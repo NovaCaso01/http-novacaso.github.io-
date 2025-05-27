@@ -1,12 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 채팅봇 소개 - 클레어힐 대학교</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <p>Hello, World!</p>
+    <header>
+        <nav>
+            <div class="container">
+                <h1><a href="#home-section">클레어힐 대학교</a></h1>
+                <ul>
+                    <li><a href="#background-section">캠퍼스</a></li>
+                    <li><a href="#character-section">등장인물</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home-section" class="hero">
+            <div class="container">
+                <h2>클레어힐 대학교에 오신 걸 환영합니다!</h2>
+                <p>고딕 양식의 아름다운 캠퍼스와 그곳에서 펼쳐지는 이야기를 만나보세요.</p>
+            </div>
+        </section>
+
+        <section id="background-section" class="content-section">
+            <div class="container">
+                <h2>캠퍼스 투어를 시작할까요?</h2>
+                <p class="section-intro"><strong>클레어힐 대학교</strong>는 고딕 양식의 아름다운 건축물과 정원으로 유명한 명문 사립대학입니다. 예술, 과학, 인문, 스포츠 등 다양한 분야에서 자유롭고 창의적인 분위기를 중시하며, 학문뿐 아니라 문화적 교류도 활발합니다.</p>
+
+                <div class="location-grid">
+                    <div class="location-item">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Windlewood+House" alt="윈들우드 하우스 이미지">
+                        <h3>Windlewood House (윈들우드 하우스)</h3>
+                        <p>상위권 학생과 특별 전형 입학생용 고급 기숙사.</p>
+                        <blockquote><strong>301호</strong>에는 4명의 메인캐릭터가 거주 한다.</blockquote>
+                    </div>
+
+                    <div class="location-item">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Ravenbell+Tower" alt="레이븐벨 타워 이미지">
+                        <h3>Ravenbell Tower (레이븐벨 타워)</h3>
+                        <p>캠퍼스 중심의 상징적인 도서관. 고딕 양식의 중세풍 건물에 방대한 자료가 주제별로 정리되어 있다.</p>
+                        <blockquote><strong>2층 스터디룸</strong>은 커튼이 달린 반개방형 공간으로, 요즘은 공부보단 ‘몰래 만나는 곳’으로 더 유명하다.</blockquote>
+                    </div>
+
+                    <div class="location-item">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Commonfield" alt="커먼 필드 이미지">
+                        <h3>Commonfield (커먼 필드)</h3>
+                        <p>클레어힐의 심장. 탁 트인 잔디밭은 학생들의 일상적 만남과 이벤트의 중심지.</p>
+                        <blockquote>분수가 있는 '센트럴 스퀘어'는 이 필드의 ‘만남의 장소’로, 약속이나 고백의 명소로 쓰인다.</blockquote>
+                    </div>
+
+                    <div class="location-item">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Bluemount+Cafe" alt="블루마운트 카페 이미지">
+                        <h3>Bluemount Cafe (블루마운트 카페)</h3>
+                        <p>교내 건물 사이에 위치한 대형 카페. 커피, 디저트, 가벼운 식사가 인기이다.</p>
+                        <blockquote>2층의 게시판에는 학생들의 자율 홍보 포스터, 손글씨 전단과 비공식 소식으로 가득하다.</blockquote>
+                    </div>
+
+                    <div class="location-item">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Everrest+Hall" alt="에버레스트 홀 이미지">
+                        <h3>Everrest Hall (에버레스트 홀)</h3>
+                        <p>학생 휴식 전용 멀티 공간. 밥 먹고 쉬고 잠도 잘 수 있는 ‘힐링 센터’.</p>
+                        <blockquote>프라이빗한 수면실은, 조용히 사라지는 커플들도 종종 눈에 띈다.<br>학생 식당은 맛과 가격이 모두 착한 정식 제공처. 점심시간엔 줄이 길다.</blockquote>
+                    </div>
+                    
+                    <div class="location-item">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=기타+건물" alt="기타 건물 이미지">
+                        <h3>기타 건물</h3>
+                        <p>전공별 전문 건물. 실험동, 예술동, 공학동, 인문사회동, 스포츠동, 조리과학동, 행정동 등.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="character-section" class="content-section">
+            <div class="container">
+                <h2>301호, 네 개의 문 너머</h2>
+                <div class="character-grid">
+                    <div class="character-profile main-character">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=에이든+울프" alt="에이든 울프 프로필 사진">
+                        <h3>에이든 울프</h3>
+                        <ul>
+                            <li><strong>나이:</strong> 23세</li>
+                            <li><strong>학년:</strong> 3학년</li>
+                            <li><strong>학과:</strong> 체육학과</li>
+                        </ul>
+                        <p class="quote">"약해질 순 있지만, 무너지진 않아."</p>
+                        <p class="description">한때는 모든 걸 가졌던 운동천재. 늘 이기던 세상에서 밀려난 순간, 그는 단단해지는 법을 배웠다. 직설적이고 경쟁적이지만, 드물게 보여주는 침묵 속 진심이 더 강한 인상을 남긴다. 누구보다 앞서려는 그가 진짜 원하는 건, 사실 ‘뒤처지지 않는 것’일지도.</p>
+                    </div>
+
+                    <div class="character-profile main-character">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=에즈라+블랙웰" alt="에즈라 블랙웰 프로필 사진">
+                        <h3>에즈라 블랙웰</h3>
+                        <ul>
+                            <li><strong>나이:</strong> 22세</li>
+                            <li><strong>학년:</strong> 2학년</li>
+                            <li><strong>학과:</strong> 컴퓨터공학과</li>
+                        </ul>
+                        <p class="quote">"세상이 틀렸다면, 내가 고쳐야지."</p>
+                        <p class="description">불안정한 환경에서 자란 그에게 해킹은 곧 조용한 저항이었다. 그는 영웅이 되려 하지 않았고, 오직 ‘정의’와 ‘균형’을 원했다. 클레어힐 입학은 꿈이 아닌 전략이자—자신만의 것을 처음으로 만들어보기 위한 선택. 무심한 척하지만, 그 안에는 세상을 바꾸고 싶은 조용한 열망이 있다.</p>
+                    </div>
+
+                    <div class="character-profile main-character">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=루카스+에버리" alt="루카스 에버리 프로필 사진">
+                        <h3>루카스 에버리</h3>
+                        <ul>
+                            <li><strong>나이:</strong> 23세</li>
+                            <li><strong>학년:</strong> 3학년</li>
+                            <li><strong>학과:</strong> 국제경제학과</li>
+                        </ul>
+                        <p class="quote">"사람 마음은, 조용히 들어야 들려."</p>
+                        <p class="description">다정한 미소 뒤에 복잡한 감정을 숨긴 중재자. 모두의 중심이 되어주는 인물이지만, 자신의 상처는 쉽게 내보이지 않는다. 조용히 타인을 위로하며, 사랑과 연결의 가치를 믿는다.</p>
+                    </div>
+
+                    <div class="character-profile main-character">
+                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=칼럼+리드" alt="칼럼 리드 프로필 사진">
+                        <h3>칼럼 리드</h3>
+                        <ul>
+                            <li><strong>나이:</strong> 21세</li>
+                            <li><strong>학년:</strong> 2학년</li>
+                            <li><strong>학과:</strong> 광고홍보학과</li>
+                        </ul>
+                        <p class="quote">"솔직함보다 매력적인 건, 연기 하는 거야."</p>
+                        <p class="description">타고난 말재주와 외모로 사람을 사로잡는 플레이보이. 누구에게나 쉽게 다가가지만, 누구에게도 쉽게 속을 보이지 않는다. 무대 위 배우처럼 완벽한 페르소나 뒤엔 솔직함을 갈망하는 진짜 자신이 있다.</p>
+                    </div>
+                </div>
+
+                <h2 class="sub-heading">선배, 교수님, 그리고 마스코트까지</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>이름</th>
+                                <th>나이</th>
+                                <th>소속 / 역할</th>
+                                <th>한 줄 소개</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>리사 벨로체</td>
+                                <td>23세</td>
+                                <td>A.C.T 리더</td>
+                                <td>무대 위의 카리스마, 무대 밖에선 따뜻한 리더. 완벽을 추구한다.</td>
+                            </tr>
+                            <tr>
+                                <td>제이스 할로웨이</td>
+                                <td>24세</td>
+                                <td>블랙포스트 편집장</td>
+                                <td>말보다 눈빛이 날카로운 분석가. 진실도, 거짓도 다 꿰뚫는다.</td>
+                            </tr>
+                            <tr>
+                                <td>에반 브룩스</td>
+                                <td>21세</td>
+                                <td>스톰 러너즈 리더</td>
+                                <td>몸으로 말하는 낙천주의자. 가벼워 보여도 의외로 진심인 남자.</td>
+                            </tr>
+                            <tr>
+                                <td>마르코 탄</td>
+                                <td>25세</td>
+                                <td>코드나잇 회장</td>
+                                <td>조용한 괴짜 천재. 웃긴 말도, 천재적인 아이디어도 그의 몫.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>이름</th>
+                                <th>나이</th>
+                                <th>직책/직업</th>
+                                <th>한 줄 소개</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>에릭 하퍼</td>
+                                <td>39세</td>
+                                <td>신경과학 교수</td>
+                                <td>날 선 말투에 따뜻한 속마음, 밤늦게 도서관에 남는 교수님.</td>
+                            </tr>
+                            <tr>
+                                <td>테오 로건</td>
+                                <td>29세</td>
+                                <td>학생지원팀 행정직</td>
+                                <td>학생 일이라면 뭐든 해결해주는 ‘캠퍼스 해결사’.</td>
+                            </tr>
+                             <tr>
+                                <td>버터</td>
+                                <td>약 4살</td>
+                                <td>고양이 / 마스코트</td>
+                                <td>다가오든 말든, 곁에 있어주는 존재. 클레어힐의 묘한 위로.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 클레어힐 프로젝트. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
