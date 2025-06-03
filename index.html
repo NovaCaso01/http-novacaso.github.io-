@@ -16,6 +16,7 @@
         body {
             font-family: 'Roboto Mono', monospace;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -80,8 +81,9 @@
             min-height: 100vh;
         }
 
-        /* Hero Section */
-        .hero {
+        /* Hero Section (REMOVED) */
+
+        .hero { /* Styles for hero are kept in case they are reused or for reference, but the section itself is gone */
             height: 90vh;
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
             background-size: cover;
@@ -368,10 +370,10 @@
             .logo {
                  margin-bottom: 10px; /* Space between logo and menu items */
             }
-            .hero-title {
+            .hero-title { /* This style might be unused now, but kept for consistency */
                 font-size: 2.5rem;
             }
-            .hero-subtitle {
+            .hero-subtitle { /* This style might be unused now, but kept for consistency */
                 font-size: 1.2rem;
             }
             .character-grid {
@@ -389,7 +391,6 @@
             <div class="logo">NOVA CASO</div>
             <nav>
                 <ul class="nav-menu">
-                    <li class="nav-item active" onclick="showSection('hero')">홈</li>
                     <li class="nav-item" onclick="showSection('overview')">개요</li>
                     <li class="nav-item" onclick="showSection('locations')">주요장소</li>
                     <li class="nav-item" onclick="showSection('organizations')">주요기업및조직</li>
@@ -402,22 +403,7 @@
     </header>
 
     <main class="main-content">
-        <section id="hero" class="hero content-section active">
-            <div class="hero-content">
-                <h1 class="hero-title">어서오세요, 노바카소에</h1>
-                <p class="hero-subtitle">"빛은 찬란하지만, 그 아래는 늘 검다."</p>
-                <div class="hero-description">
-                    2087년, 지구는 기후재앙과 전쟁, 기술 발전과 자본 독점이 몰고 온 혼돈 속에서 새로운 질서로 재편되었다. 
-                    국가의 권위는 무너졌고, 초거대기업들이 도시를 '운영'한다. 그 중 하나, 디스트릭트-7. 
-                    한때 '서울'이라 불렸던 잔재 위에 세워진 이곳은, 빛과 정보가 과잉된 도시. 
-                    하지만 그 모든 소음 너머, 조용한 네온 간판 하나가 반짝인다. 바로 "노바 카소". 
-                    이야기의 시작점은, 늘 그렇듯, 한 잔의 술 위에서…
-                </div>
-            </div>
-        </section>
-
-        <section id="overview" class="content-section">
-            <h2 class="section-title">네온더스트 세계관</h2>
+        <section id="overview" class="content-section"> <h2 class="section-title">네온더스트 세계관</h2>
             <div class="content-grid">
                 <div class="content-card">
                     <h3 class="card-title">세계관 개요</h3>
@@ -657,7 +643,7 @@
             // 현재 클릭된 메뉴 항목을 찾아 'active' 클래스를 추가합니다.
             navItems.forEach(item => {
                 // onclick 속성 값에서 sectionId를 추출하여 비교합니다.
-                // 예: "showSection('hero')" 에서 'hero' 추출
+                // 예: "showSection('overview')" 에서 'overview' 추출
                 const onclickAttr = item.getAttribute('onclick');
                 if (onclickAttr && onclickAttr.includes(`showSection('${sectionId}')`)) {
                     item.classList.add('active');
@@ -665,9 +651,9 @@
             });
         }
 
-        // 페이지 로드 시 'hero' 섹션을 기본으로 보여주도록 설정
+        // 페이지 로드 시 'overview' 섹션을 기본으로 보여주도록 설정
         document.addEventListener('DOMContentLoaded', () => {
-            showSection('hero'); // 기본적으로 'hero' 섹션과 해당 메뉴를 활성화합니다.
+            showSection('overview'); // '개요' 섹션을 새로운 기본값으로 설정합니다.
         });
     </script>
 </body>
