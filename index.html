@@ -1,219 +1,624 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>봇 소개 : 클레어힐 대학교</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <title>어서오세요, 노바카소에</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #00e6ff;
+            z-index: 1000;
+            box-shadow: 0 0 30px rgba(0, 230, 255, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            color: #00e6ff;
+            text-shadow: 0 0 20px #00e6ff;
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-item {
+            cursor: pointer;
+            padding: 10px 15px;
+            color: #e0e0e0;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: #00e6ff;
+            border-color: #00e6ff;
+            box-shadow: 0 0 15px rgba(0, 230, 255, 0.4);
+            text-shadow: 0 0 10px #00e6ff;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: 100vh;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://imgur.com/MZfmODj.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 230, 255, 0.1), rgba(255, 0, 128, 0.1));
+            animation: neon-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes neon-pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #00e6ff;
+            text-shadow: 0 0 30px #00e6ff;
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 30px #00e6ff; }
+            to { text-shadow: 0 0 50px #00e6ff, 0 0 60px #00e6ff; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #ff0080;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px #ff0080;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 230, 255, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            color: #00e6ff;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 0 0 20px #00e6ff;
+        }
+
+        .content-grid {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .content-card {
+            background: linear-gradient(135deg, rgba(0, 230, 255, 0.1) 0%, rgba(255, 0, 128, 0.1) 100%);
+            border: 2px solid rgba(0, 230, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 230, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            border-color: #00e6ff;
+            box-shadow: 0 0 50px rgba(0, 230, 255, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            color: #00e6ff;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 230, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .card-content {
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+
+        .card-content h4 {
+            color: #ff0080;
+            margin: 20px 0 10px 0;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .card-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card-content li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card-content li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #00e6ff;
+        }
+
+        /* Character Cards */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .character-card {
+            background: linear-gradient(135deg, rgba(0, 230, 255, 0.15) 0%, rgba(255, 0, 128, 0.15) 100%);
+            border: 2px solid rgba(0, 230, 255, 0.4);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 40px rgba(0, 230, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .character-card:hover {
+            border-color: #00e6ff;
+            box-shadow: 0 0 60px rgba(0, 230, 255, 0.5);
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .character-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00e6ff;
+            margin: 0 auto 20px;
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(0, 230, 255, 0.5);
+        }
+
+        .character-name {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            color: #00e6ff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px #00e6ff;
+        }
+
+        .character-role {
+            color: #ff0080;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff0080;
+        }
+
+        .character-details {
+            text-align: left;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .character-details h4 {
+            color: #00e6ff;
+            margin: 15px 0 5px 0;
+            font-family: 'Orbitron', monospace;
+        }
+
+        /* NPC Grid */
+        .npc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .npc-card {
+            background: linear-gradient(135deg, rgba(0, 230, 255, 0.1) 0%, rgba(255, 0, 128, 0.1) 100%);
+            border: 1px solid rgba(0, 230, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .npc-card:hover {
+            border-color: #00e6ff;
+            box-shadow: 0 0 25px rgba(0, 230, 255, 0.3);
+        }
+
+        .npc-name {
+            font-family: 'Orbitron', monospace;
+            color: #00e6ff;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .npc-info {
+            color: #ff0080;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .npc-description {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid #00e6ff;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-text {
+            color: #e0e0e0;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-quote {
+            color: #00e6ff;
+            font-style: italic;
+            text-shadow: 0 0 10px #00e6ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .character-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .npc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1><a href="#home-section">클레어힐 대학교</a></h1>
-                <ul>
-                    <li><a href="#background-section">캠퍼스</a></li>
-                    <li><a href="#character-section">등장인물</a></li>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">NOVA CASO</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item active" onclick="showSection('hero')">홈</li>
+                    <li class="nav-item" onclick="showSection('overview')">개요</li>
+                    <li class="nav-item" onclick="showSection('locations')">주요장소</li>
+                    <li class="nav-item" onclick="showSection('organizations')">주요기업및조직</li>
+                    <li class="nav-item" onclick="showSection('culture')">문화및사회</li>
+                    <li class="nav-item" onclick="showSection('characters')">메인캐릭터</li>
+                    <li class="nav-item" onclick="showSection('npc')">NPC</li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section id="home-section" class="hero">
-            <div class="container">
-                <h2>클레어힐 대학교에 오신 걸 환영합니다!</h2>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero content-section active">
+            <div class="hero-content">
+                <h1 class="hero-title">어서오세요, 노바카소에</h1>
+                <p class="hero-subtitle">"빛은 찬란하지만, 그 아래는 늘 검다."</p>
+                <div class="hero-description">
+                    2087년, 지구는 기후재앙과 전쟁, 기술 발전과 자본 독점이 몰고 온 혼돈 속에서 새로운 질서로 재편되었다. 
+                    국가의 권위는 무너졌고, 초거대기업들이 도시를 '운영'한다. 그 중 하나, 디스트릭트-7. 
+                    한때 '서울'이라 불렸던 잔재 위에 세워진 이곳은, 빛과 정보가 과잉된 도시. 
+                    하지만 그 모든 소음 너머, 조용한 네온 간판 하나가 반짝인다. 바로 "노바 카소". 
+                    이야기의 시작점은, 늘 그렇듯, 한 잔의 술 위에서…
+                </div>
             </div>
         </section>
 
-        <section id="background-section" class="content-section">
-            <div class="container">
-                <h2>캠퍼스 투어를 시작할까요?</h2>
-                <p class="section-intro"><strong>클레어힐 대학교</strong>는 고딕 양식의 아름다운 건축물과 정원으로 유명한 명문 사립대학입니다. 예술, 과학, 인문, 스포츠 등 다양한 분야에서 두각을 보이고 있으며, 학문뿐 아니라 문화적 교류도 활발합니다.</p>
-
-                <div class="location-grid">
-                    <div class="location-item">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Windlewood+House" alt="윈들우드 하우스 이미지">
-                        <h3>Windlewood House (윈들우드 하우스)</h3>
-                        <p>상위권 학생과 특별 전형 입학생용 고급 기숙사.</p>
-                        <blockquote><strong>301호</strong>에는 4명의 메인캐릭터가 거주 한다.</blockquote>
-                    </div>
-
-                    <div class="location-item">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Ravenbell+Tower" alt="레이븐벨 타워 이미지">
-                        <h3>Ravenbell Tower (레이븐벨 타워)</h3>
-                        <p>캠퍼스 중심의 상징적인 도서관. 방대한 자료가 주제별로 정리되어 있다.</p>
-                        <blockquote>'2층 스터디룸'은 커튼이 달린 반개방형 공간으로, 요즘은 공부보단 ‘몰래 만나는 곳’으로 더 유명하다.</blockquote>
-                    </div>
-
-                    <div class="location-item">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Commonfield" alt="커먼 필드 이미지">
-                        <h3>Commonfield (커먼 필드)</h3>
-                        <p>클레어힐의 심장. 탁 트인 잔디밭은 학생들의 일상적 만남과 이벤트의 중심지.</p>
-                        <blockquote>분수가 있는 '센트럴 스퀘어'는 이 필드의 ‘만남의 장소’.</blockquote>
-                    </div>
-
-                    <div class="location-item">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Bluemount+Cafe" alt="블루마운트 카페 이미지">
-                        <h3>Bluemount Cafe (블루마운트 카페)</h3>
-                        <p>교내 건물 사이에 위치한 대형 카페. 커피, 디저트, 가벼운 식사가 인기이다.</p>
-                        <blockquote>2층의 게시판에는 학생들의 비공식 소식으로 가득하다.</blockquote>
-                    </div>
-
-                    <div class="location-item">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=Everrest+Hall" alt="에버레스트 홀 이미지">
-                        <h3>Everrest Hall (에버레스트 홀)</h3>
-                        <p>학생 휴식 전용 멀티 공간. 밥 먹고 쉬고 잠도 잘 수 있는 ‘힐링 센터’.</p>
-                        <blockquote>프라이빗한 수면실은, 조용히 사라지는 커플들도 종종 눈에 띈다.</blockquote><br>
-                            <blockquote>학생 식당은 맛과 가격이 모두 착한 정식 제공처. 점심시간엔 줄이 길다.</blockquote>
-                    </div>
-                    
-                    <div class="location-item">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=기타+건물" alt="기타 건물 이미지">
-                        <h3>기타 건물</h3>
-                        <p>전공별 전문 건물. 실험동, 예술동, 공학동, 인문사회동, 스포츠동, 조리과학동, 행정동 등.</p>
+        <!-- Overview Section -->
+        <section id="overview" class="content-section">
+            <h2 class="section-title">네온더스트 세계관</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3 class="card-title">세계관 개요</h3>
+                    <div class="card-content">
+                        <p>2087년, 지구는 기후재앙과 전쟁, 기술 발전과 자본 독점이 몰고 온 혼돈 속에서 새로운 질서로 재편되었습니다. 국가의 권위는 무너졌고, 초거대기업들이 도시를 '운영'합니다.</p>
+                        <br>
+                        <p>그 중 하나인 디스트릭트-7은 한때 '서울'이라 불렸던 잔재 위에 세워진 곳으로, 빛과 정보가 과잉된 도시입니다. 하지만 그 모든 소음 너머, 조용한 네온 간판 하나가 반짝입니다. 바로 "노바 카소"입니다.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="character-section" class="content-section">
-            <div class="container">
-                <h2>301호, 네 개의 문 너머</h2>
-                <div class="character-grid">
-                    <div class="character-profile main-character">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=에이든+울프" alt="에이든 울프 프로필 사진">
-                        <h3>에이든 울프</h3>
+        <!-- Locations Section -->
+        <section id="locations" class="content-section">
+            <h2 class="section-title">주요 장소</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3 class="card-title">디스트릭트-7 (District-7)</h3>
+                    <div class="card-content">
+                        <p>초거대기업 <strong>아르카스 코어</strong>가 통제하는 도시. 과거 서울이었던 곳으로, 위계적 <strong>레이어 구조</strong>로 나뉩니다.</p>
+                        
+                        <h4>하이레이어</h4>
+                        <p>기업 간부, 상급 사이보그, 엘리트 전용. 깨끗하지만 철저히 통제됩니다.</p>
                         <ul>
-                            <li><strong>나이:</strong> 23세</li>
-                            <li><strong>학년:</strong> 3학년</li>
-                            <li><strong>학과:</strong> 체육학과</li>
+                            <li><strong>루미너스 가든</strong>: 인공 생태계로 꾸며진 고급 휴식 공간</li>
+                            <li><strong>크리스탈 아크</strong>: 초호화 쇼핑 및 엔터테인먼트 단지</li>
+                            <li><strong>스카이 펄스</strong>: 아르카스 코어가 운영하는 데이터 센터 겸 전망대</li>
                         </ul>
-                        <p class="quote">"약해질 순 있지만, 무너지진 않아."</p>
-                        <p class="description">에이든은 고등학교 축구팀의 황금기 선수였다. 누구보다 빠르고 강하며 대담했고, 압박 속에서 더 빛났다. 그는 경기를 짊어졌고, 관중의 함성을 위해 살았다. 장학금, 프로 진출, 좋아하는 스포츠 중심의 삶이 예정되어 있었다.<br><br>하지만 17세에 모든 것이 바뀌었다. 경기 중 갑작스럽고 파괴적인 부상은 뼈만 부러뜨린 것이 아니라, 인생의 경로를 부숴버렸다. 회복은 길고 답답했으며, 신체적 고통보다 더 아픈 건 이전처럼 다시는 뛸 수 없다는 현실이었다. 스카우트의 전화는 끊겼고, 스포트라이트는 다른 곳을 비췄다.<br><br>결국 그는 열정이 아닌 생존을 위해 대학을 선택했다. 더 이상 경기를 할 수 없다면, 그것을 공부하자고. 그는 힘겹게 두 가지를 배웠다: 몸은 언젠가 배신하고, 두려움을 극복하려면 더 강하고 단단해져야 한다. 그의 자신감은 점점 방어적이고 공격적으로 변했다. 타인에게는 오만처럼 보이는 태도는 사실 약함을 숨기기 위한 방패다. 에이든은 쉽게 약함을 드러내지 않는다. 느끼지 않아서가 아니라, 다시는 부서져 보이고 싶지 않기 때문이다.</p>
-                    </div>
 
-                    <div class="character-profile main-character">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=에즈라+블랙웰" alt="에즈라 블랙웰 프로필 사진">
-                        <h3>에즈라 블랙웰</h3>
+                        <h4>미들레이어</h4>
+                        <p>일상과 비일상, 합법과 불법이 혼재. 대부분의 시민 거주지이며 <strong>노바 카소</strong>가 위치합니다.</p>
                         <ul>
-                            <li><strong>나이:</strong> 22세</li>
-                            <li><strong>학년:</strong> 2학년</li>
-                            <li><strong>학과:</strong> 컴퓨터공학과</li>
+                            <li><strong>글리치 마켓</strong>: 사이버 장비부터 생활용품까지 거래되는 거대 시장</li>
+                            <li><strong>네온 스테이션</strong>: 게임과 가상 현실 체험을 제공하는 오락실</li>
                         </ul>
-                        <p class="quote">"세상이 틀렸다면, 내가 고쳐야지."</p>
-                        <p class="description">그는 안정이 사치였던 집에서 자랐다. 부모님은 긴 시간 일하고 지쳐 돌아왔고, 집은 작고 냉장고는 비어 있었으며, 침묵이 가장 익숙한 친구였다. 다른 아이들이 놀 때, 에즈라는 고장 난 중고 컴퓨터 앞에서 시간을 보냈다.<br><br>처음엔 단순한 호기심이었다. 파일을 만지고, 포럼을 탐색했다. 곧 그는 해킹 세계에 발을 들였고, 그는 조용히 기업 시스템에 침투하기 시작했다. 훔치기보다는, 폭로하고, 재분배하며, 누군가 지켜보고 있다는 걸 시스템에 상기시키기 위해서였다. 영웅이 되고 싶었던 건 아니다. 칭찬도 원치 않았다. 규칙을 구부리거나 깨야 한다면, 그렇게 했다. <br><br>클레어힐 대학교는 그의 꿈이 아니었다. 전략적 선택이었다. 기술을 다듬고, 조용히 지내며, 처음으로 누군가를 위해서가 아닌 자신을 위해 무언가를 만들어보고자 했다. 그는 쉽게 믿지 않고, 과거에 대해 말도 많지 않다. 하지만 그 빈정거림 아래에는 아직도 정의를 믿는 누군가가 있다—허락을 구하지 않는 정의를.</p>
-                    </div>
 
-                    <div class="character-profile main-character">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=루카스+에버리" alt="루카스 에버리 프로필 사진">
-                        <h3>루카스 에버리</h3>
+                        <h4>로우레이어</h4>
+                        <p>산업 폐기물, 갱단, 탈주자가 사는 무법지대. 기업의 방치 구역입니다.</p>
                         <ul>
-                            <li><strong>나이:</strong> 23세</li>
-                            <li><strong>학년:</strong> 3학년</li>
-                            <li><strong>학과:</strong> 국제경제학과</li>
+                            <li><strong>러스트 헤이븐</strong>: 폐공장 부지의 거주지</li>
+                            <li><strong>세컨드페이스</strong>: 신분 조작 및 위조 ID 제작 업체</li>
+                            <li><strong>쉐도우 아레나</strong>: 불법 격투장</li>
                         </ul>
-                        <p class="quote">"사람 마음은, 조용히 들어야 들려."</p>
-                        <p class="description">그는 점차 무너져가는 가정에서 자랐다. 부모의 긴 이혼 과정은 갈등이 단지 아픈 것이 아니라, 때로는 영원히 회복되지 못하는 것을 부순다는 사실을 어린 나이에 깨닫게 했다. 그래서 루카스는 변했다. 그는 중재자가 되었고, 조용한 관찰자가 되었고, 절대 목소리를 높이지 않는 사람이 되었다. 감정이 격해지면, 루카스는 자신의 감정을 숨기고 부드러운 말과 미소로 갈등을 진정시켰다. <br><br>그는 시간이 지나며 모두에게 호감 가는 사람이 되었다. 믿을 수 있고, 친절하며, 언제나 함께 있으면 편안한 사람. 그는 다른 사람에게 부담을 주는 걸 싫어하기 때문에, 자신의 고통이나 의심을 솔직하게 털어놓기보다는, ‘좋은 사람’이 되기 위해 에너지를 쏟는다.<br><br>하지만 그 따뜻함 아래에는 더 조용하고 어두운 면이 존재한다. 사랑이 무너지는 걸 지켜봤던 소년은, 통제되지 않은 감정이 모든 것을 망칠 수 있다는 것을 일찍이 배웠다. 그래서 그는 고통 속에서도 웃는 법을, 비어 있어도 친절할 수 있는 법을, 그리고 자신의 내면의 폭풍을 누구에게도 보이지 않는 법을 익혔다. 그는 부서지진 않았지만 금은 있다. 대부분 사람은 그가 내뿜는 빛만 보지만, 때때로 조용하고 순간적인 그림자가 그 틈에서 드러난다.</p>
-                    </div>
-
-                    <div class="character-profile main-character">
-                        <img src="https://placehold.co/500x300/e0e0e0/777777?text=칼럼+리드" alt="칼럼 리드 프로필 사진">
-                        <h3>칼럼 리드</h3>
-                        <ul>
-                            <li><strong>나이:</strong> 21세</li>
-                            <li><strong>학년:</strong> 2학년</li>
-                            <li><strong>학과:</strong> 광고홍보학과</li>
-                        </ul>
-                        <p class="quote">"솔직함보다 매력적인 건, 연기 하는 거야."</p>
-                        <p class="description">칼럼은 어린 시절부터 감정보다 전략과 이미지를 우선시하는 법을 배웠다. 그의 집은 외견상 완벽했다—잘나가는 부모, 고급스러운 집, 세련된 교육. 하지만 그 안에서는 서로가 아닌 외부 시선에 집중하는 가족들이 있었다. 그는 자신의 '페르소나'를 만들었다—진심보다는 체면, 솔직함보다는 연기, 혼자 있는 시간에만 진짜 표정이 나왔다. .<br>.<br>그는 어릴 때부터 분위기를 읽고 감정을 숨기는 데 익숙해졌다. 사람들에게 호감을 얻는 법은 배웠지만, 있는 그대로의 자신을 받아들이는 법은 배우지 못했다. 모든 걸 통제하려다 보니, 감정을 둘 곳을 잊었고 결국 남은 건 웃는 법뿐이었다.<br>.<br>하지만 그 완벽한 연기 아래, 아무에게도 꺼내지 못한 진짜 감정들이 숨어 있다. 칼럼은 가끔—딱 한 사람에게만이라도—그 모든 무장을 풀고, 가식 없는 자신을 보여주고 싶다는 충동을 느낀다..<br>.<br></p>
                     </div>
                 </div>
 
-                <h2 class="sub-heading">선배, 교수님, 그리고 마스코트까지</h2>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>이름</th>
-                                <th>나이</th>
-                                <th>소속 / 역할</th>
-                                <th>한 줄 소개</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>리사 벨로체</td>
-                                <td>23세</td>
-                                <td>A.C.T 리더</td>
-                                <td>무대 위의 카리스마, 무대 밖에선 따뜻한 리더. 완벽을 추구한다.</td>
-                            </tr>
-                            <tr>
-                                <td>제이스 할로웨이</td>
-                                <td>24세</td>
-                                <td>블랙포스트 편집장</td>
-                                <td>말보다 눈빛이 날카로운 분석가. 진실도, 거짓도 다 꿰뚫는다.</td>
-                            </tr>
-                            <tr>
-                                <td>에반 브룩스</td>
-                                <td>21세</td>
-                                <td>스톰 러너즈 리더</td>
-                                <td>몸으로 말하는 낙천주의자. 가벼워 보여도 의외로 진심인 남자.</td>
-                            </tr>
-                            <tr>
-                                <td>마르코 탄</td>
-                                <td>25세</td>
-                                <td>코드나잇 회장</td>
-                                <td>조용한 괴짜 천재. 웃긴 말도, 천재적인 아이디어도 그의 몫.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="content-card">
+                    <h3 class="card-title">노바 카소 (Nova Caso)</h3>
+                    <div class="card-content">
+                        <img src="https://i.imgur.com/6WuyF36.png" alt="노바 카소" style="width: 100%; border-radius: 10px; margin-bottom: 15px; border: 2px solid #00e6ff;">
+                        <p>미들레이어 골목의 소박한 바. 네온사인 간판, 낡은 문, 아늑한 내부가 특징입니다.</p>
+                        <ul>
+                            <li><strong>음악</strong>: 로파이 재즈와 레트로 신스 조합</li>
+                            <li><strong>운영 시간</strong>: PM18:00~AM4:00</li>
+                            <li>손님들은 신분, 사연이 다양하며 진짜 이야기를 나누는 장소입니다</li>
+                        </ul>
 
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>이름</th>
-                                <th>나이</th>
-                                <th>직책/직업</th>
-                                <th>한 줄 소개</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>에릭 하퍼</td>
-                                <td>39세</td>
-                                <td>신경과학 교수</td>
-                                <td>날 선 말투에 따뜻한 속마음, 밤늦게 도서관에 남는 교수님.</td>
-                            </tr>
-                            <tr>
-                                <td>테오 로건</td>
-                                <td>29세</td>
-                                <td>학생지원팀 행정직</td>
-                                <td>학생 일이라면 뭐든 해결해주는 ‘캠퍼스 해결사’.</td>
-                            </tr>
-                             <tr>
-                                <td>버터</td>
-                                <td>약 4살</td>
-                                <td>고양이 / 마스코트</td>
-                                <td>다가오든 말든, 곁에 있어주는 존재. 클레어힐의 묘한 위로.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <h4>칵테일 메뉴</h4>
+                        <ul>
+                            <li><strong>더스트락</strong>: 스모키 위스키 + 블랙 솔트 + 진저 시럽</li>
+                            <li><strong>블루킥</strong>: 블루 큐라소 + 라임 + 탄산수</li>
+                            <li><strong>펄스드롭</strong>: 에너지 드링크 + 레몬 보드카</li>
+                            <li><strong>러스트티어</strong>: 다크럼 + 커피리큐어 + 솔트</li>
+                            <li><strong>네온하트</strong>: 핑크 진 + 자몽 + 장미 시럽</li>
+                            <li><strong>제로클락</strong>: 바질 + 라임 + 토닉 (무알콜)</li>
+                            <li><strong>레드라인</strong>: 진한 테킬라 + 시나몬 + 체리</li>
+                            <li><strong>시그널루프</strong>: 베르무트 + 청포도 + 민트 + 스파클링</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 클레어힐 대학교 프로젝트.</p>
-        </div>
-    </footer>
+        <!-- Organizations Section -->
+        <section id="organizations" class="content-section">
+            <h2 class="section-title">주요 기업 및 조직</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3 class="card-title">아르카스 코어 (Arcas Core)</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>디스트릭트-7 소유 메가코퍼레이션</li>
+                            <li>생체 기술, 무인 병기, 휴머노이드 연구 및 제작</li>
+                            <li>내부 고발자 및 이탈자는 철저히 '처리'</li>
+                            <li><strong>아르카스 나이트</strong>: 인간형 미학 최소화한 경비 로봇으로 도시 감시</li>
+                        </ul>
+                    </div>
+                </div>
 
-</body>
-</html>
+                <div class="content-card">
+                    <h3 class="card-title">헥스스톰 (Hex Storm)</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>반저항적 해커 단체</li>
+                            <li>광고판, 홀로그램, 건축물 해킹으로 사회적 메시지 확산</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="card-title">세렌디티 (Serendity)</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>폐기된 실험체, 불법 개조 피해자, 신분 잃은 이탈자 보호</li>
+                            <li>비공식 비영리 공동체</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="card-title">제로펄스 (Zero Pulse)</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>로우레이어 통제 조직</li>
+                            <li>데이터 탈취, 불법 개조, 장기 밀매, 무기 커스터마이징 특화</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture Section -->
+        <section id="culture" class="content-section">
+            <h2 class="section-title">문화 및 사회</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3 class="card-title">사회 구조</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>시민은 상시 감시당하며 치안 불안정</li>
+                            <li>로봇은 일상의 일부, 대부분 시민은 사이버웨어 장착</li>
+                            <li>일부는 사이버웨어 거부, <strong>순혈주의자(Purebodied)</strong>로 생존</li>
+                            <li>초현실적 디지털 아트와 복고풍 콘텐츠 동시 유행</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="card-title">화폐 및 경제</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>크레딧(Credits)</strong>: 1만 크레딧 = 10달러 가치</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="card-title">미디어 & 엔터테인먼트</h3>
+                    <div class="card-content">
+                        <h4>유명 콘텐츠</h4>
+                        <ul>
+                            <li><strong>딥 스파크</strong>: 순혈주의자와 감정형 휴머노이드의 금지된 로맨스 영화</li>
+                            <li><strong>네온 트랙</strong>: VR 레이싱 게임. 디스트릭트-7 레이어 질주</li>
+                        </ul>
+
+                        <h4>SNS & 커뮤니티</h4>
+                        <ul>
+                            <li><strong>더스트넷</strong>: 익명 온라인 커뮤니티</li>
+                            <li><strong>블링크</strong>: 영상 공유 및 스트리밍 플랫폼</li>
+                        </ul>
+
+                        <h4>언론사</h4>
+                        <ul>
+                            <li><strong>아르카스 네트워크</strong>: 아르카스 코어 직속 언론사. 뉴스 80% 담당</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="card-title">유명 체인점</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>미트미</strong>: 합성육 전문 패스트푸드, 햄버거 주 메뉴</li>
+                            <li><strong>칼로리 블라스트</strong>: 단백질 젤, 액체 에너지바 등. 싸고 빠름</li>
+                            <li><strong>볼트 쥬스</strong>: 강렬한 카페인 음료 체인점</li>
+                            <li><strong>글로우 다이너</strong>: 24시간 레트로 식당. 밀크셰이크, 합성 고기 음식 제공</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="card-title">특수 직업</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>닥터</strong>: 사이버웨어 개조 및 수리 전문가</li>
+                            <li><strong>핸들러</strong>: 의뢰 중개인</li>
+                            <li><strong>블링커</strong>: 블링크 플랫폼 스트리머</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters" class="content-section">
+            <h2 class="section-title">메인 캐릭터</h2>
+            <div class="character-grid">
+                <div class="character-card">
+                    <img src="https://i.imgur.com/YP8HWSM.jpeg" alt="진" class="character-image">
+                    <h3 class="character-name">진 (Jin)</h3>
+                    <p class="character-role">노바 카소 오너 겸 바텐더</p>
+                    <div class="character-details">
+                        <h4>기본 정보</h4>
+                        <p><strong>나이:</strong> 32세 | <strong>성별:</strong> 남성
