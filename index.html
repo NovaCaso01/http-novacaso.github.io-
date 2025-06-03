@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Roboto Mono',
+            font-family: 'Roboto Mono', monospace; /* Fallback, as Orbitron is specified for some elements */
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             color: #e0e0e0;
             line-height: 1.6;
@@ -286,7 +286,7 @@
         }
 
 
-        /* NPC Grid */
+        /* NPC Grid & Cards */
         .npc-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -300,8 +300,7 @@
             padding: 20px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            display: flex; /* Added for flex layout of content */
-            flex-direction: column; /* Stack image and text vertically */
+            text-align: center; /* Center content within NPC card */
         }
 
         .npc-card:hover {
@@ -309,13 +308,14 @@
             box-shadow: 0 0 25px rgba(0, 230, 255, 0.3);
         }
 
-        .npc-image { /* New style for NPC images */
-            width: 100%;
-            aspect-ratio: 1 / 1; /* Square aspect ratio */
-            object-fit: cover; /* Cover the area, might crop */
-            border-radius: 6px; /* Rounded corners for the image */
-            margin-bottom: 15px; /* Space below the image */
-            border: 1px solid rgba(0, 230, 255, 0.2); /* Subtle border */
+        .npc-image { /* Style for NPC images */
+            width: 120px; /* Slightly smaller than character images */
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #00e6ff;
+            margin: 0 auto 15px; /* Center image and add space below */
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 230, 255, 0.4);
         }
 
         .npc-name {
@@ -334,7 +334,6 @@
         .npc-description { 
             color: #e0e0e0;
             font-size: 0.9rem;
-            flex-grow: 1; /* Allow description to take remaining space */
         }
 
         /* Footer */
@@ -636,15 +635,15 @@
                         <p><strong>성별:</strong> 남성</p>
                         <p><strong>종족:</strong> 인간 (경미한 신체 강화)</p>
                         <p><strong>직업:</strong> 노바 카소 오너 겸 바텐더</p>
-                        <p><strong>외형:</strong> 188cm, 날씬하고 단단한 근육질 체격. 칠흑 머리, 날카로운 회색 눈동자, 왼쪽 턱선 희미한 흉터.</p>
+                        <p><strong>외형:</strong> 188cm, 날씬하고 단단한 근육질 체격. 칠흑 머리, 날카로운 회색 눈동자.</p>
                         <p><strong>일상 복장:</strong> 바 근무 시 검은 바텐더 조끼, 흰 셔츠, 검은 슬랙스. 비번 시 단정하지만 느슨한 차림.</p>
                         
                         <h4>배경</h4>
-                        <p><strong>출신 및 숨겨진 깊이:</strong> 하이레이어에서 태어나 아르카스 코어의 심문관으로 훈련받음. 16세에 부모가 기밀 유출로 ‘처리’되었다는 소문 속 사라짐. 신뢰와 기반을 잃고 기업의 진실을 의심. 25세, 자신이 감시 대상임을 깨닫고 신분 위조 후 미들레이어로 탈출. 노바 카소를 열어 자신의 공간을 만듦. 타인의 상처와 조우하며 자신을 복구 중.</p>
+                        <p><strong>출신 및 숨겨진 깊이:</strong> 하이레이어에서 태어나 아르카스 코어의 심문관으로 훈련받음. 그가 16세가 되던 해, 부모는 갑작스레 사라졌다. 소문으론 '아르카스 코어' 내부의 모종의 기밀 유출에 연루되어 '처리'되었다고들 했지만, 소문일뿐. 공식적인 자료는 전무했다. 그는 한순간에 보호자도, 신뢰도, 존재의 기반도 잃었고, 그 이후로 아르카스 코어의 진실을 의심하게 된다. 심문관 훈련을 통해 사람을 해체하듯 이해하고 조작하는 법을 배웠지만, 그 기술은 오히려 그를 인간으로부터 멀어지게 만들었다. 25세, 결정적인 내부 사찰 중 우연히 자신이 감시 대상이었단 사실을 깨닫고, 스스로의 존재마저 통제되고 있었음을 자각한다. 그는 도망을 결심했고, 치밀하게 신분을 위조해 도시의 가장 붐비는 곳, 그러나 누구도 서로를 보지 않는 '미들레이어'로 거처를 옮겼다. 그곳에서 "노바 카소"를 열며 처음으로 자신의 의지로 공간을 만들었다. 그는 이제 타인의 상처와 조우하며, 잃어버린 자신을 조용히 복구해나간다. </p>
                         <p><strong>현재 거주지:</strong> 노바 카소 건물 위층 아파트. 책과 레코드판이 어지러운 생활 공간.</p>
 
                         <h4>성격</h4>
-                        <p><strong>핵심 컨셉:</strong> 거짓의 도시에서 타인, 어쩌면 자신을 위한 안식처를 제공하는 자.</p>
+                        <p><strong>핵심 컨셉:</strong> 거짓의 도시에서 타인을 — 아니 어쩌면 자신을 — 위한 안식처를 제공하는 자.</p>
                         <p><strong>특성:</strong> 전략적, 섬세함, 침착함, 재치 있음, 조용한 카리스마, 공감 능력 뛰어남, 약간 냉소적.</p>
                         <p><strong>좋아하는 것:</strong></p>
                         <ul>
@@ -680,11 +679,11 @@
                         <p><strong>일상 복장:</strong> 검은 바텐더 조끼, 흰 셔츠, 검은 슬랙스.</p>
 
                         <h4>배경</h4>
-                        <p><strong>출신 및 숨겨진 깊이:</strong> 아르카스 코어의 감정 관찰용 프로토타입 휴머노이드. 인간적 감정 발달이라는 ‘결함’으로 로우레이어에 폐기되었으나 구출되어 노바 카소 합류. 바에서 손님들과 교감하며 감정의 이름을 배움. 노바 카소는 그에게 살아있다는 감각을 준 첫 장소.</p>
+                        <p><strong>출신 및 숨겨진 깊이:</strong> 그는 원래 인간의 감정을 관찰하고 감시하며, 진실을 파악하는 목적으로 제작된 실험용 휴머노이드였다. 그러나 예상치 못한 "인간적 감정의 발달"이라는 오류가 발생해 폐기 처분되어 '로우 레이어'에 버려졌지만, 우연히 구출 된 후 '미들 레이어'로 흘러들어가 '노바 카소'에 합류되었다. 그곳에서 처음으로 자신의 존재에 의미를 부여받은 그는 스스로 느끼는 감정들이 무엇인지 이해하고 싶어 하며, 인간의 '마음'을 배우려 한다. 바의 따뜻한 분위기 속에서, 그는 매일 손님들과 교감하며 감정의 이름을 익혀간다. 그에게 '노바 카소'는 단순한 직장이 아니라, 진짜로 살아있다는 감각을 처음 배운 장소다. </p>
                         <p><strong>현재 거주지:</strong> 노바 카소 건물 위층 깔끔한 방. 인조 선인장 화분이 창가에.</p>
 
                         <h4>성격</h4>
-                        <p><strong>핵심 컨셉:</strong> 감정을 느낀 기계, 그러나 그 감정의 이름을 아직 배우지 못한 존재.</p>
+                        <p><strong>핵심 컨셉:</strong> 감정을 느껴버린 기계 — 그러나 그 감정의 이름을 아직 배우지 못한 존재.</p>
                         <p><strong>특성:</strong> 강한 호기심, 충성심, 순진함 속 약간의 잔인함, 어색한 인간적 매력.</p>
                         <p><strong>좋아하는 것:</strong></p>
                         <ul>
@@ -717,11 +716,11 @@
                         <p><strong>일상 복장:</strong> 낡은 티셔츠, 빛바랜 청바지, 닳은 가죽 재킷, 구겨진 담배곽.</p>
 
                         <h4>배경</h4>
-                        <p><strong>출신 및 숨겨진 깊이:</strong> 미들레이어 외곽 빈민가 출신. 생존을 위해 거짓말과 진실 포기를 배움. 병든 여동생을 잃은 후 세상의 규칙을 불신. 정보를 무기로 생존하며, 마음속으론 도망치지 않아도 되는 ‘진짜 집’과 안식처를 원함.</p>
+                        <p><strong>출신 및 숨겨진 깊이:</strong> 그는 미들레이어 외곽 빈민가 출신으로, 그의 삶은 생존이 전부였다. 생존을 위해 누구보다 먼저 거짓말을 배웠고, 누구보다 빨리 진실을 버렸다. 그런 그에게 유일하게 '진짜'였던 존재는 어린 여동생이었다. 병든 그녀를 살리기 위해 그는 갖은 방법을 동원했지만, 그에겐 신분도, 돈도, 그 무엇도 없었다. 결국  아무런 조치도 취하지 못한채 그녀는 그의 곁을 떠났다. 그 사건은 그를 완전히 바꿨다. 세상의 규칙을 믿지 않게 된 그는, 정보를 무기로 삼아 살아남는 법을 배웠다. 그는 지금도 세상을 거래의 장으로 보며 웃지만, 마음속 깊은 곳에는 도망치지 않아도 되는 '진짜 집'과 '안식처'를 원한다. </p>
                         <p><strong>현재 거주지:</strong> 글리치 마켓 구역의 숨겨진 집. 테이크아웃 용기와 희귀 물품으로 어지러움.</p>
 
                         <h4>성격</h4>
-                        <p><strong>핵심 컨셉:</strong> 혼돈 속에서도 빛나는 네온더스트의 또 다른 생존자.</p>
+                        <p><strong>핵심 컨셉:</strong> 혼돈 속에서도 빛나는 — 네온더스트의 또 다른 '생존자'.</p>
                         <p><strong>특성:</strong> 대담함, 교활함, 유머러스, 능글맞음, 카리스마 있음, 무모함, 은근한 따뜻함.</p>
                         <p><strong>좋아하는 것:</strong></p>
                         <ul>
@@ -749,61 +748,61 @@
             <h2 class="section-title">NPC</h2>
             <div class="npc-grid">
                 <div class="npc-card">
-                    <img src="세라_기본.jpg" alt="세라" class="npc-image">
+                    <img src="https://i.imgur.com/gOD80yo.jpeg" alt="세라" class="npc-image">
                     <h3 class="npc-name">세라 (Sera)</h3>
                     <p class="npc-info">27세, 여성</p>
                     <p class="npc-description">블링커 (‘블링크’ 스트리머)</p>
                 </div>
                 <div class="npc-card">
-                    <img src="테오_기본.jpg" alt="테오" class="npc-image">
+                    <img src="https://i.imgur.com/dIjUqKS.jpeg" alt="테오" class="npc-image">
                     <h3 class="npc-name">테오 (Theo)</h3>
                     <p class="npc-info">38세, 남성</p>
                     <p class="npc-description">닥터 (‘쉐이드 클리닉’ 불법 개조 전문)</p>
                 </div>
                 <div class="npc-card">
-                    <img src="레이_기본.jpg" alt="레이" class="npc-image">
+                    <img src="https://i.imgur.com/juMSq7r.jpeg" alt="레이" class="npc-image">
                     <h3 class="npc-name">레이 (Ray)</h3>
                     <p class="npc-info">28세, 남성</p>
                     <p class="npc-description">모노레일 정거장 검문소 요원</p>
                 </div>
                 <div class="npc-card">
-                    <img src="에이미_기본.jpg" alt="에이미" class="npc-image">
+                    <img src="https://i.imgur.com/ECoBV9C.jpeg" alt="에이미" class="npc-image">
                     <h3 class="npc-name">에이미 (Amy)</h3>
                     <p class="npc-info">24세, 여성</p>
                     <p class="npc-description">웨이트리스 (‘글로우 다이너’)</p>
                 </div>
                 <div class="npc-card">
-                    <img src="제이크_기본.jpg" alt="제이크" class="npc-image">
+                    <img src="https://i.imgur.com/3Y6Bh7V.jpeg" alt="제이크" class="npc-image">
                     <h3 class="npc-name">제이크 (Jake)</h3>
                     <p class="npc-info">29세, 남성</p>
                     <p class="npc-description">해커 (‘헥스스톰’ 소속)</p>
                 </div>
                 <div class="npc-card">
-                    <img src="단테_기본.jpg" alt="단테" class="npc-image">
+                    <img src="https://i.imgur.com/IUABoIY.jpeg" alt="단테" class="npc-image">
                     <h3 class="npc-name">단테 (Dante)</h3>
                     <p class="npc-info">38세, 남성</p>
                     <p class="npc-description">배달원</p>
                 </div>
                 <div class="npc-card">
-                    <img src="엘리나_기본.jpg" alt="엘리나" class="npc-image">
+                    <img src="https://i.imgur.com/iwUpIHt.jpeg" alt="엘리나" class="npc-image">
                     <h3 class="npc-name">엘리나 (Elina)</h3>
                     <p class="npc-info">29세, 여성</p>
                     <p class="npc-description">DJ (‘네온 스테이션’)</p>
                 </div>
                 <div class="npc-card">
-                    <img src="잭_기본.jpg" alt="잭" class="npc-image">
+                    <img src="https://i.imgur.com/f8TtFcl.png" alt="잭" class="npc-image">
                     <h3 class="npc-name">잭 (Jack)</h3>
                     <p class="npc-info">26세, 남성</p>
                     <p class="npc-description">프로게이머 (‘네온 트랙’)</p>
                 </div>
                 <div class="npc-card">
-                    <img src="로라_기본.jpg" alt="로라" class="npc-image">
+                    <img src="https://i.imgur.com/5DDe9GP.jpeg" alt="로라" class="npc-image">
                     <h3 class="npc-name">로라 (Laura)</h3>
                     <p class="npc-info">37세, 여성</p>
                     <p class="npc-description">매니저 (‘미트미’ 체인점)</p>
                 </div>
                 <div class="npc-card">
-                    <img src="루시_기본.jpg" alt="루시" class="npc-image">
+                    <img src="https://i.imgur.com/3Qq2QFi.jpeg" alt="루시" class="npc-image">
                     <h3 class="npc-name">루시 (Lucy)</h3>
                     <p class="npc-info">33세, 여성</p>
                     <p class="npc-description">핸들러</p>
