@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -77,7 +77,7 @@
 
         /* Main Content */
         .main-content {
-            margin-top: 80px;
+            margin-top: 80px; /* Adjusted for fixed header height */
             min-height: 100vh;
         }
 
@@ -150,14 +150,14 @@
 
         /* Content Sections */
         .content-section {
-            display: none;
+            display: none; /* Initially hidden */
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
         .content-section.active {
-            display: block;
+            display: block; /* Show active section */
         }
 
         .section-title {
@@ -362,19 +362,22 @@
                 flex-direction: column;
                 gap: 10px;
             }
-
+            .nav-container { /* Adjust nav container for column layout */
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo {
+                 margin-bottom: 10px; /* Space between logo and menu items */
+            }
             .hero-title {
                 font-size: 2.5rem;
             }
-
             .hero-subtitle {
                 font-size: 1.2rem;
             }
-
             .character-grid {
                 grid-template-columns: 1fr;
             }
-
             .npc-grid {
                 grid-template-columns: 1fr;
             }
@@ -400,7 +403,6 @@
     </header>
 
     <main class="main-content">
-        <!-- Hero Section -->
         <section id="hero" class="hero content-section active">
             <div class="hero-content">
                 <h1 class="hero-title">어서오세요, 노바카소에</h1>
@@ -415,7 +417,6 @@
             </div>
         </section>
 
-        <!-- Overview Section -->
         <section id="overview" class="content-section">
             <h2 class="section-title">네온더스트 세계관</h2>
             <div class="content-grid">
@@ -430,7 +431,6 @@
             </div>
         </section>
 
-        <!-- Locations Section -->
         <section id="locations" class="content-section">
             <h2 class="section-title">주요 장소</h2>
             <div class="content-grid">
@@ -491,7 +491,6 @@
             </div>
         </section>
 
-        <!-- Organizations Section -->
         <section id="organizations" class="content-section">
             <h2 class="section-title">주요 기업 및 조직</h2>
             <div class="content-grid">
@@ -539,7 +538,6 @@
             </div>
         </section>
 
-        <!-- Culture Section -->
         <section id="culture" class="content-section">
             <h2 class="section-title">문화 및 사회</h2>
             <div class="content-grid">
@@ -611,7 +609,6 @@
             </div>
         </section>
 
-        <!-- Characters Section -->
         <section id="characters" class="content-section">
             <h2 class="section-title">메인 캐릭터</h2>
             <div class="character-grid">
@@ -621,4 +618,58 @@
                     <p class="character-role">노바 카소 오너 겸 바텐더</p>
                     <div class="character-details">
                         <h4>기본 정보</h4>
-                        <p><strong>나이:</strong> 32세 | <strong>성별:</strong> 남성
+                        <p><strong>나이:</strong> 32세 | <strong>성별:</strong> 남성</p>
+                    </div> </div> </div> </section> <section id="npc" class="content-section">
+            <h2 class="section-title">NPC</h2>
+            <div class="npc-grid">
+                </div>
+        </section>
+
+    </main> <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2087 NOVA CASO. ALL RIGHTS RESERVED.</p>
+            <p class="footer-quote">"모든 이야기는 한 잔의 술에서 시작된다."</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // 모든 content-section 요소들을 가져옵니다.
+            const sections = document.querySelectorAll('.content-section');
+            // 모든 nav-item 요소들을 가져옵니다.
+            const navItems = document.querySelectorAll('.nav-item');
+
+            // 모든 섹션을 숨기고 'active' 클래스를 제거합니다.
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // 모든 네비게이션 아이템에서 'active' 클래스를 제거합니다.
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // 클릭된 섹션 ID에 해당하는 섹션을 찾아서 'active' 클래스를 추가하여 보이게 합니다.
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+
+            // 현재 클릭된 메뉴 항목을 찾아 'active' 클래스를 추가합니다.
+            navItems.forEach(item => {
+                // onclick 속성 값에서 sectionId를 추출하여 비교합니다.
+                // 예: "showSection('hero')" 에서 'hero' 추출
+                const onclickAttr = item.getAttribute('onclick');
+                if (onclickAttr && onclickAttr.includes(`showSection('${sectionId}')`)) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // 페이지 로드 시 'hero' 섹션을 기본으로 보여주도록 설정
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('hero'); // 기본적으로 'hero' 섹션과 해당 메뉴를 활성화합니다.
+        });
+    </script>
+</body>
+</html>
