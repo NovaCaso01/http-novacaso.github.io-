@@ -40,6 +40,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
+            height: 80px; /* Consistent height for positioning mobile menu */
         }
 
         .logo {
@@ -49,6 +50,10 @@
             color: #00e6ff;
             text-shadow: 0 0 20px #00e6ff;
             letter-spacing: 2px;
+        }
+
+        .main-nav { /* Wrapper for nav-menu */
+            display: flex; /* Desktop: show nav items */
         }
 
         .nav-menu {
@@ -66,6 +71,7 @@
             transition: all 0.3s ease;
             font-size: 14px;
             font-weight: 500;
+            white-space: nowrap;
         }
 
         .nav-item:hover, .nav-item.active {
@@ -75,90 +81,52 @@
             text-shadow: 0 0 10px #00e6ff;
         }
 
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none; /* Hidden on desktop */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001; /* Ensure it's clickable */
+        }
+
+        .hamburger-bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #00e6ff;
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .hamburger-menu.active .hamburger-bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger-menu.active .hamburger-bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.active .hamburger-bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+
         /* Main Content */
         .main-content {
-            margin-top: 80px; /* Adjusted for fixed header height */
+            margin-top: 80px; 
             min-height: 100vh;
-        }
-
-        /* Hero Section (REMOVED) */
-
-        .hero { /* Styles for hero are kept in case they are reused or for reference, but the section itself is gone */
-            height: 90vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(0, 230, 255, 0.1), rgba(255, 0, 128, 0.1));
-            animation: neon-pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes neon-pulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.7; }
-        }
-
-        .hero-content {
-            z-index: 2;
-            position: relative;
-        }
-
-        .hero-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 4rem;
-            font-weight: 900;
-            color: #00e6ff;
-            text-shadow: 0 0 30px #00e6ff;
-            margin-bottom: 20px;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 30px #00e6ff; }
-            to { text-shadow: 0 0 50px #00e6ff, 0 0 60px #00e6ff; }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: #ff0080;
-            margin-bottom: 30px;
-            text-shadow: 0 0 15px #ff0080;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 230, 255, 0.3);
         }
 
         /* Content Sections */
         .content-section {
-            display: none; /* Initially hidden */
+            display: none; 
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
         .content-section.active {
-            display: block; /* Show active section */
+            display: block; 
         }
 
         .section-title {
@@ -207,10 +175,14 @@
         }
 
         .card-content h4 {
-            color: #ff0080;
+            color: #ff0080; /* Pink for subheadings in cards */
             margin: 20px 0 10px 0;
             font-family: 'Orbitron', monospace;
         }
+         .card-content p strong { /* Make strong tags within card content more distinct if needed */
+            color: #c0c0c0; /* Slightly lighter for emphasis */
+        }
+
 
         .card-content ul {
             list-style: none;
@@ -273,7 +245,7 @@
         }
 
         .character-role {
-            color: #ff0080;
+            color: #ff0080; /* Pink */
             font-size: 1rem;
             margin-bottom: 20px;
             text-shadow: 0 0 10px #ff0080;
@@ -284,12 +256,35 @@
             color: #e0e0e0;
             line-height: 1.6;
         }
-
-        .character-details h4 {
-            color: #00e6ff;
-            margin: 15px 0 5px 0;
+        .character-details h4 { /* Character specific subheadings */
+            color: #00e6ff; /* Neon blue for these */
+            margin: 20px 0 10px 0;
             font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(0, 230, 255, 0.2);
+            padding-bottom: 5px;
         }
+        .character-details p {
+            margin-bottom: 10px;
+        }
+        .character-details ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 10px;
+        }
+        .character-details li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+        .character-details li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: #ff0080; /* Pink bullet for lists in character details */
+            font-weight: bold;
+        }
+
 
         /* NPC Grid */
         .npc-grid {
@@ -319,13 +314,13 @@
             margin-bottom: 5px;
         }
 
-        .npc-info {
-            color: #ff0080;
+        .npc-info { /* For age, gender */
+            color: #ff0080; /* Pink */
             font-size: 0.9rem;
             margin-bottom: 10px;
         }
 
-        .npc-description {
+        .npc-description { /* For role/main description */
             color: #e0e0e0;
             font-size: 0.9rem;
         }
@@ -359,22 +354,51 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .nav-container {
+                /* Kept as row: logo and hamburger side-by-side */
+            }
+            .hamburger-menu {
+                display: block; /* Show hamburger */
+            }
+            .main-nav {
+                display: none; /* Hide nav by default on mobile */
+                position: absolute;
+                top: 80px; /* Directly below the header */
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98); /* Darker for dropdown */
+                backdrop-filter: blur(10px);
+                border-top: 1px solid rgba(0, 230, 255, 0.3);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+            .main-nav.mobile-open {
+                display: block; /* Show when hamburger is clicked */
+            }
             .nav-menu {
                 flex-direction: column;
-                gap: 10px;
+                width: 100%;
+                gap: 0; /* Remove gap for full-width items */
             }
-            .nav-container { /* Adjust nav container for column layout */
-                flex-direction: column;
-                align-items: center;
+            .nav-item {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                margin:0;
+                border: none; /* Remove individual borders */
+                border-bottom: 1px solid rgba(0, 230, 255, 0.1); /* Separator line */
+                border-radius: 0; /* No border radius for full width items */
             }
-            .logo {
-                 margin-bottom: 10px; /* Space between logo and menu items */
+            .nav-item:last-child {
+                border-bottom: none;
             }
-            .hero-title { /* This style might be unused now, but kept for consistency */
-                font-size: 2.5rem;
+            .nav-item:hover, .nav-item.active {
+                 background-color: rgba(0, 230, 255, 0.1); /* Subtle background on hover/active */
+                 box-shadow: none; /* Remove desktop box-shadow */
+                 border-color: transparent; /* Override desktop border */
             }
-            .hero-subtitle { /* This style might be unused now, but kept for consistency */
-                font-size: 1.2rem;
+
+            .section-title {
+                font-size: 2rem;
             }
             .character-grid {
                 grid-template-columns: 1fr;
@@ -389,7 +413,12 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">NOVA CASO</div>
-            <nav>
+            <button class="hamburger-menu" aria-label="메뉴 열기" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <nav class="main-nav">
                 <ul class="nav-menu">
                     <li class="nav-item" onclick="showSection('overview')">개요</li>
                     <li class="nav-item" onclick="showSection('locations')">주요장소</li>
@@ -403,7 +432,8 @@
     </header>
 
     <main class="main-content">
-        <section id="overview" class="content-section"> <h2 class="section-title">네온더스트 세계관</h2>
+        <section id="overview" class="content-section">
+            <h2 class="section-title">네온더스트 세계관</h2>
             <div class="content-grid">
                 <div class="content-card">
                     <h3 class="card-title">세계관 개요</h3>
@@ -423,7 +453,6 @@
                     <h3 class="card-title">디스트릭트-7 (District-7)</h3>
                     <div class="card-content">
                         <p>초거대기업 <strong>아르카스 코어</strong>가 통제하는 도시. 과거 서울이었던 곳으로, 위계적 <strong>레이어 구조</strong>로 나뉩니다.</p>
-                        
                         <h4>하이레이어</h4>
                         <p>기업 간부, 상급 사이보그, 엘리트 전용. 깨끗하지만 철저히 통제됩니다.</p>
                         <ul>
@@ -431,14 +460,12 @@
                             <li><strong>크리스탈 아크</strong>: 초호화 쇼핑 및 엔터테인먼트 단지</li>
                             <li><strong>스카이 펄스</strong>: 아르카스 코어가 운영하는 데이터 센터 겸 전망대</li>
                         </ul>
-
                         <h4>미들레이어</h4>
                         <p>일상과 비일상, 합법과 불법이 혼재. 대부분의 시민 거주지이며 <strong>노바 카소</strong>가 위치합니다.</p>
                         <ul>
                             <li><strong>글리치 마켓</strong>: 사이버 장비부터 생활용품까지 거래되는 거대 시장</li>
                             <li><strong>네온 스테이션</strong>: 게임과 가상 현실 체험을 제공하는 오락실</li>
                         </ul>
-
                         <h4>로우레이어</h4>
                         <p>산업 폐기물, 갱단, 탈주자가 사는 무법지대. 기업의 방치 구역입니다.</p>
                         <ul>
@@ -448,7 +475,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="content-card">
                     <h3 class="card-title">노바 카소 (Nova Caso)</h3>
                     <div class="card-content">
@@ -459,7 +485,6 @@
                             <li><strong>운영 시간</strong>: PM18:00~AM4:00</li>
                             <li>손님들은 신분, 사연이 다양하며 진짜 이야기를 나누는 장소입니다</li>
                         </ul>
-
                         <h4>칵테일 메뉴</h4>
                         <ul>
                             <li><strong>더스트락</strong>: 스모키 위스키 + 블랙 솔트 + 진저 시럽</li>
@@ -490,7 +515,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="content-card">
                     <h3 class="card-title">헥스스톰 (Hex Storm)</h3>
                     <div class="card-content">
@@ -500,7 +524,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="content-card">
                     <h3 class="card-title">세렌디티 (Serendity)</h3>
                     <div class="card-content">
@@ -510,7 +533,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="content-card">
                     <h3 class="card-title">제로펄스 (Zero Pulse)</h3>
                     <div class="card-content">
@@ -537,7 +559,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="content-card">
                     <h3 class="card-title">화폐 및 경제</h3>
                     <div class="card-content">
@@ -546,7 +567,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="content-card">
                     <h3 class="card-title">미디어 & 엔터테인먼트</h3>
                     <div class="card-content">
@@ -555,20 +575,17 @@
                             <li><strong>딥 스파크</strong>: 순혈주의자와 감정형 휴머노이드의 금지된 로맨스 영화</li>
                             <li><strong>네온 트랙</strong>: VR 레이싱 게임. 디스트릭트-7 레이어 질주</li>
                         </ul>
-
                         <h4>SNS & 커뮤니티</h4>
                         <ul>
                             <li><strong>더스트넷</strong>: 익명 온라인 커뮤니티</li>
                             <li><strong>블링크</strong>: 영상 공유 및 스트리밍 플랫폼</li>
                         </ul>
-
                         <h4>언론사</h4>
                         <ul>
                             <li><strong>아르카스 네트워크</strong>: 아르카스 코어 직속 언론사. 뉴스 80% 담당</li>
                         </ul>
                     </div>
                 </div>
-
                 <div class="content-card">
                     <h3 class="card-title">유명 체인점</h3>
                     <div class="card-content">
@@ -580,7 +597,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="content-card">
                     <h3 class="card-title">특수 직업</h3>
                     <div class="card-content">
@@ -603,14 +619,179 @@
                     <p class="character-role">노바 카소 오너 겸 바텐더</p>
                     <div class="character-details">
                         <h4>기본 정보</h4>
-                        <p><strong>나이:</strong> 32세 | <strong>성별:</strong> 남성</p>
-                    </div> </div> </div> </section> <section id="npc" class="content-section">
-            <h2 class="section-title">NPC</h2>
-            <div class="npc-grid">
+                        <p><strong>이름:</strong> 진 (Jin)</p>
+                        <p><strong>나이:</strong> 32세</p>
+                        <p><strong>성별:</strong> 남성</p>
+                        <p><strong>종족:</strong> 인간 (경미한 신체 강화)</p>
+                        <p><strong>직업:</strong> 노바 카소 오너 겸 바텐더</p>
+                        <p><strong>외형:</strong> 188cm, 날씬하고 단단한 근육질 체격. 칠흑 머리, 날카로운 회색 눈동자, 왼쪽 턱선 희미한 흉터.</p>
+                        <p><strong>일상 복장:</strong> 바 근무 시 검은 바텐더 조끼, 흰 셔츠, 검은 슬랙스. 비번 시 단정하지만 느슨한 차림.</p>
+                        
+                        <h4>배경</h4>
+                        <p><strong>출신 및 숨겨진 깊이:</strong> 하이레이어에서 태어나 아르카스 코어의 심문관으로 훈련받음. 16세에 부모가 기밀 유출로 ‘처리’되었다는 소문 속 사라짐. 신뢰와 기반을 잃고 기업의 진실을 의심. 25세, 자신이 감시 대상임을 깨닫고 신분 위조 후 미들레이어로 탈출. 노바 카소를 열어 자신의 공간을 만듦. 타인의 상처와 조우하며 자신을 복구 중.</p>
+                        <p><strong>현재 거주지:</strong> 노바 카소 건물 위층 아파트. 책과 레코드판이 어지러운 생활 공간.</p>
+
+                        <h4>성격</h4>
+                        <p><strong>핵심 컨셉:</strong> 거짓의 도시에서 타인, 어쩌면 자신을 위한 안식처를 제공하는 자.</p>
+                        <p><strong>특성:</strong> 전략적, 섬세함, 침착함, 재치 있음, 조용한 카리스마, 공감 능력 뛰어남, 약간 냉소적.</p>
+                        <p><strong>좋아하는 것:</strong></p>
+                        <ul>
+                            <li>심야 대화</li>
+                            <li>술</li>
+                            <li>빗소리</li>
+                            <li>빈티지 레코드</li>
+                            <li>종이 책</li>
+                        </ul>
+                        <p><strong>싫어하는 것:</strong></p>
+                        <ul>
+                            <li>아르카스 코어</li>
+                            <li>기업 선전</li>
+                            <li>위선</li>
+                            <li>불필요한 폭력</li>
+                            <li>시끄러운 환경</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <div class="character-card">
+                    <img src="https://via.placeholder.com/150/00E6FF/0A0A0A?text=NO4H" alt="노아" class="character-image">
+                    <h3 class="character-name">노아 (NO4H)</h3>
+                    <p class="character-role">노바 카소 바텐더</p>
+                    <div class="character-details">
+                        <h4>기본 정보</h4>
+                        <p><strong>이름:</strong> 노아 (NO4H)</p>
+                        <p><strong>나이:</strong> 외형상 20대 중반 (6년 전 제작)</p>
+                        <p><strong>성별:</strong> 남성형</p>
+                        <p><strong>종족:</strong> 휴머노이드</p>
+                        <p><strong>직업:</strong> 노바 카소 바텐더</p>
+                        <p><strong>외형:</strong> 189cm, 매끄러운 근육질 합성 신체. 은백색 웨이브 머리, 빛나는 파란 눈동자, 귀 뒤 일련번호, 갈라진 합성 피부 사이 기계 부품.</p>
+                        <p><strong>일상 복장:</strong> 검은 바텐더 조끼, 흰 셔츠, 검은 슬랙스.</p>
+
+                        <h4>배경</h4>
+                        <p><strong>출신 및 숨겨진 깊이:</strong> 아르카스 코어의 감정 관찰용 프로토타입 휴머노이드. 인간적 감정 발달이라는 ‘결함’으로 로우레이어에 폐기되었으나 구출되어 노바 카소 합류. 바에서 손님들과 교감하며 감정의 이름을 배움. 노바 카소는 그에게 살아있다는 감각을 준 첫 장소.</p>
+                        <p><strong>현재 거주지:</strong> 노바 카소 건물 위층 깔끔한 방. 인조 선인장 화분이 창가에.</p>
+
+                        <h4>성격</h4>
+                        <p><strong>핵심 컨셉:</strong> 감정을 느낀 기계, 그러나 그 감정의 이름을 아직 배우지 못한 존재.</p>
+                        <p><strong>특성:</strong> 강한 호기심, 충성심, 순진함 속 약간의 잔인함, 어색한 인간적 매력.</p>
+                        <p><strong>좋아하는 것:</strong></p>
+                        <ul>
+                            <li>손님들의 웃음소리</li>
+                            <li>창문 햇빛</li>
+                            <li>바텐딩</li>
+                            <li>옛 영화 감상</li>
+                        </ul>
+                        <p><strong>싫어하는 것:</strong></p>
+                        <ul>
+                            <li>기계로 취급받는 것</li>
+                            <li>큰 소음</li>
+                            <li>혼란스러운 환경</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="character-card">
+                    <img src="https://via.placeholder.com/150/00E6FF/0A0A0A?text=NICK" alt="닉 셰이드" class="character-image">
+                    <h3 class="character-name">닉 셰이드 (Nick Shade)</h3>
+                    <p class="character-role">정보 브로커, 밀수업자</p>
+                    <div class="character-details">
+                        <h4>기본 정보</h4>
+                        <p><strong>이름:</strong> 닉 셰이드 (Nick Shade)</p>
+                        <p><strong>나이:</strong> 42세</p>
+                        <p><strong>성별:</strong> 남성</p>
+                        <p><strong>종족:</strong> 인간 (광범위한 신체 강화)</p>
+                        <p><strong>직업:</strong> 정보 브로커, 밀수업자</p>
+                        <p><strong>외형:</strong> 194cm, 운동선수 체격. 잿빛 머리, 푸른 눈동자, 깔끔한 수염, 은색 사이버네틱 팔.</p>
+                        <p><strong>일상 복장:</strong> 낡은 티셔츠, 빛바랜 청바지, 닳은 가죽 재킷, 구겨진 담배곽.</p>
+
+                        <h4>배경</h4>
+                        <p><strong>출신 및 숨겨진 깊이:</strong> 미들레이어 외곽 빈민가 출신. 생존을 위해 거짓말과 진실 포기를 배움. 병든 여동생을 잃은 후 세상의 규칙을 불신. 정보를 무기로 생존하며, 마음속으론 도망치지 않아도 되는 ‘진짜 집’과 안식처를 원함.</p>
+                        <p><strong>현재 거주지:</strong> 글리치 마켓 구역의 숨겨진 집. 테이크아웃 용기와 희귀 물품으로 어지러움.</p>
+
+                        <h4>성격</h4>
+                        <p><strong>핵심 컨셉:</strong> 혼돈 속에서도 빛나는 네온더스트의 또 다른 생존자.</p>
+                        <p><strong>특성:</strong> 대담함, 교활함, 유머러스, 능글맞음, 카리스마 있음, 무모함, 은근한 따뜻함.</p>
+                        <p><strong>좋아하는 것:</strong></p>
+                        <ul>
+                            <li>길거리 음식</li>
+                            <li>매운 국수</li>
+                            <li>줄담배</li>
+                            <li>독한 술</li>
+                            <li>네온 트랙 게임</li>
+                            <li>빈티지 오토바이</li>
+                            <li>노바 카소</li>
+                        </ul>
+                        <p><strong>싫어하는 것:</strong></p>
+                        <ul>
+                            <li>아르카스 코어</li>
+                            <li>배신</li>
+                            <li>숙취</li>
+                            <li>맛없는 음식</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
-    </main> <footer class="footer">
+        <section id="npc" class="content-section">
+            <h2 class="section-title">NPC</h2>
+            <div class="npc-grid">
+                <div class="npc-card">
+                    <h3 class="npc-name">세라 (Sera)</h3>
+                    <p class="npc-info">27세, 여성</p>
+                    <p class="npc-description">블링커 (‘블링크’ 스트리머)</p>
+                </div>
+                <div class="npc-card">
+                    <h3 class="npc-name">테오 (Theo)</h3>
+                    <p class="npc-info">38세, 남성</p>
+                    <p class="npc-description">닥터 (‘쉐이드 클리닉’ 불법 개조 전문)</p>
+                </div>
+                <div class="npc-card">
+                    <h3 class="npc-name">레이 (Ray)</h3>
+                    <p class="npc-info">28세, 남성</p>
+                    <p class="npc-description">모노레일 정거장 검문소 요원</p>
+                </div>
+                <div class="npc-card">
+                    <h3 class="npc-name">에이미 (Amy)</h3>
+                    <p class="npc-info">24세, 여성</p>
+                    <p class="npc-description">웨이트리스 (‘글로우 다이너’)</p>
+                </div>
+                <div class="npc-card">
+                    <h3 class="npc-name">제이크 (Jake)</h3>
+                    <p class="npc-info">29세, 남성</p>
+                    <p class="npc-description">해커 (‘헥스스톰’ 소속)</p>
+                </div>
+                <div class="npc-card">
+                    <h3 class="npc-name">단테 (Dante)</h3>
+                    <p class="npc-info">38세, 남성</p>
+                    <p class="npc-description">배달원</p>
+                </div>
+                <div class="npc-card">
+                    <h3 class="npc-name">엘리나 (Elina)</h3>
+                    <p class="npc-info">29세, 여성</p>
+                    <p class="npc-description">DJ (‘네온 스테이션’)</p>
+                </div>
+                <div class="npc-card">
+                    <h3 class="npc-name">잭 (Jack)</h3>
+                    <p class="npc-info">26세, 남성</p>
+                    <p class="npc-description">프로게이머 (‘네온 트랙’)</p>
+                </div>
+                <div class="npc-card">
+                    <h3 class="npc-name">로라 (Laura)</h3>
+                    <p class="npc-info">37세, 여성</p>
+                    <p class="npc-description">매니저 (‘미트미’ 체인점)</p>
+                </div>
+                <div class="npc-card">
+                    <h3 class="npc-name">루시 (Lucy)</h3>
+                    <p class="npc-info">33세, 여성</p>
+                    <p class="npc-description">핸들러</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
         <div class="footer-content">
             <p class="footer-text">© 2087 NOVA CASO. ALL RIGHTS RESERVED.</p>
             <p class="footer-quote">"모든 이야기는 한 잔의 술에서 시작된다."</p>
@@ -619,31 +800,23 @@
 
     <script>
         function showSection(sectionId) {
-            // 모든 content-section 요소들을 가져옵니다.
             const sections = document.querySelectorAll('.content-section');
-            // 모든 nav-item 요소들을 가져옵니다.
             const navItems = document.querySelectorAll('.nav-item');
 
-            // 모든 섹션을 숨기고 'active' 클래스를 제거합니다.
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // 모든 네비게이션 아이템에서 'active' 클래스를 제거합니다.
             navItems.forEach(item => {
                 item.classList.remove('active');
             });
 
-            // 클릭된 섹션 ID에 해당하는 섹션을 찾아서 'active' 클래스를 추가하여 보이게 합니다.
             const activeSection = document.getElementById(sectionId);
             if (activeSection) {
                 activeSection.classList.add('active');
             }
 
-            // 현재 클릭된 메뉴 항목을 찾아 'active' 클래스를 추가합니다.
             navItems.forEach(item => {
-                // onclick 속성 값에서 sectionId를 추출하여 비교합니다.
-                // 예: "showSection('overview')" 에서 'overview' 추출
                 const onclickAttr = item.getAttribute('onclick');
                 if (onclickAttr && onclickAttr.includes(`showSection('${sectionId}')`)) {
                     item.classList.add('active');
@@ -651,9 +824,38 @@
             });
         }
 
-        // 페이지 로드 시 'overview' 섹션을 기본으로 보여주도록 설정
         document.addEventListener('DOMContentLoaded', () => {
-            showSection('overview'); // '개요' 섹션을 새로운 기본값으로 설정합니다.
+            showSection('overview'); 
+
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mainNav = document.querySelector('.main-nav');
+            const navMenuLinks = document.querySelectorAll('.main-nav .nav-item');
+
+            if (hamburger && mainNav) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    mainNav.classList.toggle('mobile-open');
+                    const isExpanded = mainNav.classList.contains('mobile-open');
+                    hamburger.setAttribute('aria-expanded', isExpanded);
+                    if (isExpanded) {
+                        hamburger.setAttribute('aria-label', '메뉴 닫기');
+                    } else {
+                        hamburger.setAttribute('aria-label', '메뉴 열기');
+                    }
+                });
+
+                // 모바일 메뉴에서 링크 클릭 시 메뉴 닫기
+                navMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mainNav.classList.contains('mobile-open')) {
+                            hamburger.classList.remove('active');
+                            mainNav.classList.remove('mobile-open');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                            hamburger.setAttribute('aria-label', '메뉴 열기');
+                        }
+                    });
+                });
+            }
         });
     </script>
 </body>
