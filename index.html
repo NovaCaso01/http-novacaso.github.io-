@@ -7,6 +7,13 @@
     <style>
         @import url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff');
 
+        @font-face {
+            font-family: 'ONE-Mobile-Title';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,7 +21,7 @@
         }
 
         body {
-            font-family: 'Pretendard-Regular', sans-serif; /* Fallback 추가 */
+            font-family: 'Pretendard-Regular', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             color: #e0e0e0;
             line-height: 1.6;
@@ -44,12 +51,12 @@
         }
 
         .logo {
-            font-family: 'Orbitron', 'Pretendard-Regular', sans-serif; /* Fallback 추가 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
             font-size: 24px;
-            font-weight: 900;
+            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
             color: #00e6ff;
             text-shadow: 0 0 20px #00e6ff;
-            letter-spacing: 2px;
+            letter-spacing: 1px; /* Orbitron 보다 자간이 넓을 수 있어 조정 */
         }
 
         .main-nav { /* Wrapper for nav-menu */
@@ -130,7 +137,8 @@
         }
 
         .section-title {
-            font-family: 'Orbitron', 'Pretendard-Regular', sans-serif; /* Fallback 추가 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
+            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
             font-size: 2.5rem;
             color: #00e6ff;
             text-align: center;
@@ -161,7 +169,8 @@
         }
 
         .card-title {
-            font-family: 'Orbitron', 'Pretendard-Regular', sans-serif; /* Fallback 추가 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
+            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
             font-size: 1.5rem;
             color: #00e6ff;
             margin-bottom: 15px;
@@ -177,7 +186,8 @@
         .card-content h4 {
             color: #ff0080; /* Pink for subheadings in cards */
             margin: 20px 0 10px 0;
-            font-family: 'Orbitron', 'Pretendard-Regular', sans-serif; /* Fallback 추가 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
+            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
         }
          .card-content p strong { 
             color: #c0c0c0; 
@@ -237,7 +247,8 @@
         }
 
         .character-name {
-            font-family: 'Orbitron', 'Pretendard-Regular', sans-serif; /* Fallback 추가 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
+            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
             font-size: 1.8rem;
             color: #00e6ff;
             margin-bottom: 10px;
@@ -249,6 +260,7 @@
             font-size: 1rem;
             margin-bottom: 20px;
             text-shadow: 0 0 10px #ff0080;
+            font-family: 'Pretendard-Regular', sans-serif; /* 역할은 일반 폰트로 유지 */
         }
 
         .character-details {
@@ -259,7 +271,8 @@
         .character-details h4 { 
             color: #00e6ff; 
             margin: 20px 0 10px 0;
-            font-family: 'Orbitron', 'Pretendard-Regular', sans-serif; /* Fallback 추가 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
+            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
             font-size: 1.1rem;
             border-bottom: 1px solid rgba(0, 230, 255, 0.2);
             padding-bottom: 5px;
@@ -319,7 +332,8 @@
         }
 
         .npc-name {
-            font-family: 'Orbitron', 'Pretendard-Regular', sans-serif; /* Fallback 추가 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
+            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
             color: #00e6ff;
             font-size: 1.2rem;
             margin-bottom: 5px;
@@ -329,11 +343,13 @@
             color: #ff0080; 
             font-size: 0.9rem;
             margin-bottom: 10px;
+            font-family: 'Pretendard-Regular', sans-serif; /* NPC 정보는 일반 폰트로 유지 */
         }
 
         .npc-description { 
             color: #e0e0e0;
             font-size: 0.9rem;
+            font-family: 'Pretendard-Regular', sans-serif; /* NPC 설명은 일반 폰트로 유지 */
         }
 
         /* Footer */
@@ -447,7 +463,7 @@
             <h2 class="section-title">네온더스트 세계관</h2>
             <div class="content-grid">
                 <div class="content-card">
-                    <h4 class="card-title">"빛은 찬란하지만, 그 아래는 늘 검다."</h3> <h3 class="card-title">"빛은 찬란하지만, 그 아래는 늘 검다."</h3>
+                    <h3 class="card-title">"빛은 찬란하지만, 그 아래는 늘 검다."</h3>
                     <div class="card-content">
                         <p>2087년, 지구는 기후재앙과 전쟁, 기술 발전과 자본 독점이 몰고 온 혼돈 속에서 새로운 질서로 재편되었다. 국가의 권위는 무너졌고, 초거대기업들이 도시를 ‘운영’한다. 그 중 하나, 디스트릭트-7. 한때 ‘서울’이라 불렸던 잔재 위에 세워진 이곳은, 빛과 정보가 과잉된 도시. 하지만 그 모든 소음 너머, 조용한 네온 간판 하나가 반짝인다. 바로 "노바 카소(Nova Caso)". 이야기의 시작점은, 늘 그렇듯, 한 잔의 술 위에서…</p>
                     </div>
