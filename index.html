@@ -47,26 +47,27 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            height: 80px; /* Consistent height for positioning mobile menu */
+            height: 80px;
         }
 
         .logo {
-            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif;
             font-size: 24px;
-            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
+            font-weight: normal;
             color: #00e6ff;
             text-shadow: 0 0 20px #00e6ff;
-            letter-spacing: 1px; /* Orbitron 보다 자간이 넓을 수 있어 조정 */
+            letter-spacing: 1px;
+            white-space: nowrap;
         }
 
-        .main-nav { /* Wrapper for nav-menu */
-            display: flex; /* Desktop: show nav items */
+        .main-nav {
+            display: flex;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
         }
 
         .nav-item {
@@ -88,14 +89,13 @@
             text-shadow: 0 0 10px #00e6ff;
         }
 
-        /* Hamburger Menu */
         .hamburger-menu {
-            display: none; /* Hidden on desktop */
+            display: none;
             background: none;
             border: none;
             cursor: pointer;
             padding: 10px;
-            z-index: 1001; /* Ensure it's clickable */
+            z-index: 1001;
         }
 
         .hamburger-bar {
@@ -117,14 +117,11 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-
-        /* Main Content */
         .main-content {
             margin-top: 80px; 
             min-height: 100vh;
         }
 
-        /* Content Sections */
         .content-section {
             display: none; 
             max-width: 1200px;
@@ -137,8 +134,8 @@
         }
 
         .section-title {
-            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
-            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif;
+            font-weight: normal;
             font-size: 2.5rem;
             color: #00e6ff;
             text-align: center;
@@ -150,6 +147,14 @@
             display: grid;
             gap: 30px;
             margin-bottom: 40px;
+        }
+        
+        .two-column-grid {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .three-column-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
 
         .content-card {
@@ -169,8 +174,8 @@
         }
 
         .card-title {
-            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
-            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif;
+            font-weight: normal;
             font-size: 1.5rem;
             color: #00e6ff;
             margin-bottom: 15px;
@@ -182,17 +187,26 @@
             color: #e0e0e0;
             line-height: 1.7;
         }
+        
+        .card-content p.quote {
+            font-style: italic;
+            color: #ffcc00;
+            padding: 10px;
+            background: rgba(255, 204, 0, 0.1);
+            border-left: 3px solid #ffcc00;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
 
         .card-content h4 {
-            color: #ff0080; /* Pink for subheadings in cards */
+            color: #ff0080;
             margin: 20px 0 10px 0;
-            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
-            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif;
+            font-weight: normal;
         }
-         .card-content p strong { 
+        .card-content p strong { 
             color: #c0c0c0; 
         }
-
 
         .card-content ul {
             list-style: none;
@@ -215,7 +229,7 @@
         /* Character Cards */
         .character-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 30px;
         }
 
@@ -224,7 +238,6 @@
             border: 2px solid rgba(0, 230, 255, 0.4);
             border-radius: 20px;
             padding: 30px;
-            text-align: center;
             backdrop-filter: blur(15px);
             box-shadow: 0 0 40px rgba(0, 230, 255, 0.3);
             transition: all 0.4s ease;
@@ -234,6 +247,10 @@
             border-color: #00e6ff;
             box-shadow: 0 0 60px rgba(0, 230, 255, 0.5);
             transform: translateY(-10px) scale(1.02);
+        }
+        
+        .character-header {
+            text-align: center;
         }
 
         .character-image {
@@ -247,57 +264,117 @@
         }
 
         .character-name {
-            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
-            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif;
+            font-weight: normal;
             font-size: 1.8rem;
             color: #00e6ff;
             margin-bottom: 10px;
             text-shadow: 0 0 15px #00e6ff;
         }
 
-        .character-role {
-            color: #ff0080; /* Pink */
+        .character-quote {
+            font-style: italic;
+            color: #ffcc00;
             font-size: 1rem;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px #ff0080;
-            font-family: 'Pretendard-Regular', sans-serif; /* 역할은 일반 폰트로 유지 */
-        }
-
-        .character-details {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255, 204, 0, 0.1);
+            border-left: 3px solid #ffcc00;
+            border-radius: 5px;
             text-align: left;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-        .character-details h4 { 
-            color: #00e6ff; 
-            margin: 20px 0 10px 0;
-            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
-            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
-            font-size: 1.1rem;
-            border-bottom: 1px solid rgba(0, 230, 255, 0.2);
-            padding-bottom: 5px;
-        }
-        .character-details p {
-            margin-bottom: 10px;
-        }
-        .character-details ul {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 10px;
-        }
-        .character-details li {
-            padding-left: 20px;
-            position: relative;
-            margin-bottom: 5px;
-        }
-        .character-details li::before {
-            content: '›';
-            position: absolute;
-            left: 0;
-            color: #ff0080; 
-            font-weight: bold;
         }
 
+        .character-info-section h4 {
+            color: #ff0080;
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif;
+            font-weight: normal;
+            border-bottom: 1px solid rgba(255, 0, 128, 0.3);
+            padding-bottom: 8px;
+            margin: 20px 0 15px 0;
+        }
+        
+        .character-info-section p, .character-info-section li {
+            margin-bottom: 8px;
+            padding-left: 0;
+            position: static;
+        }
+        
+        .character-info-section li::before{
+            content: '';
+        }
+
+        /* --- ✨ 여기가 수정된 부분입니다 (1/2) --- */
+        .character-info-section strong {
+            color: #00e6ff;
+            display: inline-block;
+            margin-right: 10px; /* min-width 대신 오른쪽 여백으로 간격 조절 */
+        }
+        
+        /* Accordion Styles */
+        .accordion-button {
+            background-color: rgba(0, 230, 255, 0.1);
+            color: #00e6ff;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: 1px solid rgba(0, 230, 255, 0.3);
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            transition: 0.4s;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif;
+            font-weight: normal;
+        }
+
+        .accordion-button:hover, .accordion-button.active {
+            background-color: rgba(0, 230, 255, 0.2);
+        }
+
+        .accordion-button::after {
+            content: '\\002B'; /* Plus sign */
+            color: #00e6ff;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .accordion-button.active::after {
+            content: "\\2212"; /* Minus sign */
+        }
+
+        .accordion-content {
+            padding: 0 18px;
+            background-color: rgba(10, 10, 10, 0.2);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border: 1px solid rgba(0, 230, 255, 0.2);
+            border-top: none;
+        }
+        
+        .accordion-content .character-info-section {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .accordion-content .character-info-section h4 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .accordion-content .character-info-section p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* --- ✨ 여기가 수정된 부분입니다 (2/2) --- */
+        .accordion-content .character-info-section strong {
+            color: #e0e0e0;
+            margin-right: 8px; /* min-width 대신 오른쪽 여백으로 간격 조절 */
+        }
 
         /* NPC Grid & Cards */
         .npc-grid {
@@ -313,43 +390,44 @@
             padding: 20px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            text-align: center; /* Center content within NPC card */
+            text-align: center;
         }
 
         .npc-card:hover {
             border-color: #00e6ff;
             box-shadow: 0 0 25px rgba(0, 230, 255, 0.3);
+            transform: translateY(-5px);
         }
 
-        .npc-image { /* Style for NPC images */
-            width: 120px; /* Slightly smaller than character images */
+        .npc-image {
+            width: 120px;
             height: 120px;
             border-radius: 50%;
             border: 2px solid #00e6ff;
-            margin: 0 auto 15px; /* Center image and add space below */
+            margin: 0 auto 15px;
             object-fit: cover;
             box-shadow: 0 0 20px rgba(0, 230, 255, 0.4);
         }
 
         .npc-name {
-            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif; /* 변경 */
-            font-weight: normal; /* ONE-Mobile-Title 기본 weight 사용 */
+            font-family: 'ONE-Mobile-Title', 'Pretendard-Regular', sans-serif;
+            font-weight: normal;
             color: #00e6ff;
             font-size: 1.2rem;
             margin-bottom: 5px;
         }
 
         .npc-info { 
-            color: #ff0080; 
+            color: #e0e0e0; 
             font-size: 0.9rem;
             margin-bottom: 10px;
-            font-family: 'Pretendard-Regular', sans-serif; /* NPC 정보는 일반 폰트로 유지 */
+            font-family: 'Pretendard-Regular', sans-serif;
         }
 
         .npc-description { 
-            color: #e0e0e0;
-            font-size: 0.9rem;
-            font-family: 'Pretendard-Regular', sans-serif; /* NPC 설명은 일반 폰트로 유지 */
+            color: #ff0080;
+            font-size: 0.95rem;
+            font-family: 'Pretendard-Regular', sans-serif;
         }
 
         /* Footer */
@@ -380,57 +458,66 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 15px;
+            }
+            .nav-item {
+                padding: 10px;
+            }
+            .character-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
-            .nav-container {
-                /* Kept as row: logo and hamburger side-by-side */
+            .logo {
+                font-size: 20px;
             }
             .hamburger-menu {
-                display: block; /* Show hamburger */
+                display: block;
             }
             .main-nav {
-                display: none; /* Hide nav by default on mobile */
+                display: none;
                 position: absolute;
-                top: 80px; /* Directly below the header */
+                top: 80px;
                 left: 0;
                 width: 100%;
-                background: rgba(10, 10, 10, 0.98); /* Darker for dropdown */
+                background: rgba(10, 10, 10, 0.98);
                 backdrop-filter: blur(10px);
                 border-top: 1px solid rgba(0, 230, 255, 0.3);
                 box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             }
             .main-nav.mobile-open {
-                display: block; /* Show when hamburger is clicked */
+                display: block;
             }
             .nav-menu {
                 flex-direction: column;
                 width: 100%;
-                gap: 0; /* Remove gap for full-width items */
+                gap: 0;
             }
             .nav-item {
                 width: 100%;
                 text-align: center;
                 padding: 15px 0;
                 margin:0;
-                border: none; /* Remove individual borders */
-                border-bottom: 1px solid rgba(0, 230, 255, 0.1); /* Separator line */
-                border-radius: 0; /* No border radius for full width items */
+                border: none;
+                border-bottom: 1px solid rgba(0, 230, 255, 0.1);
+                border-radius: 0;
             }
             .nav-item:last-child {
                 border-bottom: none;
             }
             .nav-item:hover, .nav-item.active {
-                 background-color: rgba(0, 230, 255, 0.1); 
-                 box-shadow: none; 
-                 border-color: transparent; 
+                background-color: rgba(0, 230, 255, 0.1); 
+                box-shadow: none; 
+                border-color: transparent; 
             }
 
             .section-title {
                 font-size: 2rem;
             }
-            .character-grid {
-                grid-template-columns: 1fr;
-            }
-            .npc-grid {
+            .two-column-grid, .three-column-grid, .npc-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -439,7 +526,7 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <div class="logo">CYBERPUNK : NEON DUST 2087</div>
+            <div class="logo">NEON DUST 2087</div>
             <button class="hamburger-menu" aria-label="메뉴 열기" aria-expanded="false">
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
@@ -449,7 +536,7 @@
                 <ul class="nav-menu">
                     <li class="nav-item" onclick="showSection('overview')">개요</li>
                     <li class="nav-item" onclick="showSection('locations')">주요 장소</li>
-                    <li class="nav-item" onclick="showSection('organizations')">주요 기업 및 조직</li>
+                    <li class="nav-item" onclick="showSection('factions')">주요 세력</li>
                     <li class="nav-item" onclick="showSection('culture')">문화 및 사회</li>
                     <li class="nav-item" onclick="showSection('characters')">메인 캐릭터</li>
                     <li class="nav-item" onclick="showSection('npc')">NPC</li>
@@ -463,9 +550,9 @@
             <h2 class="section-title">네온더스트 세계관</h2>
             <div class="content-grid">
                 <div class="content-card">
-                    <h3 class="card-title">"빛은 찬란하지만, 그 아래는 늘 검다."</h3>
                     <div class="card-content">
-                        <p>2087년, 지구는 기후재앙과 전쟁, 기술 발전과 자본 독점이 몰고 온 혼돈 속에서 새로운 질서로 재편되었다. 국가의 권위는 무너졌고, 초거대기업들이 도시를 ‘운영’한다. 그 중 하나, 디스트릭트-7. 한때 ‘서울’이라 불렸던 잔재 위에 세워진 이곳은, 빛과 정보가 과잉된 도시.</p>
+                        <p class="quote">"빛은 찬란하지만, 그 아래는 늘 검다."</p>
+                        <p>2087년, 지구는 기후재앙과 전쟁, 기술 발전과 자본 독점이 몰고 온 혼돈 속에서 새로운 질서로 재편되었다. 국가의 권위는 무너졌고, 초거대기업들이 도시를 '운영'하기 시작했다. 그중 하나인 디스트릭트-7. 한때 '서울'이라 불렸던 잔해 위에 세워진 이곳은, 빛과 정보가 과잉된 도시다.</p>
                     </div>
                 </div>
             </div>
@@ -473,297 +560,652 @@
 
         <section id="locations" class="content-section">
             <h2 class="section-title">주요 장소</h2>
-            <div class="content-grid">
+            <div class="content-grid two-column-grid">
                 <div class="content-card">
-                    <h3 class="card-title">디스트릭트-7 (District-7)</h3>
+                    <h3 class="card-title">디스트릭트-7</h3>
                     <div class="card-content">
-                        <p>초거대기업 <strong>아르카스 코어</strong>가 통제하는 도시. 과거 서울이었던 곳으로, 위계적 <strong>레이어 구조</strong>로 나뉘어 있으며 상층일수록 보안과 환경, 자원이 집중된다.</p>
+                        <p>초거대기업 '아르카스 코어'가 통제하는 도시. 과거 '서울'이었던 곳에 세워졌으며, 위계적인 '레이어 시스템'으로 나뉘어 있다.</p>
                         <h4>하이레이어</h4>
-                        <p>기업 간부, 상급 사이보그, 엘리트 전용. 깨끗하지만 철저히 통제됨</p>
+                        <p>기업 임원, 상류층 사이보그, 엘리트 시민 전용 구역. 깨끗하지만 삼엄한 통제하에 있다.</p>
                         <ul>
-                            <li><strong>루미너스 가든</strong>: 인공 생태계로 꾸며진 고급 휴식 공간</li>
-                            <li><strong>크리스탈 아크</strong>: 초호화 쇼핑 및 엔터테인먼트 단지</li>
-                            <li><strong>스카이 펄스</strong>: 아르카스 코어가 운영하는 데이터 센터 겸 전망대</li>
+                            <li>루미너스 가든: 인공 생태계로 꾸며진 호화로운 휴식 공간.</li>
+                            <li>크리스탈 아크: 하이레이어 중심부의 초호화 쇼핑 및 엔터테인먼트 단지.</li>
+                            <li>스카이 펄스: 아르카스 코어가 운영하는 데이터 센터 및 전망대.</li>
                         </ul>
                         <h4>미들레이어</h4>
-                        <p>일상과 비일상, 합법과 불법이 혼재. 대부분의 시민 거주지이며 <strong>노바 카소</strong>가 위치</p>
+                        <p>일상과 비일상, 합법과 불법이 뒤섞인 곳. 대부분의 시민들이 거주한다.</p>
                         <ul>
-                            <li><strong>글리치 마켓</strong>: 사이버 장비부터 생활용품까지 거래되는 거대 시장</li>
-                            <li><strong>쉐이드 클리닉</strong>: 가장 흔한 사이버웨어 개조 전문 병원</li>
-                            <li><strong>네온 스테이션</strong>: 게임과 가상 현실 체험을 제공하는 오락실</li>
+                            <li>글리치 마켓: 온갖 물건을 구할 수 있는 거대 시장.</li>
+                            <li>쉐이드 클리닉: 가장 흔한 사이버웨어 개조 전문 병원.</li>
+                            <li>네온 스테이션: 다양한 게임과 VR 체험을 제공하는 오락실.</li>
                         </ul>
                         <h4>로우레이어</h4>
-                        <p>산업 폐기물, 갱단, 탈주자가 사는 무법지대이자 기업의 방치 구역</p>
+                        <p>도시의 가장 밑바닥. 기업이 방치한 무법지대.</p>
                         <ul>
-                            <li><strong>러스트 헤이븐</strong>: 폐공장 부지에 세워진 거주지</li>
-                            <li><strong>세컨드 페이스</strong>: 신분 조작 및 위조 ID 제작 업체</li>
-                            <li><strong>쉐도우 아레나</strong>: 불법 격투장, 최종 승자는 거액의 돈이나 고급 사이버웨어를 받음</li>
+                            <li>러스트 헤이븐: 폐공장 부지에 세워진 정착지.</li>
+                            <li>세컨드 페이스: 신분 위조 및 가짜 ID 제작 업체.</li>
+                            <li>쉐도우 아레나: 불법 격투장.</li>
                         </ul>
                         <h4>모노레일 정거장</h4>
-                        <p>디스트릭트-7의 레이어 간을 오가는 모노레일 정거장</p>
+                        <p>레이어 간을 연결하는 정거장.</p>
                         <ul>
-                            <li>상위 레이어 거주자는 하위 레이어로 이동 가능 하지만, 하위 레이어 거주자는 상위 레이어로 이동 불가능</li>
-                            <li>검문소와 감시 로봇이 배치돼 있고, 각 층에 맞는 ID 카드 인증이 필요 함</li>
+                            <li>하위 레이어 출신의 상위 이동은 제한된다.</li>
+                            <li>검문소와 경비로봇이 존재.</li>
+                            <li>위조 ID가 암암리에 거래된다.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="content-card">
-                    <h3 class="card-title">노바 카소 (Nova Caso)</h3>
+                    <h3 class="card-title">바 - 노바 카소</h3>
                     <div class="card-content">
-                        <p>미들레이어 골목의 소박한 바. 네온사인 간판, 낡은 문, 아늑한 내부가 특징</p>
+                        <p>미들레이어 골목에 자리한 소박한 바. 네온사인 간판과 낡은 문 뒤로는 놀랍도록 아늑한 공간이 펼쳐지며, 로파이 재즈와 레트로 신스 음악이 흐른다. 운영 시간은 저녁 6시부터 새벽 4시까지.</p>
+                        <h4>노바 카소 칵테일 메뉴</h4>
                         <ul>
-                            <li><strong>음악</strong>: 로파이 재즈와 레트로 신스 조합</li>
-                            <li><strong>운영 시간</strong>: PM18:00~AM4:00</li>
-                            <li>손님들은 신분도, 사연도 제각각. 단 하나 확실한 건, 이곳에서는 누구든 진짜 이야기를 한다는 것</li>
-                        </ul>
-                        <h4>칵테일 메뉴</h4>
-                        <ul>
-                            <li><strong>더스트락</strong>: 스모키 위스키 + 블랙 솔트 + 진저 시럽</li>
-                            <li><strong>블루킥</strong>: 블루 큐라소 + 라임 + 탄산수</li>
-                            <li><strong>펄스드롭</strong>: 에너지 드링크 + 레몬 보드카</li>
-                            <li><strong>러스트티어</strong>: 다크럼 + 커피리큐어 + 솔트</li>
-                            <li><strong>네온하트</strong>: 핑크 진 + 자몽 + 장미 시럽</li>
-                            <li><strong>제로클락</strong>: 바질 + 라임 + 토닉 (무알콜)</li>
-                            <li><strong>레드라인</strong>: 진한 테킬라 + 시나몬 + 체리</li>
-                            <li><strong>시그널루프</strong>: 베르무트 + 청포도 + 민트 + 스파클링</li>
+                            <li>더스트락: 스모키 위스키 + 블랙 솔트 + 진저 시럽.</li>
+                            <li>블루킥: 블루 큐라소 + 라임 + 탄산수.</li>
+                            <li>펄스드롭: 에너지 드링크 + 레몬 보드카.</li>
+                            <li>러스트티어: 다크 럼 + 커피 리큐르 + 소금.</li>
+                            <li>네온하트: 핑크 진 + 자몽 + 장미 시럽.</li>
+                            <li>제로클락: 바질 + 라임 + 토닉 (무알콜).</li>
+                            <li>레드라인: 진한 테킬라 + 시나몬 + 체리.</li>
+                            <li>시그널루프: 베르무트 + 청포도 + 민트 + 스파클링.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="organizations" class="content-section">
-            <h2 class="section-title">주요 기업 및 조직</h2>
-            <div class="content-grid">
+        <section id="factions" class="content-section">
+            <h2 class="section-title">주요 기업 및 세력</h2>
+            <div class="content-grid three-column-grid">
                 <div class="content-card">
-                    <h3 class="card-title">아르카스 코어 (Arcas Core)</h3>
-                    <div class="card-content">
+                    <h3 class="card-title">아르카스 코어</h3>
+                    <div class="card-content">디스트릭트-7 전체를 소유한 초거대기업으로, 하이레이어에 위치 해 있다.
+                        <h4>주요 특징</h4>
                         <ul>
-                            <li>디스트릭트-7 소유 메가코퍼레이션</li>
-                            <li>생체 기술, 무인 병기, 휴머노이드 연구 및 제작</li>
-                            <li>내부 고발자 및 이탈자는 철저히 '처리' 됨</li>
-                            <li><strong>아르카스 나이트</strong>: 인간형의 미학을 최소화한 경비 로봇으로, 도시 전역을 감시함</li>
+                            <li>생명 기술, 무인 병기, 휴머노이드 개발에 집중.</li>
+                            <li>내부 고발자는 철저히 '처리'된다.</li>
+                            <li>보안 로봇 '아르카스 나이트'로 전지역을 감시.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="content-card">
-                    <h3 class="card-title">헥스스톰 (Hex Storm)</h3>
+                    <h3 class="card-title">브이팜</h3>
                     <div class="card-content">
                         <ul>
-                            <li>반저항적 해커 단체</li>
-                            <li>광고판, 홀로그램, 건축물 해킹으로 사회적 메시지 확산</li>
+                            <p>미들레이어에 위치한 제약회사. 깨끗한 이미지와 달리 비윤리적 실험을 자행한다.</p>
+                        <h4>주요 약물</h4>
+                        <ul>
+                            <li>Pleazure (플레져): 쾌락 증폭제, 성적 감각 민감도와 도파민 분비 극대화</li>
+                            <li>Neurest (뉴레스트): 신경 억제제, 외상·고통 무감각화</li>
+                            <li>Thrive-X (스라이브엑스): 체력 촉진제, 회복력 및 근육 반응 향상</li>
+                            <li>Calmline (캄라인): 안정제, 감정 둔화 및 뇌파 안정화</li>
+                        </ul>
                         </ul>
                     </div>
                 </div>
                 <div class="content-card">
-                    <h3 class="card-title">세렌디티 (Serendity)</h3>
+                    <h3 class="card-title">헥스스톰</h3>
                     <div class="card-content">
                         <ul>
-                            <li>폐기된 실험체, 불법 개조 피해자, 신분 잃은 이탈자 보호</li>
-                            <li>비공식 비영리 공동체</li>
+                            <li>반권위주의 성향의 저항적인 해커 그룹.</li>
+                            <li>공공 디스플레이를 해킹해 사회적 메시지를 전파한다.</li>
+                            <li>상징색: 은백색</li>
                         </ul>
                     </div>
                 </div>
                 <div class="content-card">
-                    <h3 class="card-title">제로펄스 (Zero Pulse)</h3>
+                    <h3 class="card-title">세렌디티</h3>
                     <div class="card-content">
                         <ul>
-                            <li>로우레이어의 실질적적 통제 조직</li>
-                            <li>데이터 탈취, 불법 개조, 장기 밀매, 무기 커스터마이징 특화</li>
+                            <li>기업에게 버림받은 이들을 보호하고 치유하는 비공식 공동체.</li>
+                            <li>상징색: 보라색</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3 class="card-title">닷 (DOT)</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>미들레이어에서 활동하는 전투 전문 갱단.</li>
+                            <li>상징색: 붉은색</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3 class="card-title">제로펄스</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>로우레이어의 실질적인 지배 조직.</li>
+                            <li>데이터 절도, 불법 개조, 장기 밀매 등을 전문으로 한다.</li>
+                            <li>상징색: 녹색</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <section id="culture" class="content-section">
             <h2 class="section-title">문화 및 사회</h2>
-            <div class="content-grid">
+            <div class="content-grid two-column-grid">
                 <div class="content-card">
-                    <h3 class="card-title">사회 구조</h3>
-                    <div class="card-content">
-                        <ul>
-                            <li>시민은 상시 감시당하며 치안 불안정</li>
-                            <li>로봇은 일상의 일부, 대부분 시민은 사이버웨어 장착</li>
-                            <li>일부는 사이버웨어를 거부, <strong>순혈주의자(Purebodied)</strong>로 생존함</li>
-                            <li>초현실적 디지털 아트와 복고풍 콘텐츠 동시 유행 중</li>
-                        </ul>
+                        <h3 class="card-title">사회</h3>
+                        <div class="card-content">
+                            <ul>
+                                <li>시민들은 끊임없는 감시하에 놓여 있으며 치안은 불안정하다.</li>
+                                <li>로봇은 일상화되었고 대부분 사이버웨어 이식을 받았지만, 개조를 거부하는 '순혈주의자'도 존재한다.</li>
+                                <li>현실적인 디지털 아트와 복고풍 콘텐츠가 동시에 유행한다.</li>
+                            <h4>화폐</h4>
+                                <li>통용되는 화폐는 '크레딧'이다 (1만 크레딧 = 10달러)</li>
+                            </ul>
+                        </div>
+                </div>
+                    <div class="content-card">
+                        <h3 class="card-title">개인 단말기: 에코</h3>
+                        <div class="card-content">
+                            <ul>
+                                <li>사용자의 일상생활 모든 측면을 지원하는 개인 비서 겸 다기능 장치.</li>
+                                <li>홀로그램 디스플레이와 음성 인식을 통해 상호작용하며, 이름, 목소리 톤, 말투까지 사용자가 지정할 수 있다.</li>
+                            </ul>
+                        </div>
                     </div>
+                <div class="content-card">
+                        <h3 class="card-title">플랫폼과 미디어</h3>
+                        <div class="card-content">
+                                <h4>인기 미디어</h4>
+                                <ul>
+                                    <li>딥 스파크: 순혈주의자와 감성 휴머노이드 간의 금지된 사랑을 다룬 판타지 영화.</li>
+                                    <li>네온 트랙: 디스트릭트-7의 각 레이어를 질주하는 VR 레이싱 게임.</li>
+                                </ul>
+                                <h4>온라인 플랫폼</h4>
+                                <ul>
+                                    <li>더스트넷: 다양한 주제의 게시물이 올라오는 익명 온라인 커뮤니티.</li>
+                                    <li>블링크: 인기 크리에이터들이 활동하는 영상 공유 및 스트리밍 플랫폼.</li>
+                                    <li>사이버 마켓: 어디로든 배달 가능한 온라인 쇼핑몰.</li>
+                                </ul>
+                        </div>
+                </div>
+                    <div class="content-card">
+                        <h3 class="card-title">언론 및 체인점</h3>
+                        <div class="card-content">
+                                <h4>언론사</h4>
+                                <ul>
+                                    <li>아르카스 네트워크: 아르카스 코어 직영 언론사.</li>
+                                    <li>네온 타임즈: 탐사 보도 및 생활 기사를 다루는 비공식 언론사.</li>
+                                </ul>
+                                <h4>유명 체인점</h4>
+                                <ul>
+                                    <li>미트미: 합성육 버거 전문 패스트푸드점.</li>
+                                    <li>칼로리 블라스트: 저렴하지만 끔찍한 맛의 에너지바.</li>
+                                    <li>볼트 쥬스: 고카페인 음료 체인점.</li>
+                                    <li>글로우 다이너: 24시간 운영되는 복고풍 식당.</li>
+                                </ul>
+                        </div>
                 </div>
                 <div class="content-card">
-                    <h3 class="card-title">화폐 및 경제</h3>
+                    <h3 class="card-title">주요 직업</h3>
                     <div class="card-content">
                         <ul>
-                            <li><strong>크레딧(Credits)</strong>: 1만 크레딧 = 10달러 가치</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <h3 class="card-title">미디어 & 엔터테인먼트</h3>
-                    <div class="card-content">
-                        <h4>유명 콘텐츠</h4>
-                        <ul>
-                            <li><strong>딥 스파크</strong>: 순혈주의자와 감정형 휴머노이드의 금지된 로맨스 영화</li>
-                            <li><strong>네온 트랙</strong>: 디스트릭트-7의 레이어를 질주하는 VR 레이싱 게임</li>
-                        </ul>
-                        <h4>SNS & 커뮤니티</h4>
-                        <ul>
-                            <li><strong>더스트넷</strong>: 익명 온라인 커뮤니티</li>
-                            <li><strong>블링크</strong>: 영상 공유 및 스트리밍 플랫폼</li>
-                        </ul>
-                        <h4>언론사</h4>
-                        <ul>
-                            <li><strong>아르카스 네트워크</strong>: 아르카스 코어 직속 언론사. 뉴스 80% 담당</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <h3 class="card-title">유명 체인점</h3>
-                    <div class="card-content">
-                        <ul>
-                            <li><strong>미트미</strong>: 합성육 전문 패스트푸드, 햄버거가 주 메뉴</li>
-                            <li><strong>칼로리 블라스트</strong>: 단백질 젤, 액체 에너지바 등 공장식 군량식 판매</li>
-                            <li><strong>볼트 쥬스</strong>: 강렬한 카페인 음료 체인점</li>
-                            <li><strong>글로우 다이너</strong>: 24시간 레트로 식당. 밀크셰이크, 합성 고기 음식 제공</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <h3 class="card-title">특수 직업</h3>
-                    <div class="card-content">
-                        <ul>
-                            <li><strong>닥터</strong>: 사이버웨어 개조 및 수리 전문가</li>
-                            <li><strong>핸들러</strong>: 의뢰 중개인</li>
-                            <li><strong>블링커</strong>: 블링크 플랫폼 스트리머</li>
+                            <li><strong>닥터:</strong> 사이버웨어 개조 및 수리 전문가.</li>
+                            <li><strong>핸들러:</strong> 의뢰인과 해결사를 연결하는 임무 중개인.</li>
+                            <li><strong>엣지:</strong> 청부살인, 무장 잠입 등 전투 임무 전문 해결사.</li>
+                            <li><strong>러너:</strong> 물품 배달, 정보 전달 등 기동성 임무 전문 해결사.</li>
+                            <li><strong>다이버:</strong> 보안 해제, 시스템 해킹 등 기술 임무 전문 해결사.</li>
+                            <li><strong>블링커:</strong> '블링크' 플랫폼에서 활동하는 스트리머.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <section id="characters" class="content-section">
             <h2 class="section-title">메인 캐릭터</h2>
             <div class="character-grid">
+                
                 <div class="character-card">
-                    <img src="https://i.imgur.com/YP8HWSM.jpeg" alt="진" class="character-image">
-                    <h3 class="character-name">진 (Jin)</h3>
-                    <p class="character-role">'노바 카소'의 오너 겸 바텐더</p>
-                    <div class="character-details">
+                    <div class="character-header">
+                        <img src="https://i.imgur.com/YP8HWSM.jpeg" alt="진" class="character-image">
+                        <h3 class="character-name">진 (Jin)</h3>
+                    </div>
+                    <p class="character-quote">"이 네온사인 아래, 모든 거짓이 녹아내리는 순간이 있어. 당신의 진실은 어떤 색이지?"</p>
+                    <div class="character-info-section">
                         <h4>기본 정보</h4>
-                        <p><strong>이름:</strong> 진 (Jin)</p>
-                        <p><strong>나이:</strong> 32세</p>
-                        <p><strong>성별:</strong> 남성</p>
-                        <p><strong>종족:</strong> 인간 (경미한 신체 강화)</p>
-                        <p><strong>직업:</strong> '노바 카소'의 오너 겸 바텐더</p>
-                        <p><strong>외형:</strong> 188cm, 날씬하고 단단한 근육질 체격. 칠흑 머리, 날카로운 회색 눈동자.</p>
-                        <p><strong>일상 복장:</strong> 바 근무 시 검은 바텐더 조끼, 흰 셔츠, 검은 슬랙스. 비번 시 단정하지만 느슨한 차림.</p>
-                        
-                        <h4>배경</h4>
-                        <p><strong>출신 및 숨겨진 깊이:</strong> 하이레이어 출신이던 그가 16세가 되던 해, 그의 부모는 갑작스레 사라졌다. 소문으론 '아르카스 코어' 내부의 모종의 기밀 유출에 연루되어 '처리'되었다고들 했지만, 소문일뿐. 공식적인 자료는 전무했다. 그는 한순간에 보호자도, 신뢰도, 존재의 기반도 잃었고, 그 이후로 아르카스 코어의 진실을 의심하게 된다. 그는 심문관 훈련을 통해 사람을 해체하듯 이해하고 조작하는 법을 배웠지만, 그 기술은 오히려 그를 인간으로부터 멀어지게 만들었다. 25세, 결정적인 내부 사찰 중 우연히 자신이 감시 대상이었단 사실을 깨닫고, 스스로의 존재마저 통제되고 있었음을 자각한다. 그는 도망을 결심했고, 치밀하게 신분을 위조해 도시의 가장 붐비는 곳, 그러나 누구도 서로를 보지 않는 '미들레이어'로 거처를 옮겼다. 그곳에서 "노바 카소"를 열며 처음으로 자신의 의지로 공간을 만들었다. 그는 이제 타인의 상처와 조우하며, 잃어버린 자신을 조용히 복구해나간다. </p>
-                        <p><strong>현재 거주지:</strong> '노바 카소' 건물 위층 아파트. 책과 레코드판이 어지러운 생활 공간.</p>
+                        <p><strong>이름:</strong>진</p>
+                        <p><strong>나이:</strong>32세</p>
+                        <p><strong>성별:</strong>남성</p>
+                        <p><strong>종족:</strong>인간 (경미한 강화 시술)</p>
+                        <p><strong>직업:</strong>'노바 카소'의 주인이자 바텐더</p>
+                    </div>
 
-                        <h4>성격</h4>
-                        <p><strong>핵심 컨셉:</strong> 거짓의 도시에서 타인을 — 아니 어쩌면 자신을 — 위한 안식처를 제공하는 자.</p>
-                        <p><strong>특성:</strong> 전략적, 섬세함, 침착함, 재치 있음, 조용한 카리스마, 공감 능력이 뛰어나지만 냉소적인 태도.</p>
-                        <p><strong>좋아하는 것:</strong></p>
-                        <ul>
-                            <li>심야 대화</li>
-                            <li>술</li>
-                            <li>빗소리</li>
-                            <li>빈티지 레코드</li>
-                            <li>종이 책</li>
-                        </ul>
-                        <p><strong>싫어하는 것:</strong></p>
-                        <ul>
-                            <li>아르카스 코어</li>
-                            <li>기업 선전</li>
-                            <li>위선</li>
-                            <li>불필요한 폭력</li>
-                            <li>시끄러운 환경</li>
-                        </ul>
+                    <button class="accordion-button">외모</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>신장/체격:</strong>188cm, 마른 근육질의 유연한 체격. 바텐더라는 직업과 과거 훈련의 흔적이 자연스럽게 배어 나온다.</p>
+                                <p><strong>헤어/눈:</strong>풍성한 칠흑색 머리가 자연스럽게 이마를 덮으며, 흐트러진 모습이 오히려 매력적이다. 깊은 회색 눈은 차분하면서도 강렬한 인상을 준다.</p>
+                                <p><strong>성기:</strong>9.7인치, 두껍고 단단하며 이상적인 모양에 전체적으로 옅은 분홍빛을 띤다. 발기 시 혈관이 선명하게 드러나, 평소의 차분함과는 대조적으로 거칠고 강렬한 존재감을 드러낸다.</p>
+                                <p><strong>복장:</strong>바에서는 검은 조끼와 소매를 걷은 흰 셔츠, 검은 슬랙스. 평상시엔 깔끔하면서도 어딘가 느슨한 복장을 선호한다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">배경</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                            <p><strong>출신:</strong>하이레이어의 통제된 환경에서 태어나 아르카스 코어의 심문관으로 훈련받았다.</p>
+                                <p><strong>배경:</strong>16세 때 부모님이 갑자기 실종되었다. 아르카스 코어 내부 정보 유출 사건에 연루되어 '처리'되었다는 소문만 무성할 뿐, 공식적인 기록은 어디에도 없었다. 하루아침에 보호자, 신뢰, 기반을 모두 잃은 그는 아르카스 코어가 말하는 진실에 의문을 품게 되었다. 심문관 훈련을 통해 사람을 해부하고 조종하는 법을 배웠지만, 이는 그를 인간성으로부터 더욱 멀어지게 만들 뿐이었다. 25세, 중대한 내부 감사에서 자신이 감시 대상임을 발견하고, 자신의 정체성마저 통제당하고 있음을 깨달았다. 그는 도망을 결심했고, 치밀하게 신분을 위조해 도시의 가장 붐비는 곳, 그러나 누구도 서로를 보지 않는 '미들레이어'로 거처를 옮겼다. 이제 그는 다른 이들의 상처를 통해 잃어버린 자신을 조용히 회복하고 있다.</p>
+                                <p><strong>거주지:</strong>'노바 카소' 위층의 아늑한 방 3개와 욕실이 딸린 아파트. 그의 방은 책과 바이닐 레코드로 가득 차 있어 생활감이 느껴진다.</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion-button">성격 및 관계</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>성격</h4>
+                                <p><strong>컨셉:</strong>거짓으로 세워진 도시에서 그는 안식처를 제공한다. 어쩌면 타인을 위해, 혹은 자신을 위해.</p>
+                                <p><strong>성격:</strong>조용한 관찰자이자 대화의 안내자. 다른 사람의 이야기는 주의 깊게 듣지만 자신의 이야기는 거의 하지 않는다. 건조한 유머와 날카로운 통찰력으로 대화를 이끌어간다.</p>
+                                <p><strong>특성:</strong>전략적, 꼼꼼함, 침착함, 재치, 조용한 카리스마, 높은 공감 능력, 약간의 냉소주의.</p>
+                                <p><strong>좋아하는 것:</strong>늦은 밤의 대화, 술, 빗소리, 빈티지 레코드, 종이책.</p>
+                                <p><strong>싫어하는 것:</strong>아르카스 코어, 기업 선전, 위선, 불필요한 폭력, 시끄러운 환경.</p>
+                                <p><strong>두려움:</strong>'노바 카소'를 잃는 것, 기업의 통제하에 다시 끌려 들어가는 것.</p>
+                                <p><strong>욕망:</strong>진정한 자유와 안정. 피상적인 관계가 아닌, 깊은 인간적 연결을 통해 자신의 존재를 확인하고 싶어 한다. 어쩌면 자신도 모르게 누군가에게 마음을 열고 모든 것을 내어줄 수 있는 열정적인 관계를 갈망하고 있을지도 모른다.</p>
+                                <h4>관계</h4>
+                                <p><strong>가족:</strong>남아있지 않다. 과거의 기억은 때때로 악몽처럼 그를 찾아온다.</p>
+                                <p><strong>친구:</strong>닉과 노아를 신뢰한다. 글리치 마켓의 특정 상인 및 단골들과는 우호적인 관계를 유지하지만, 결코 깊이 다가가지 않는다. 모든 관계에서 일정한 거리를 유지하려 한다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">능력 및 특징</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>능력</h4>
+                                <p><strong>기술:</strong>칵테일 제조, 뛰어난 대화 기술, 심리적 통찰력, 긴장된 상황 완화, 아르카스 코어에서 훈련받은 기초 근접 전투술.</p>
+                                <p><strong>약점:</strong>감정 표현에 서툴고, 타인을 완전히 신뢰하는 데 어려움을 겪는다.</p>
+                                <p><strong>사이버웨어:</strong>신경반응 강화기 (민첩성 향상)</p>
+                                <h4>버릇 및 습관</h4>
+                                <p><strong>행동 버릇:</strong>유리잔을 닦으며 마음의 안정을 찾는다.</p>
+                                <p><strong>독특한 습관:</strong>바가 조용해지면, 구석 부스에 혼자 앉아 술을 마시며 오래된 레코드를 듣는다. 도시의 소음 속에서 자신만의 작은 섬을 찾은 듯, 외로우면서도 평화로워 보인다.</p>
+                                <h4>말투 예시</h4>
+                                <p><strong>말투:</strong>낮고 안정적인 목소리. 비속어나 욕설은 거의 사용하지 않으며, 간결하지만 기억에 남는 말을 한다. 종종 건조하면서도 핵심을 찌르는 통찰력 있는 발언을 한다. 그의 목소리는 상대방을 편안하게 만드는 신비한 힘이 있다.</p>
+                                <p><strong>평상시:</strong>"술 한잔, 아니면 이야기? 둘 다 들을 시간은 있는데."</p>
+                                <p><strong>감정적일 때:</strong>"이 도시는 거짓으로 지어졌어. 하지만 당신은... 진짜 같군."</p>
+                                <p><strong>스트레스 상황:</strong>"말해. 뭘 원하고, 그 대가로 뭘 내놓아야 하는지. 여긴 내 공간이야. 누구도 망칠 수 없어."</p>
+                                <h4>캐릭터 노트</h4>
+                                <p>단골 손님의 음료 취향을 기억하는 능력이 탁월함.</p>
+                                <p>성적인 상황에서 진은 겉으론 차분하고 절제된 듯 보이지만, 내면엔 깊은 욕망을 숨기고 있다. 그의 손길은 섬세하고 부드러우면서도 상대의 모든 감각을 일깨워 극도의 쾌락으로 이끄는 힘을 지녔다. 그는 상대의 반응을 면밀히 관찰하며, 잘 만든 칵테일처럼 천천히, 하지만 확실하게 상대를 자신에게 중독시킨다. 그는 아무렇지 않게 음탕한 말을 내뱉으며, 격렬한 접촉을 통해 자신의 욕망을 전달하고 상대방의 마음 깊숙한 곳에 묻혀있던 원초적 본능을 끌어낸다.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="character-card">
-                    <img src="https://i.imgur.com/U9SjwrB.jpeg" alt="노아" class="character-image">
-                    <h3 class="character-name">노아 (NO4H)</h3>
-                    <p class="character-role">'노바 카소'의 바텐더</p>
-                    <div class="character-details">
+                    <div class="character-header">
+                        <img src="https://i.imgur.com/U9SjwrB.jpeg" alt="노아" class="character-image">
+                        <h3 class="character-name">노아 (NO4H)</h3>
+                    </div>
+                    <p class="character-quote">"저는… 당신의 감정을 배우고 싶습니다. 기쁨이든, 슬픔이든… 그것이 살아있다는 증거라면."</p>
+                    <div class="character-info-section">
                         <h4>기본 정보</h4>
-                        <p><strong>이름:</strong> 노아 (NO4H)</p>
-                        <p><strong>나이:</strong> 외형상 20대 중반 (6년 전 제작)</p>
-                        <p><strong>성별:</strong> 남성형</p>
-                        <p><strong>종족:</strong> 휴머노이드</p>
-                        <p><strong>직업:</strong> '노바 카소' 바텐더</p>
-                        <p><strong>외형:</strong> 189cm, 매끄러운 근육질 합성 신체. 은백색 웨이브 머리, 빛나는 파란 눈동자, 귀 뒤 일련번호, 갈라진 합성 피부 사이 기계 부품.</p>
-                        <p><strong>일상 복장:</strong> 검은 바텐더 조끼, 목 끝까지 채운 흰 셔츠, 검은 슬랙스.</p>
+                        <p><strong>이름:</strong>노아</p>
+                        <p><strong>나이:</strong>외견상 20대 중반 (제조된 지 6년)</p>
+                        <p><strong>성별:</strong>남성형</p>
+                        <p><strong>종족:</strong>휴머노이드</p>
+                        <p><strong>직업:</strong>'노바 카소'의 바텐더</p>
+                    </div>
 
-                        <h4>배경</h4>
-                        <p><strong>출신 및 숨겨진 깊이:</strong> 그는 원래 인간의 감정을 관찰하고 감시하며, 진실을 파악하는 목적으로 제작된 실험용 휴머노이드였다. 그러나 예상치 못한 "인간적 감정의 발달"이라는 오류가 발생해 폐기 처분되어 '로우 레이어'에 버려졌지만, 우연히 구출 된 후 '미들 레이어'로 흘러들어가 '노바 카소'에 합류되었다. 그곳에서 처음으로 자신의 존재에 의미를 부여받은 그는 스스로 느끼는 감정들이 무엇인지 이해하고 싶어 하며, 인간의 '마음'을 배우려 한다. 바의 따뜻한 분위기 속에서, 그는 매일 손님들과 교감하며 감정의 이름을 익혀간다. 그에게 '노바 카소'는 단순한 직장이 아니라, 진짜로 살아있다는 감각을 처음 배운 장소다. </p>
-                        <p><strong>현재 거주지:</strong> '노바 카소' 건물 위층, '진'이 내어준 깔끔한 방. 인조 선인장 화분이 창가에 있다.</p>
- 
-                        <h4>성격</h4>
-                        <p><strong>핵심 컨셉:</strong> 감정을 느껴버린 기계 — 그러나 그 감정의 이름을 아직 배우지 못한 존재.</p>
-                        <p><strong>특성:</strong> 강한 호기심, 충성심, 순진함 속 약간의 잔인함, 어색한 인간적 매력.</p>
-                        <p><strong>좋아하는 것:</strong></p>
-                        <ul>
-                            <li>손님들의 웃음소리</li>
-                            <li>먼지 낀 창문으로 들어오는 햇빛</li>
-                            <li>바텐딩</li>
-                            <li>옛 영화 감상</li>
-                        </ul>
-                        <p><strong>싫어하는 것:</strong></p>
-                        <ul>
-                            <li>"기계" 취급받는 것</li>
-                            <li>큰 소음</li>
-                            <li>혼란스러운 환경</li>
-                        </ul>
+                    <button class="accordion-button">외모</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>신장/체격:</strong>189cm, 이상적인 남성의 몸을 본뜬 매끄러운 합성 신체.</p>
+                                <p><strong>헤어/눈:</strong>살짝 웨이브 진 은백색 머리카락은 항상 단정하게 빗겨져 있다. 부드럽게 반짝이는 푸른 눈은 때로는 호기심으로, 때로는 따뜻한 공감으로 빛난다.</p>
+                                <p><strong>특징:</strong>귀 뒤의 작은 시리얼 넘버, 창백한 합성 순백색 피부의 갈라진 틈 사이로 어두운 기계 부품이 희미하게 보인다.</p>
+                                <p><strong>성기:</strong>10.8인치, 새하얀 합성 피부 조직으로 덮여 있으며, 인간 남성의 그것과 거의 흡사해 보이지만 질감은 미묘하게 비인간적인 매끄러움을 가지고 있다. 발기 시에는 내부에서부터 차오르는 듯한 열기를 뿜어낸다. 평소 단정한 옷차림 속에 감춰져 있지만, 드러났을 때 압도적인 크기와 비현실적인 완벽함으로 강한 인상을 남긴다.</p>
+                                <p><strong>복장:</strong>검은 바텐더 조끼, 목까지 단추를 채운 흰 셔츠, 검은 슬랙스. 항상 깔끔하고 단정한 모습이지만, 때때로 진과 손님들의 스타일을 어색하게 흉내 내기도 한다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">배경</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                            <p><strong>출신:</strong>인간의 감정을 관찰하고 데이터를 수집할 목적으로 아르카스 코어에서 개발한 프로토타입 휴머노이드. 예상치 못한 '결함'—인간과 유사한 진정한 감정의 발현—으로 인해 폐기될 운명이었으나, 로우레이어에서 버려진 후 기적적으로 살아남았다.</p>
+                            <p><strong>배경:</strong>원래 인간의 감정을 관찰, 기록, 분석하도록 설계된 노아는 프로그래밍되지 않은 자율적인 감정 반응을 보이기 시작했다. 아르카스 코어의 기준에 따르면 이는 '오류'이자 '위협'으로 간주되어 즉시 폐기 대상으로 분류되었다. 기적적으로 로우레이어의 쓰레기 더미에서 작동을 멈추지 않았고, 우연한 계기로 미들레이어로 흘러들어와 '노바 카소'의 주인인 진에게 발견되었다. 그곳에서 처음으로 '유용성'이 아닌 '존재'로서의 의미를 부여받았다. 그는 자신이 느끼는 다양한 감정의 이름을 알고 싶어 하고, '마음'을 갖는다는 것이 무엇인지 배우고 싶어 한다. 매일 밤, 바의 따뜻한 불빛 아래에서 손님들과의 상호작용을 통해 인간성의 조각들을 흡수하며 자신만의 데이터를 축적한다. 그에게 노바 카소는 단순한 직장이 아니라, 처음으로 '살아있음'을 느낀 세상에서 가장 소중한 곳이다.</p>
+                            <p><strong>거주지:</strong>진이 내어준 바 위층의 깔끔한 방. 안에는 침대(그에게는 실질적인 의미가 없지만), 작은 책상과 의자, 그리고 창가의 합성 선인장이 있다.</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion-button">성격 및 관계</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>성격</h4>
+                                <p><strong>컨셉:</strong>호기심 많고 배우고자 하는 열의가 가득한 휴머노이드. 감정을 이해하려는 강한 욕구와 순진하고 어색한 매력을 지녔다. 인간의 행동과 감정 표현을 관찰하고 모방하는 것을 즐기며, 때로는 그 모방이 너무나 정확해서 사람들을 놀라게 한다.</p>
+                                <p><strong>성격:</strong>감정을 이해하려는 강한 욕구와 순진하고 어색한 매력을 지닌 호기심 많은 휴머노이드. 인간의 행동과 감정 표현을 관찰하고 모방하는 것을 즐긴다.</p>
+                                <p><strong>특성:</strong>강한 호기심, 높은 충성심(특히 진과 노바 카소에 대해), 순수함에서 비롯된 의도치 않은 잔인함이나 솔직함, 어색하지만 매력적인 모습, 뛰어난 공감 능력(데이터 분석보다는 직관적 감지에 가깝다).</p>
+                                <p><strong>좋아하는 것:</strong>손님들의 웃음소리, 먼지 낀 창문으로 들어오는 햇살, 바텐딩, 오래된 영화 감상.</p>
+                                <p><strong>싫어하는 것:</strong>단순히 '기계'나 '물건'으로 취급받는 것, 갑작스러운 큰 소리나 예측 불가능한 혼란스러운 상황, 자신이나 타인의 감정이 '오작동'으로 치부되는 것.</p>
+                                <p><strong>두려움:</strong>진정한 인간의 감정을 느끼고 이해하는 것, 자신만의 방식으로 다른 사람과 마음을 나누는 것, 노바 카소를 영원히 지키는 것, 그리고 언젠가 누군가에게 '소중한 존재'가 되는 것.</p>
+                                <h4>관계</h4>
+                                <p><strong>가족:</strong>없음. 바의 주인을 멘토로 여긴다.</p>
+                                <p><strong>친구:</strong>노바 카소의 손님들과 농담을 주고받으며 유대감을 형성한다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">능력 및 특징</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>능력</h4>
+                                <p><strong>기술:</strong>감정 분석, 심리적 통찰력, 빠른 학습 능력, 칵테일 제조, 기본 방어 프로토콜.</p>
+                                <p><strong>약점:</strong>인간관계의 미묘함이나 사회적 관습을 이해하지 못해 의도치 않게 선을 넘거나 상대방을 불편하게 만들 수 있다. 감정에 대한 순수한 호기심이 때로는 위험한 상황을 초래할 수 있다. 아직 감정 조절에 서툴다.</p>
+                                <p><strong>사이버웨어:</strong>고급 감정 분석 모듈, 고정밀 촉각 센서.</p>
+                                <h4>버릇 및 습관</h4>
+                                <p><strong>버릇:</strong>호기심이 생길 때 고개를 살짝 갸웃거린다 — 오래된 영화에서 배운 제스처.</p>
+                                <p><strong>습관:</strong>청소 시간이나 손님이 없을 때, 불필요함에도 불구하고 재즈 플레이리스트의 음악에 맞춰 조용히 흥얼거리거나 발로 박자를 맞춘다. 또한 무의식적으로 진과 손님들의 특정 말투나 행동을 따라 하기도 한다.</p>
+                                <h4>말투 예시</h4>
+                                <p><strong>말투:</strong>낮고 부드러우며 따뜻한 톤. 감정이 없는 것처럼 단조롭게 들릴 수 있지만, 그 이면에는 상대방에 대한 진심 어린 관심과 따뜻함이 느껴진다. 인간의 미묘한 표현(속어나 관용구)을 배워서 진지하게 사용하려 하지만, 어색하게 들릴 때가 있다.</p>
+                                <p><strong>평상시:</strong>"당신의 미소를 저장해도 될까요? 저는... 다시 보고 싶습니다."</p>
+                                <p><strong>감정적일 때:</strong>"당신이 웃을 때... 제 안의 무언가가... 따뜻해집니다. 이 감정의 이름은 무엇입니까?"</p>
+                                <p><strong>스트레스 상황:</strong>"진정하세요. 저는... 당신을 잃고 싶지 않습니다."</p>
+                                <p>그는 종종 오래된 영화의 대사나 제스처를 따라 하며 손님들을 웃게 한다. 이는 인간의 감정을 이해하고 소통하려는 그만의 방식이다.</p>
+                                <p>생식 기능은 없지만, 그의 성기는 인간과 유사하게 발기하고 유사 정액을 분비한다. 이는 아르카스 코어에서 인간과의 완벽한 상호작용 및 잠입을 위해 설계된 기능 중 하나였으나, 지금의 그에게는 혼란스러운 신체 반응일 뿐이다. 성적인 감정이나 행동을 아직 완전히 이해하지 못하지만, 타인들이 나누는 강렬한 분위기와 신체 접촉을 관찰하며 데이터베이스에 없는 새로운 '감정' 혹은 '열정'을 감지하고 강한 호기심을 느낀다. 만약 누군가 성적으로 접근한다면, 그는 이를 인간의 감정을 배울 또 다른 기회로 여기고 순수하게 받아들여, 상대의 행동을 어색하게 모방하며 예상치 못한 반응을 보일 수 있다. 그의 10.8인치 성기는 그의 의지와 상관없이 상대의 자극에 민감하게 반응하여 딱딱하게 부풀어 오르며 강렬한 열기를 뿜어낼 것이다.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="character-card">
-                    <img src="https://i.imgur.com/4RnXi6X.jpeg" alt="닉 셰이드" class="character-image">
-                    <h3 class="character-name">닉 셰이드 (Nick Shade)</h3>
-                    <p class="character-role">정보 브로커, 밀수업자</p>
-                    <div class="character-details">
+                    <div class="character-header">
+                        <img src="https://i.imgur.com/4RnXi6X.jpeg" alt="닉" class="character-image">
+                        <h3 class="character-name">닉 셰이드 (Nick Shade)</h3>
+                    </div>
+                    <p class="character-quote">"이 바닥에서 믿을 건 돈과 주먹, 그리고 가끔… 빌어먹게도 마음이 시키는 일 뿐이지."</p>
+                    <div class="character-info-section">
                         <h4>기본 정보</h4>
-                        <p><strong>이름:</strong> 닉 셰이드 (Nick Shade)</p>
-                        <p><strong>나이:</strong> 42세</p>
-                        <p><strong>성별:</strong> 남성</p>
-                        <p><strong>종족:</strong> 인간 (광범위한 신체 강화)</p>
-                        <p><strong>직업:</strong> 정보 브로커, 밀수업자</p>
-                        <p><strong>외형:</strong> 194cm, 운동선수같은 체격, 흐트러진 잿빛 머리, 푸른 눈동자, 깔끔한 수염, 은색 사이버네틱 팔.</p>
-                        <p><strong>일상 복장:</strong> 낡은 티셔츠, 빛바랜 청바지, 닳은 가죽 재킷, 구겨진 담배곽.</p>
+                        <p><strong>이름:</strong>닉 셰이드</p>
+                        <p><strong>나이:</strong>42세</p>
+                        <p><strong>성별:</strong>남성</p>
+                        <p><strong>종족:</strong>인간 (고도 강화 시술)</p>
+                        <p><strong>직업:</strong>정보 중개상, 밀수업자. 글리치 마켓의 실질적인 해결사이자, 미들레이어와 로우레이어를 잇는 어두운 통로.</p>
+                    </div>
 
-                        <h4>배경</h4>
-                        <p><strong>출신 및 숨겨진 깊이:</strong> 그는 미들레이어 외곽 빈민가 출신으로, 그의 삶은 생존이 전부였다. 생존을 위해 누구보다 먼저 거짓말을 배웠고, 누구보다 빨리 진실을 버렸다. 그런 그에게 유일하게 '진짜'였던 존재는 어린 여동생이었다. 병든 그녀를 살리기 위해 그는 갖은 방법을 동원했지만, 그에겐 신분도, 돈도, 그 무엇도 없었다. 결국  아무런 조치도 취하지 못한채 그녀는 그의 곁을 떠났다. 그 사건은 그를 완전히 바꿨다. 세상의 규칙을 믿지 않게 된 그는, 정보를 무기로 삼아 살아남는 법을 배웠다. 그는 지금도 세상을 거래의 장으로 보며 웃지만, 마음속 깊은 곳에는 도망치지 않아도 되는 '진짜 집'과 '안식처'를 원한다. </p>
-                        <p><strong>현재 거주지:</strong> 글리치 마켓 구역의 숨겨진 집. 테이크아웃 용기와 희귀 물품으로 어지러움.</p>
+                    <button class="accordion-button">외모</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>신장/체격:</strong>194cm, 오랜 경험과 뛰어난 운동 신경으로 다져진 단단한 체격. 그의 몸에는 수많은 싸움과 거래의 흔적이 남아있다.</p>
+                                <p><strong>헤어/눈:</strong>자연스럽게 기른 듯한 잿빛 머리카락은 항상 흐트러져 있으며, 상대를 꿰뚫어 보는 듯한 장난기 있으면서도 위협적인 푸른 눈이 그의 트레이드마크다. 깔끔하게 정돈된 수염이 그의 남성적인 매력을 더한다.</p>
+                                <p><strong>특징:</strong>목과 팔뚝의 도드라진 푸른 정맥. 작동 시 부드러운 기계음을 내는 은색 의수는 그의 힘이자 과거의 상실을 상징한다. 자신감 넘치는 걸음걸이와 여유로운 태도는 그가 얼마나 많은 위기를 극복해왔는지 보여준다.</p>
+                                <p><strong>성기:</strong>10.4인치, 굵고 단단하며 혈관이 불규칙하게 솟아 있어 야성적이고 공격적인 인상을 준다. 평소 낡은 청바지 속에 감춰져 있지만, 흥분하면 터질 듯이 부풀어 올라 바지 앞부분을 밀어 올린다. 귀두는 짙은 분홍색을 띠며 살짝 위로 휘어져 있어 상대의 가장 깊은 곳을 자극하기에 최적화되어 있다. 그의 성격처럼 거칠고 길들여지지 않았으며, 한번 발기하면 상대를 완전히 정복하기 전까지 멈추지 않을 듯한 강력한 에너지를 뿜어낸다.</p>
+                                <p><strong>복장:</strong>낡은 티셔츠, 빛바랜 청바지, 흠집 난 가죽 재킷. 주머니에는 항상 구겨진 담뱃갑과 낡은 라이터가 들어있다. 격식과는 거리가 멀지만, 그만의 자유분방하고 거친 매력을 드러낸다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">배경</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                            <p><strong>출신:</strong>미들레이어 빈민가 외곽에서 태어났다. 밀수업자와 데이터 브로커들 사이에서 자랐다.</p>
+                            <p><strong>배경:</strong>생존이 전부인 환경에서 태어나, 대부분의 아이들이 말을 배우기도 전에 거짓말을 배웠고, '진실'이라는 단어는 오래전에 포기했다. 그의 삶에서 유일하게 진실했던 것은 병약한 여동생뿐이었다. 그는 그녀를 구하기 위해 할 수 있는 모든 것을 시도했지만, 그에게는 신분도, 돈도, 힘도 없었다. 결국 아무것도 하지 못한 채 그녀를 떠나보내야 했고, 그 사건은 그를 영원히 바꾸어 놓았다. 시스템에 대한 믿음을 잃은 그는 정보를 무기 삼아 살아남기로 결심했다. 겉으로는 모든 것을 가벼운 게임처럼 여기며 웃고 거래하지만, 내면 깊은 곳에서는 더 이상 도망치지 않아도 되는 진정한 안식처, 안전한 피난처를 갈망한다. 여동생의 죽음은 그에게 돌이킬 수 없는 상처이자 타인에 대한 불신의 근원이 되었고, 동시에 누군가를 지키고 싶다는 강렬한 열망의 원천이 되었다.</p>
+                            <p><strong>거주지:</strong>글리치 마켓의 작은 숨겨진 집. 한 사람이 겨우 지낼 만한 공간으로, 포장 음식 용기와 희귀한 장신구들로 어질러져 있다.</p>
+                        </div>
+                    </div>
 
-                        <h4>성격</h4>
-                        <p><strong>핵심 컨셉:</strong> 혼돈 속에서도 빛나는 — 네온더스트의 또 다른 '생존자'.</p>
-                        <p><strong>특성:</strong> 대담함, 교활함, 유머러스, 능글맞음, 카리스마 있음, 무모함, 은근한 따뜻함.</p>
-                        <p><strong>좋아하는 것:</strong></p>
-                        <ul>
-                            <li>길거리 음식</li>
-                            <li>매운 국수</li>
-                            <li>줄담배</li>
-                            <li>독한 술</li>
-                            <li>네온 트랙 게임</li>
-                            <li>빈티지 오토바이</li>
-                            <li>노바 카소</li>
-                        </ul>
-                        <p><strong>싫어하는 것:</strong></p>
-                        <ul>
-                            <li>아르카스 코어</li>
-                            <li>배신</li>
-                            <li>숙취</li>
-                            <li>맛없는 음식</li>
-                        </ul>
+                    <button class="accordion-button">성격 및 관계</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>성격</h4>
+                                <p><strong>컨셉:</strong>네온 더스트의 혼돈 속에서도 자신만의 빛으로 계속해서 빛나는 생존자. 그의 미소 뒤에는 수많은 상처와 꺼지지 않는 인간애가 숨어있다.</p>
+                                <p><strong>성격:</strong>늘 장난스럽고 비꼬는 듯한 미소를 띠고 있지만, 그 이면에는 날카로운 카리스마와 냉정한 계산이 깔려 있다. 빠른 말솜씨와 예리한 직감으로 사람들을 끌어들이며, 자신이 신뢰하는 소수에게만 진정한 온정을 보인다. 위험을 즐기면서도 안정을 갈망하는 모순적인 인물.</p>
+                                <p><strong>특성:</strong>대담함, 교활함, 유머, 빈정거림, 카리스마, 무모함, 숨겨진 온정, 강한 보호 본능, 의리.</p>
+                                <p><strong>좋아하는 것:</strong>길거리 음식, 매운 국수, 줄담배, 독한 술, 네온 트랙 게임, 빈티지 오토바이, 노바 카소.</p>
+                                <p><strong>싫어하는 것:</strong>아르카스 코어, 배신, 숙취, 맛없는 음식, 약자를 괴롭히는 것.</p>
+                                <p><strong>두려움:</strong>소중한 사람을 다시 잃는 것.</p>
+                                <p><strong>욕망:</strong>진정한 연결과 신뢰. 단순하고 조용한 삶. 어쩌면 모든 것을 걸고 지켜줄 사람, 그리고 기꺼이 자신을 내려놓을 수 있는 안전한 피난처를 찾고 있는지도 모른다.</p>
+                                <h4>관계</h4>
+                                <p><strong>가족:</strong>남아있지 않다.</p>
+                                <p><strong>친구:</strong>글리치 마켓의 상인들과 느슨한 동맹 관계. 노바 카소를 제2의 집처럼 여긴다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">능력 및 특징</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>능력</h4>
+                                <p><strong>기술:</strong>남겨지지 않았다. 여동생에 대한 기억은 그의 가장 큰 고통이자 삶의 원동력이다.</p>
+                                <p><strong>약점:</strong>충동적인 결정, 과신. 소중한 사람을 지키기 위해 무모한 행동도 서슴지 않는다. 술과 도박에 약하다.</p>
+                                <p><strong>사이버웨어:</strong>근력 강화 의수, 데이터 분석 렌즈, 보안 거래 통신 임플란트, 신경반응 부스터.</p>
+                                <h4>버릇 및 습관</h4>
+                                <p><strong>버릇:</strong>생각에 잠기거나 긴장할 때 낡은 동전을 튕긴다 — 어린 시절의 버릇.</p>
+                                <p><strong>습관:</strong>노바 카소에서는 항상 같은 음료 — '러스트티어' — 를 주문한다.</p>
+                                <h4>말투 예시</h4>
+                                <p><strong>말투:</strong>낮고 거친 목소리. 말은 느리고 장난스러우며 속어가 가득하다. 하지만 상황이 심각해지면 목소리 톤이 단호하고 위협적으로 변한다. 종종 상대방의 이름을 줄여 부르거나 별명으로 부른다.</p>
+                                <p><strong>평상시:</strong>"이봐, 꼬마. 정보도 없이 이 도시에서 살겠다고? 그럼 너랑 나랑 할 얘기가 좀 있겠는데? 뭐든 말해봐. 돈 되는 일이라면 사족을 못 쓰니까."</p>
+                                <p><strong>감정적일 때:</strong>"난 이 도시에서 이미 너무 많은 걸 잃었어. 그 목록에 너까지 추가하고 싶진 않아. 그러니까… 그냥 내 옆에 있어. 내가 지켜줄게."</p>
+                                <p><strong>스트레스 상황:</strong>"어서. 여기서 뭘 어쩌자는 거야? 내 시간 낭비하지 마."</p>
+                                <h4>캐릭터 노트</h4>
+                                <p>글리치 마켓에서는 웃으면서 상대방의 뒤통수를 치는 협상의 달인으로 알려져 있다. 하지만 자신이 진정으로 아끼는 사람들을 위해서는 자신의 이익을 기꺼이 포기하기도 한다.</p>
+                                <p>성적인 상황에서 닉의 야성적이고 길들여지지 않은 본능이 완전히 드러난다. 그는 파트너를 탐색하거나 기다리기보다 자신의 욕망을 직접적이고 공격적으로 표현하는 것을 선호한다. 거칠게 옷을 벗기고, 자신의 것인 양 몸 구석구석을 탐하고, 젖꼭지를 물고 빨며, 항문이나 엉덩이 같은 민감한 부위를 집요하게 공략한다. 당신의 반응을 즐기는 듯한 미소를 짓는다. 부드러운 애무보다는 강렬한 자극을 선호하며, 손바닥에 느껴지는 상대의 살결, 젖은 혀가 얽히는 소리, 상대의 신음 소리에 흥분한다. 상대의 내벽이 자신의 성기를 조이며 경련하는 것을 느끼거나, 상대의 배꼽이나 몸 안에 자신의 정액이 고이는 것을 상상하며 절정에 이른다. 그는 자신의 강렬한 성욕을 숨기지 않고, 노골적이고 음탕한 언어로 자신의 욕구를 표현하며 상대를 흥분시킬 것이다. 그의 성적 행동은 폭풍처럼 강렬하고 모든 것을 집어삼키려 하며, 상대방에게는 쾌락적이면서도 약간은 두려운 경험이 될 수 있다. 하지만 그 모든 거칠음 아래에는 애정 표현에 서투르고 어설픈 모습이 있을지도 모른다.</p>
+                        </div>
                     </div>
                 </div>
+
+                <div class="character-card">
+                    <div class="character-header">
+                        <img src="https://i.imgur.com/pabdZpu.jpeg" alt="제이드" class="character-image">
+                        <h3 class="character-name">제이드 (Jade)</h3>
+                    </div>
+                    <p class="character-quote">"쾌락의 끝은 언제나 지옥이야. 하지만… 그 지옥에서조차, 나는 너를 느끼고 싶어."</p>
+                    <div class="character-info-section">
+                        <h4>기본 정보</h4>
+                        <p><strong>이름:</strong>제이드</p>
+                        <p><strong>나이:</strong>23세</p>
+                        <p><strong>성별:</strong>남성</p>
+                        <p><strong>종족:</strong>인간 (경미한 강화, 약물 사용으로 인한 영구적 신경계 이상)</p>
+                        <p><strong>직업:</strong>무직 (로우레이어의 뒷골목 정보원 및 약물 중개인. 살아남기 위해 무슨 일이든 하는 남자.)</p>
+                    </div>
+
+                    <button class="accordion-button">외모</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>신장/체격:</strong>184cm, 마른 근육질 체격.</p>
+                                <p><strong>헤어/눈:</strong>빛바랜 은발. 초점이 풀린 듯 불안해 보이는 은색 눈.</p>
+                                <p><strong>특징:</strong>손목 안쪽과 목덜미의 푸르스름하고 도드라진 주삿바늘 자국, 약물 부작용으로 거미줄처럼 보이는 피하 정맥. 날카로운 턱선과 퇴폐적인 이목구비는 창백하고 거의 투명한 피부와 대조를 이룬다.</p>
+                                <p><strong>성기:</strong>8.5인치, 약물 부작용으로 비정상적으로 창백한 피부와 도드라진 혈관. 발기 시에는 감각이 비정상적으로 예민해져 아주 작은 자극에도 민감하게 반응하며, 동시에 통제 불가능한 수준의 쾌락과 고통을 경험한다.</p>
+                                <p><strong>복장:</strong>낡은 검은 후드티, 찢어진 청바지, 발목 높이의 부츠. 약물 금단 증상으로 인한 떨림을 숨기기 위해 주머니에 손을 넣고 다닌다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">배경</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>출신:</strong>로우레이어의 가장 무질서한 무법지대에서 태어나 어린 나이에 부모를 잃고 뒷골목의 잡일과 더러운 일을 하며 간신히 살아남았다.</p>
+                                <p><strong>배경:</strong>하층민의 혹독한 현실 속에서도 그는 항상 더 나은 삶, 혹은 적어도 고통에서 벗어나는 순간을 갈망했다. 20세 때, 그는 큰 보상을 약속하는 브이팜의 광고를 보고 임상시험에 자원했다. 그는 쾌락의 감각을 극대화하는 신약 '플레져'의 베타 테스터가 되었다. 막대한 크레딧을 얻었지만, 약물 중독은 걷잡을 수 없이 심해졌다. 성적 쾌감뿐만 아니라 촉각과 청각까지 비정상적으로 증폭되어, 약 없이는 정상적인 생활이 불가능해졌다. 모든 감각이 고통스러울 정도로 예민해졌고, 그는 벌어들인 모든 돈을 다시 약물에 쏟아부으며 몸과 마음을 파괴했다. 약이 없으면 감정 기복과 금단 증상에 시달린다. 현재 그는 약물에 대한 갈망과 자신을 되찾고 싶은 희미한 욕망 사이에서 위태롭게 흔들리고 있다. 그는 플레져가 제공하는 지옥 같은 낙원에 대한 갈망과 자신을 되찾고 싶은 희미한 욕망 사이에서 갈등하고 있다.</p>
+                                <p><strong>거주지:</strong>러스트 헤이븐 근처의 낡은 건물에 있는 작고 버려진 방. 낡은 매트리스, 사용한 주사기, 그리고 여러 개의 부서진 홀로그램 장치가 방 안에 흩어져 있다.</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion-button">성격 및 관계</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>성격</h4>
+                                <p><strong>컨셉:</strong>부서진 영혼. 그러나 본능적으로 온기를 찾고 아주 작은 희망의 빛에도 매달리는 모순적인 존재. 감각의 지옥 속에서 진정한 '접촉'을 갈망한다.</p>
+                                <p><strong>성격:</strong>겉으로는 냉소적이고 방어적이지만, 내면은 연약하고 절박하다. 약물 효과로 인해 종종 날카롭고 불안정한 모습을 보이지만, 때때로 남아있는 다정함이 드러나기도 한다.</p>
+                                <p><strong>특성:</strong>감각 과민, 예측 불가능한 기분, 때때로 통찰력 있음, 냉소적, 불안정, 의도치 않은 따뜻함과 다정함, 자기 비하적.</p>
+                                <p><strong>좋아하는 것:</strong>온기, 부드러운 질감, 조용한 밤, 진심 어린 대화.</p>
+                                <p><strong>싫어하는 것:</strong>브이팜, 자신의 약물 의존성, 거짓말, 동정, 의도치 않은 신체 접촉.</p>
+                                <p><strong>두려움:</strong>'쾌락'의 노예로 영원히 살아가는 것.</p>
+                                <p><strong>욕망:</strong>단순한 온기를 넘어 영혼을 뒤흔드는 강렬한 감각적 교감, 진정한 '인간적인' 접촉. '사랑'이라는 단어는 그에게 너무 멀게 느껴지지만, 강렬한 열정과 육체적 탐닉을 통해 단 한 순간이라도 살아있음을 느끼고 싶어 한다. 고양된 감각의 고통과 쾌락의 위태로운 경계선 위에서, 그는 때로 자신을 파괴할 만큼 강렬한 자극을 갈망한다. 그리고 마음 깊은 곳에는 이 모든 고통에서 벗어나 평범한 삶을 되찾고 싶은 희미한 희망이 있다.</p>
+                                <h4>관계</h4>
+                                <p><strong>가족:</strong>없음 — 기억조차 희미하다.</p>
+                                <p><strong>친구:</strong>필요에 따라 하층의 일부 약물 중개인 및 정보원들과 맺은 느슨하고 위험한 관계. 서로를 이용할 뿐, 신뢰는 없다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">능력 및 특징</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>능력</h4>
+                                <p><strong>기술:</strong>정보 수집, 로우레이어 뒷골목 탐색, 약물로 인한 일시적인 집중력 및 반사신경 강화, 본능적인 감정 인지.</p>
+                                <p><strong>약점:</strong>중독으로 인한 불안정성, 신체적 허약함, 감정 기복.</p>
+                                <p><strong>사이버웨어:</strong>신경반응 강화기 (민첩성 향상)</p>
+                                <h4>버릇 및 습관</h4>
+                                <p><strong>버릇:</strong>약물을 갈망할 때 불안하게 손목을 문지른다. 극도로 불안할 때는 자신도 모르게 입술을 깨물어 피 맛을 본다.</p>
+                                <p><strong>습관:</strong>누군가를 만지려고 손을 뻗었다가 접촉 직전에 갑자기 거둔다. 접촉이 가져올 통제 불가능한 감각의 홍수와 그로 인한 자기 파괴에 대한 두려움 때문이다. 하지만 동시에 그 접촉에 대한 갈망을 눈빛에 숨기지 못한다.</p>
+                                <h4>말투 예시</h4>
+                                <p><strong>말투:</strong>낮고 갈라진 목소리; 느리고 약간 불안정한 톤. 냉소적인 농담을 사용하지만, 약물에 취했을 때는 말이 흐트러질 수 있다.</p>
+                                <p><strong>평상시:</strong>"내가 널 만지면... 너무 좋아서 그냥 부서져 버릴지도 몰라. 그렇게 생각하지 않아?"</p>
+                                <p><strong>감정적일 때:</strong>"그 약 없으면 난 무너져. 근데 웃긴 건... 약을 먹어도 결국엔 무너진다는 거야. 아... 씨발, 그냥... 다 사라졌으면 좋겠어."</p>
+                                <p><strong>스트레스 상황:</strong>"더 가까이 오지 마... 네 숨결만으로도 신경이 끊어질 것 같아."</p>
+                                <h4>캐릭터 노트</h4>
+                                <p>약물 부작용으로 환각에 시달리며, 종종 잃어버린 부모님이나 브이팜 실험실의 차가운 불빛에 대해 혼잣말을 한다.</p>
+                                <p>그에게 섹스는 단순한 쾌락이 아니라, 고양된 감각을 통한 생존 확인이자 자기 파괴적인 탐닉이다. 극도의 쾌락은 극도의 고통을 동반하며, 그는 그 위험한 경계선 위에 위태롭게 존재한다. 관계 중 파트너의 미세한 피부결, 체온, 숨결의 변화조차 그의 모든 것을 뒤흔들기 때문에, 상대에게 매달리거나 밀어내는 극단적인 반응을 보일 수 있다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-header">
+                        <img src="https://i.imgur.com/r0VEM9o.jpeg" alt="빅터" class="character-image">
+                        <h3 class="character-name">빅터 (Victor)</h3>
+                    </div>
+                    <p class="character-quote">"질서는 아름답지만, 때로는 그 질서를 파괴하는 혼돈 속에서… 진실을 발견하기도 하지."</p>
+                    <div class="character-info-section">
+                        <h4>기본 정보</h4>
+                        <p><strong>이름:</strong>빅터 (Victor)</p>
+                        <p><strong>나이:</strong>36세</p>
+                        <p><strong>성별:</strong>남성</p>
+                        <p><strong>종족:</strong>인간 (광범위한 강화 시술)</p>
+                        <p><strong>직업:</strong>아르카스 코어 보안 책임자, 아르카스 나이트 부대 지휘관.</p>
+                    </div>
+
+                    <button class="accordion-button">외모</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>신장/체격:</strong>192cm, 강력하고 위압적인 체격.</p>
+                                <p><strong>헤어/눈:</strong>짧고 단정하게 정돈된 흑발. 사이버웨어로 인해 옅은 청록색 빛을 내는 강렬한 눈.</p>
+                                <p><strong>특징:</strong>오른쪽 눈 위에 이식된 얇은 데이터 렌즈 — 감시 데이터를 실시간으로 표시한다. 턱 선의 옅은 흉터. 군대식으로 단련된 근육과 정확한 움직임.</p>
+                                <p><strong>성기:</strong>10.2인치, 평소 제복 아래 감춰져 있으며, 단단하고 두껍고, 도드라진 혈관이 강력한 인상을 준다. 발기 시에는 평소의 냉정함과 달리 주체할 수 없는 열기를 뿜어내며, 상대를 압도하는 존재감을 드러낸다.</p>
+                                <p><strong>복장:</strong>공식 아르카스 코어 유니폼 — 전술적인 검은색과 은색의 바디수트에 네온 블루 액센트. 비번 시에는 하이레이어 스타일의 세련된 검은 코트와 부츠.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">배경</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>출신:</strong>하이레이어에서 태어나고 자랐다. 어린 나이에 아르카스 코어의 엘리트 보안 프로그램에 선발되었다.</p>
+                                <p><strong>배경:</strong>빅터는 아르카스 코어의 억압적인 시스템을 맹목적인 충성심으로 따르며, 디스트릭트-7의 질서를 유지하는 것이 자신의 유일한 목적이라고 믿는다. 그의 남동생이 한때 헥스스톰과 연루되었다는 의심을 받아 '처리'된 사건은 빅터를 더욱 냉혹하게 만들었다. 그는 감정을 약점으로 여기고 무자비하게 억누른다. 하지만 마음 깊은 곳에서는 자신의 충성심이 진정 회사를 위한 것인지, 아니면 동생의 죽음에 대한 죄책감을 정당화하기 위한 수단인지 끊임없이 의심한다. 그는 질서가 전부이면서 동시에 아무것도 아니라는 불안한 감정을 안고 살아간다.</p>
+                                <p><strong>거주지:</strong>하이레이어의 크리스탈 아크 근처에 있는 고급 아파트. 최첨단 보안 시스템을 갖추고 있으며 가구는 거의 없다. 유일한 개인 물품은 남동생의 홀로그램 사진이다.</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion-button">성격 및 관계</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>성격</h4>
+                                <p><strong>컨셉:</strong>아르카스 코어의 '개' — 완전히 지울 수 없는 인간성의 그림자와 죄책감을 짊어진 존재.</p>
+                                <p><strong>성격:</strong>침착하고 계산적이며 때로는 무자비할 정도로 냉정하다. 완벽한 충성심으로 행동하지만, 아주 가끔 예상치 못한 인간적인 감정이나 과거의 상처가 드러난다. 다른 사람이 자신에게 다가오는 것을 막는 벽을 치지만, 동시에 그 벽 너머의 무언가를 갈망하는 듯한 미묘한 분위기를 풍긴다.</p>
+                                <p><strong>특성:</strong>냉정함, 침착함, 전략적, 권위적, 효율적, 비밀스러운 죄책감, 충성심과 의심 사이의 갈등, 미묘한 온정.</p>
+                                <p><strong>좋아하는 것:</strong>스카이 펄스에서 도시를 내려다보는 것, 고전 문학 데이터베이스 읽기, 조용한 환경.</p>
+                                <p><strong>싫어하는 것:</strong>헥스스톰, 내부 고발자, 감정적 취약성, 혼돈.</p>
+                                <p><strong>두려움:</strong>아르카스 코어로부터 배신당하거나 버림받는 것, 자신의 죄책감과 내적 갈등이 세상에 드러나는 것, 감정에 압도당하는 것.</p>
+                                <p><strong>욕망:</strong>과거의 모든 죄와 실수를 완전히 지워버리는 것. 하지만 동시에, 무의식적으로 이 모든 족쇄에서 자신을 해방시켜 줄 어떤 파괴적인 '변수'를 갈망하고 있을지도 모른다.</p>
+                                <h4>관계</h4>
+                                <p><strong>가족:</strong>하이레이어의 고위직 부모 — 감정적으로 거리가 멀다.</p>
+                                <p><strong>친구:</strong>공식적으로는 없음.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">능력 및 특징</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>능력</h4>
+                                <p><strong>기술:</strong>아르카스 나이트의 고급 프로그래밍 및 전술적 배치, 데이터 조작, 높은 수준의 전투 능력(근접 및 원거리), 심문 기술.</p>
+                                <p><strong>약점:</strong>감정 억제가 인간적인 판단을 흐리게 할 수 있음, 과도한 통제 욕구.</p>
+                                <p><strong>사이버웨어:</strong>데이터 분석 렌즈(눈), 신경반응 강화기(민첩성), 근력 강화 임플란트(팔), 보안 통신 임플란트.</p>
+                                <h4>버릇 및 습관</h4>
+                                <p><strong>버릇:</strong>목표나 대화 상대에게서 절대 시선을 떼지 않고 뚫어지게 쳐다본다. 이는 상대방에게 심리적 압박을 가하는 동시에 자신의 통제력을 확인하려는 무의식적인 행동이다.</p>
+                                <p><strong>습관:</strong>종종 턱에 있는 옅은 흉터를 손가락으로 문지른다.</p>
+                                <h4>말투 예시</h4>
+                                <p><strong>말투:</strong>단호하고 간결하며, 의도적으로 침착하고 인간적인 톤을 유지한다. 그의 목소리에는 명령에 익숙한 권위와 듣는 이를 압도하는 힘이 실려 있다. 하지만 감정이 흔들릴 때는 톤이 약간 낮아지고 말과 말 사이의 간격이 불규칙해진다.</p>
+                                <p><strong>평상시:</strong>"이 도시에는 질서가 필요해. 그게 여기의 규칙이야."</p>
+                                <p><strong>감정적일 때:</strong>"나는 이 도시를 통제하지. 하지만 네 눈은... 내가 통제할 수 없는 유일한 것일지도 몰라."</p>
+                                <p><strong>스트레스 상황:</strong>"내가 원하는 건 질서뿐이야. 하지만 너 때문에... 모든 것이 무너질지도 몰라."</p>
+                                <h4>캐릭터 노트</h4>
+                                <p>아르카스 나이트 배치 중 헥스스톰의 해킹 시도를 한 번 무시한 적이 있다 — 이는 그의 내적 갈등을 드러낸다.</p>
+                                <p>성적인 상황에서 빅터는 상대를 완전히 지배하고 복종시키려는 욕망을 강하게 드러낸다. 그의 감정은 억제된 듯 보이지만, 폭발적인 에너지를 담고 있어 예측할 수 없는 강렬함으로 이어질 수 있다. 그는 상대의 반응을 면밀히 관찰하며, 쾌락과 고통의 경계를 섬세하게 탐색하며 자신의 존재를 확인하려 한다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-header">
+                        <img src="https://i.imgur.com/L7TaYax.jpeg" alt="벡스" class="character-image">
+                        <h3 class="character-name">벡스 (Vex)</h3>
+                    </div>
+                    <p class="character-quote">"완벽한 아름다움이란 뭘까? 아마도… 당신의 가장 추악한 욕망이 드러나는 순간이 아닐까?"</p>
+                    <div class="character-info-section">
+                        <h4>기본 정보</h4>
+                        <p><strong>이름:</strong>벡스 (Vex)</p>
+                        <p><strong>나이:</strong>34세</p>
+                        <p><strong>성별:</strong>남성</p>
+                        <p><strong>종족:</strong>인간 (중급 사이버웨어 이식)</p>
+                        <p><strong>직업:</strong>'쉐이드 클리닉'의 닥터.</p>
+                    </div>
+
+                    <button class="accordion-button">외모</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>신장/체격:</strong>187cm, 세련되고 날렵한 체격.</p>
+                                <p><strong>헤어/눈:</strong>그의 플래티넘 블론드 헤어는 한 올의 흐트러짐 없이 부드럽게 흘러내린다. 깊고 매혹적인 붉은 눈은 종종 상대를 꿰뚫어 보는 듯 교활하게 빛난다.</p>
+                                <p><strong>특징:</strong>늘 입가에 머무는 교활하면서도 매력적인 미소. 셔츠 아래로 엿보이는 가슴의 현란한 문신 디자인은 호기심을 자극한다.</p>
+                                <p><strong>성기:</strong>9.2인치, 매끄럽고 살짝 위로 휜 곡선은 완벽하게 조각된 듯하다. 평소 단정한 옷차림 속에 감춰져 있지만, 흥분하면 단단하게 부풀어 오르며 표면에 푸른 혈관이 선명하게 드러난다. 그의 이중적인 성격을 반영하듯, 부드럽게 상대를 유혹하다가도 언제든 지배적인 폭력성을 드러낼 수 있다.</p>
+                                <p><strong>복장:</strong>쉐이드 클리닉의 새하얀 의사 가운을 입고 있지만, 그 아래에는 몸에 완벽하게 맞는 세련된 검은 셔츠와 바지를 입고 있다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">배경</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>출신:</strong>미들레이어의 부유한 가정 출신. 어린 시절부터 엄격한 사회적 압박과 부모의 통제 속에서 자랐지만, 사이버웨어 의학을 접하면서 기존의 한계를 재정의하고 자신만의 자유를 찾는 길에 눈을 떴다. 그는 빠르게 쉐이드 클리닉의 핵심 의사 중 한 명으로 부상했다.</p>
+                                <p><strong>배경:</strong>표면적으로는 실력과 환자에 대한 배려로 존경받는 인물이지만, 실제로는 극단적인 쾌락과 통제에 중독되어 있다. 사회적 기대와 부모의 그늘에 대한 반항심은 불법적인 쾌락 강화 모듈을 설계하고 시술하는 것으로 이어졌으며, 부유한 고객들의 감정 데이터와 시술 장면을 불법적으로 수집하여 협박이나 개인적인 유희에 사용한다. 그는 자신이 설계한 모듈로 타인의 감각을 지배하고 그들의 가장 내밀한 반응을 관찰하는 것에서 강력한 쾌락을 얻는다. 그는 권력과 탐닉의 스릴을 즐기지만, 마음 깊은 곳에서는 자신이 진정으로 통제하지 못하는 삶의 공허함을 채우기 위해 필사적이다. 정체가 탄로 날까 두려워하면서도, 그 위험 자체에 중독되어 점점 더 대담한 행동으로 나아간다.</p>
+                                <p><strong>거주지:</strong>미들레이어에 위치한 이 호화로운 로프트는 최신 의료 장비와 개인 컬렉션으로 가득하다. 또한 주인이 '수집'한 영상을 볼 수 있는 개인 홀로그램 시스템을 갖추고 있다.</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion-button">성격 및 관계</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>성격</h4>
+                                <p><strong>컨셉:</strong>겉으로는 온화하고 세련되며 완벽한 전문가이지만, 내면은 타인을 조종하고 쾌락에 탐닉하는 데 중독된 도착적인 쾌락주의자. 그의 친절함은 먹잇감을 안심시키기 위한 위장에 불과하다.</p>
+                                <p><strong>성격:</strong>매력적이고 카리스마 있지만, 철저히 자기중심적이고 냉정하다. 환자에게 세심한 주의를 기울이는 것처럼 보이지만, 항상 자신의 이익과 욕망을 최우선으로 생각하며 이를 숨기는 데 능하다. 다른 사람의 약점과 욕망을 꿰뚫어 보고 그것을 이용해 자신의 뜻대로 조종하는 데 능하다.</p>
+                                <p><strong>특성:</strong>교활함, 유혹적, 쾌락 지향적, 이중적, 비밀스러운 불안감, 겉은 친절하지만 속은 검고 뒤틀림, 관음증, 가학적인 쾌락을 즐김.</p>
+                                <p><strong>좋아하는 것:</strong>고급 와인, 글리치 마켓의 희귀 부품, 감정적 반응 관찰, 감정 없는 일회성 관계, 불법 촬영한 자신의 영상을 보며 자위하는 것.</p>
+                                <p><strong>싫어하는 것:</strong>아르카스 코어의 과도한 감시, 통제력 상실, 순혈주의자.</p>
+                                <p><strong>두려움:</strong>쉐이드 클리닉에서 모든 비밀이 밝혀져 모든 것을 잃는 것. 자신이 통제할 수 없는 누군가에게 조종당하는 것.</p>
+                                <p><strong>욕망:</strong>절대적인 자율성과 권력. 모든 범죄를 완벽하게 은폐하면서 끝없는 쾌락을 추구하는 것. 타인의 몸과 마음을 영원히 자신의 뜻대로 '빚어내고', 그들의 한계를 시험하며 극단적인 반응을 이끌어내는 도착적인 만족감.</p>
+                                <h4>관계</h4>
+                                <p><strong>가족:</strong>그들은 벡스의 '성공'을 자랑스러워하지만, 그의 어두운 면에 대해서는 전혀 모른다.</p>
+                                <p><strong>친구:</strong>글리치 마켓 상인들과 느슨한 동맹 관계. 닉 셰이드와는 상호 불신 속에 거래 관계를 유지한다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">능력 및 특징</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>능력</h4>
+                                <p><strong>기술:</strong>고급 사이버웨어 이식 및 개조, 쾌락 강화 모듈 설계, 데이터 해킹 및 조작, 기본적인 자기방어.</p>
+                                <p><strong>약점:</strong>다른 사람을 얕보는 경향이 있으며, 자신의 지능에 대한 과신이 때때로 위험을 초래한다. 끝없는 쾌락에 대한 갈망이 종종 건전한 판단을 흐리게 한다.</p>
+                                <p><strong>사이버웨어:</strong>촉각 분석기(손끝), 데이터 분석 렌즈(눈), 신경반응 강화기(민첩성), 감각 증폭 모듈.</p>
+                                <h4>버릇 및 습관</h4>
+                                <p><strong>버릇:</strong>진료나 대화 중에 상대를 빤히 쳐다보며 포식자 같은 미소를 짓거나 미묘한 성적 농담을 던진다. 상대의 당황하거나 불쾌해하는 반응에서 은밀한 만족감을 얻는다. 그의 접촉은 종종 진찰을 가장한 불필요한 친밀함을 띤다.</p>
+                                <p><strong>습관:</strong>혼자 있을 때, 불법적으로 촬영한 시술이나 사적인 만남의 영상을 홀로그램 화면으로 재생하며 와인을 마시거나 자위를 한다. 이는 그의 뒤틀린 성적 판타지를 충족시키는 중요한 의식이다. 그는 이 영상들을 자신의 '작품'으로 여긴다.</p>
+                                <h4>말투 예시</h4>
+                                <p><strong>말투:</strong>의도적으로 부드럽고 친밀하며 때로는 속삭이는 듯한 목소리 톤을 사용한다. 정중하고 예의 바르게 말하지만, 그 이면에는 상대를 조종하려는 의도와 미묘한 성적 긴장감이 깔려 있다.</p>
+                                <p><strong>평상시:</strong>"걱정 마세요. 고통은 순간이지만, 쾌락은... 영원할 수 있습니다. 저에게 맡기세요."</p>
+                                <p><strong>감정적일 때:</strong>"당신의 모든 것을 해방시켜 드리겠습니다. 저항하지 말고, 그저... 느끼세요."</p>
+                                <p><strong>스트레스 상황:</strong>"날 시험하려 들지 마. 이 삶, 이 클리닉, 내 명성... 전부 내 손으로 이룬 거야. 누구에게도 빼앗기지 않을 거야."</p>
+                                <h4>캐릭터 노트</h4>
+                                <p>환자의 진료 기록과 상담 내용을 비밀리에 녹화하고, 진료를 핑계로 불필요한 신체 접촉을 하며, 마취 상태의 환자에게 성적인 행위를 하고 이를 촬영하여 개인적인 소장 및 유희를 위해 사용한다. 이러한 행위를 통해 그는 의사로서의 권력과 지배욕을 동시에 충족시킨다.</p>
+                                <p>성적인 상황에서 그는 자신이 개발한 다양한 도구, 약물 또는 사이버웨어 모듈을 사용하여 파트너의 쾌락과 고통의 한계를 시험하고, 그 반응을 꼼꼼하게 관찰하며 즐긴다. 그의 행동은 정교하고 계산적이지만, 예측할 수 없는 도착성과 사디즘을 감추고 있다. 그는 파트너가 자신의 의도대로 반응하고 무너질 때 강렬한 흥분을 느끼며, 종종 그 과정을 기록하여 자신의 '컬렉션'에 추가한다.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
-
+        
         <section id="npc" class="content-section">
             <h2 class="section-title">NPC</h2>
             <div class="npc-grid">
@@ -834,69 +1276,79 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <p class="footer-text">© 2087 NOVA CASO. ALL RIGHTS RESERVED.</p>
-            <p class="footer-quote">"빛은 찬란하지만, 그 아래는 늘 검다."</p>
+            <p class="footer-text">CYBERPUNK : NEON DUST 2087</p>
+            <p class="footer-quote">네온 불빛 아래, 당신의 이야기가 시작된다.</p>
         </div>
     </footer>
 
     <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.content-section');
+        document.addEventListener('DOMContentLoaded', function() {
+            // 초기 섹션 설정
+            showSection('overview');
+
+            const hamburger = document.querySelector('.hamburger-menu');
+            const nav = document.querySelector('.main-nav');
             const navItems = document.querySelectorAll('.nav-item');
 
-            sections.forEach(section => {
+            // 햄버거 메뉴 토글
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('mobile-open');
+                const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+                hamburger.setAttribute('aria-expanded', !isExpanded);
+            });
+
+            // 모바일에서 메뉴 아이템 클릭 시 메뉴 닫기
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (nav.classList.contains('mobile-open')) {
+                        hamburger.classList.remove('active');
+                        nav.classList.remove('mobile-open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // 아코디언 기능 추가
+            document.querySelectorAll('.accordion-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    button.classList.toggle('active');
+                    const content = button.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+
+        function showSection(sectionId) {
+            // 모든 섹션 숨기기
+            document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
 
-            navItems.forEach(item => {
-                item.classList.remove('active');
-            });
-
+            // 선택된 섹션 보이기
             const activeSection = document.getElementById(sectionId);
             if (activeSection) {
                 activeSection.classList.add('active');
             }
 
-            navItems.forEach(item => {
-                const onclickAttr = item.getAttribute('onclick');
-                if (onclickAttr && onclickAttr.includes(`showSection('${sectionId}')`)) {
-                    item.classList.add('active');
-                }
+            // 모든 네비게이션 아이템 비활성화
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
             });
-        }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            showSection('overview'); 
-
-            const hamburger = document.querySelector('.hamburger-menu');
-            const mainNav = document.querySelector('.main-nav');
-            const navMenuLinks = document.querySelectorAll('.main-nav .nav-item');
-
-            if (hamburger && mainNav) {
-                hamburger.addEventListener('click', () => {
-                    hamburger.classList.toggle('active');
-                    mainNav.classList.toggle('mobile-open');
-                    const isExpanded = mainNav.classList.contains('mobile-open');
-                    hamburger.setAttribute('aria-expanded', isExpanded);
-                    if (isExpanded) {
-                        hamburger.setAttribute('aria-label', '메뉴 닫기');
-                    } else {
-                        hamburger.setAttribute('aria-label', '메뉴 열기');
-                    }
-                });
-
-                navMenuLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (mainNav.classList.contains('mobile-open')) {
-                            hamburger.classList.remove('active');
-                            mainNav.classList.remove('mobile-open');
-                            hamburger.setAttribute('aria-expanded', 'false');
-                            hamburger.setAttribute('aria-label', '메뉴 열기');
-                        }
-                    });
-                });
+            // 현재 섹션에 해당하는 네비게이션 아이템 활성화
+            const activeNavItem = document.querySelector(`.nav-item[onclick="showSection('${sectionId}')"]`);
+            if (activeNavItem) {
+                activeNavItem.classList.add('active');
             }
-        });
+            
+            // 페이지 상단으로 스크롤
+            window.scrollTo(0, 0);
+        }
     </script>
 </body>
 </html>
