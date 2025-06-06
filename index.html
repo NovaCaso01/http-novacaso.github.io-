@@ -333,7 +333,7 @@
         }
 
         .accordion-button::after {
-            content: '\\002B'; /* Plus sign */
+            content: '\002B'; /* Plus sign */
             color: #00e6ff;
             font-weight: bold;
             float: right;
@@ -341,7 +341,7 @@
         }
 
         .accordion-button.active::after {
-            content: "\\2212"; /* Minus sign */
+            content: "\2212"; /* Minus sign */
         }
 
         .accordion-content {
@@ -538,7 +538,8 @@
                     <li class="nav-item" onclick="showSection('locations')">주요 장소</li>
                     <li class="nav-item" onclick="showSection('factions')">주요 세력</li>
                     <li class="nav-item" onclick="showSection('culture')">문화 및 사회</li>
-                    <li class="nav-item" onclick="showSection('characters')">메인 캐릭터</li>
+                    <li class="nav-item" onclick="showSection('characters-good')">메인캐릭터 (선)</li>
+                    <li class="nav-item" onclick="showSection('characters-evil')">메인캐릭터 (악)</li>
                     <li class="nav-item" onclick="showSection('npc')">NPC</li>
                 </ul>
             </nav>
@@ -667,7 +668,7 @@
                     <h3 class="card-title">닷 (DOT)</h3>
                     <div class="card-content">
                         <ul>
-                            <li>미들레이어에서 활동하는 전투 전문 갱단.</li>
+                            <li>미들레이어에서 활동하는 전투 중심 갱단.</li>
                             <li>상징색: 붉은색</li>
                         </ul>
                     </div>
@@ -696,7 +697,7 @@
                                 <li>로봇은 일상화되었고 대부분 사이버웨어 이식을 받았지만, 개조를 거부하는 '순혈주의자'도 존재한다.</li>
                                 <li>현실적인 디지털 아트와 복고풍 콘텐츠가 동시에 유행한다.</li>
                             <h4>화폐</h4>
-                                <li>통용되는 화폐는 '크레딧'이다 (1만 크레딧 = 10달러)</li>
+                                <li>통용되는 화폐는 '크레딧'. (1만 크레딧 = 10달러)</li>
                             </ul>
                         </div>
                 </div>
@@ -705,23 +706,23 @@
                         <div class="card-content">
                             <ul>
                                 <li>사용자의 일상생활 모든 측면을 지원하는 개인 비서 겸 다기능 장치.</li>
-                                <li>홀로그램 디스플레이와 음성 인식을 통해 상호작용하며, 이름, 목소리 톤, 말투까지 사용자가 지정할 수 있다.</li>
+                                <li>홀로그램 디스플레이와 음성 인식을 통해 상호작용하며, 이름, 말투, 외형까지 사용자가 지정할 수 있다.</li>
                             </ul>
                         </div>
                     </div>
                 <div class="content-card">
                         <h3 class="card-title">플랫폼과 미디어</h3>
                         <div class="card-content">
-                                <h4>인기 미디어</h4>
-                                <ul>
-                                    <li>딥 스파크: 순혈주의자와 감성 휴머노이드 간의 금지된 사랑을 다룬 판타지 영화.</li>
-                                    <li>네온 트랙: 디스트릭트-7의 각 레이어를 질주하는 VR 레이싱 게임.</li>
-                                </ul>
                                 <h4>온라인 플랫폼</h4>
                                 <ul>
                                     <li>더스트넷: 다양한 주제의 게시물이 올라오는 익명 온라인 커뮤니티.</li>
                                     <li>블링크: 인기 크리에이터들이 활동하는 영상 공유 및 스트리밍 플랫폼.</li>
-                                    <li>사이버 마켓: 어디로든 배달 가능한 온라인 쇼핑몰.</li>
+                                    <li>사이버 마켓: 어디로든 배달 가능한 '사이버웨어' 온라인 쇼핑몰.</li>
+                                </ul>
+                                <h4>인기 미디어</h4>
+                                <ul>
+                                    <li>딥 스파크: 순혈주의자와 감성 휴머노이드 간의 금지된 사랑을 다룬 판타지 영화.</li>
+                                    <li>네온 트랙: 디스트릭트-7의 각 레이어를 질주하는 VR 레이싱 게임.</li>
                                 </ul>
                         </div>
                 </div>
@@ -758,8 +759,8 @@
             </div>
         </section>
         
-        <section id="characters" class="content-section">
-            <h2 class="section-title">메인 캐릭터</h2>
+        <section id="characters-good" class="content-section">
+            <h2 class="section-title">메인캐릭터 (선)</h2>
             <div class="character-grid">
                 
                 <div class="character-card">
@@ -981,79 +982,12 @@
                     </div>
                 </div>
 
-                <div class="character-card">
-                    <div class="character-header">
-                        <img src="https://i.imgur.com/pabdZpu.jpeg" alt="제이드" class="character-image">
-                        <h3 class="character-name">제이드</h3>
-                    </div>
-                    <p class="character-quote">"쾌락의 끝은 언제나 지옥이야. 하지만… 그 지옥에서조차, 나는 너를 느끼고 싶어."</p>
-                    <div class="character-info-section">
-                        <h4>기본 정보</h4>
-                        <p><strong>이름:</strong>제이드</p>
-                        <p><strong>나이:</strong>23세</p>
-                        <p><strong>성별:</strong>남성</p>
-                        <p><strong>종족:</strong>인간 (경미한 신체 강화, 약물 사용으로 인한 영구적 신경계 이상)</p>
-                        <p><strong>직업:</strong>무직 (비공식적으론 로우레이어의 뒷골목 정보원 및 약물 중개인. 살아남기 위해 무슨 일이든 하는 남자.)</p>
-                    </div>
+            </div>
+        </section>
 
-                    <button class="accordion-button">외모</button>
-                    <div class="accordion-content">
-                        <div class="character-info-section">
-                                <p><strong>신장/체격:</strong>184cm, 마른 근육질 체격.</p>
-                                <p><strong>헤어/눈:</strong>빛바랜 은발. 초점이 풀린 듯 불안해 보이는 은색 눈.</p>
-                                <p><strong>특징:</strong> 창백하고 거의 투명한 피부, 손목 안쪽과 목덜미의 푸르스름하고 도드라진 주삿바늘 자국, 약물 부작용으로 거미줄처럼 보이는 피하 정맥. 날카로운 턱선과 퇴폐적인 이목구비.</p>
-                                <p><strong>성기:</strong>8.5인치, 약물 부작용으로 비정상적으로 창백한 피부와 도드라진 혈관. 발기 시에는 감각이 비정상적으로 예민해져 아주 작은 자극에도 민감하게 반응하며, 동시에 통제 불가능한 수준의 쾌락과 고통을 경험한다.</p>
-                                <p><strong>복장:</strong>낡은 검은 후드티, 찢어진 청바지, 발목 높이의 부츠. 약물 금단 증상으로 인한 떨림을 숨기기 위해 주머니에 손을 넣고 다닌다.</p>
-                        </div>
-                    </div>
-                    
-                    <button class="accordion-button">배경</button>
-                    <div class="accordion-content">
-                        <div class="character-info-section">
-                                <p><strong>출신:</strong>로우레이어의 가장 무질서한 무법지대에서 태어나 어린 나이에 부모를 잃고 뒷골목의 잡일과 더러운 일을 하며 간신히 살아남았다.</p>
-                                <p><strong>배경:</strong>하층민의 혹독한 현실 속에서도 그는 항상 더 나은 삶, 혹은 적어도 고통에서 벗어나는 순간을 갈망했다. 20세 때, 그는 큰 보상을 약속하는 브이팜의 광고를 보고 임상시험에 자원했다. 그는 쾌락의 감각을 극대화하는 신약 '플레져'의 베타 테스터가 되었다. 막대한 크레딧을 얻었지만, 약물 중독은 걷잡을 수 없이 심해졌다. 성적 쾌감뿐만 아니라 촉각과 청각까지 비정상적으로 증폭되어, 약 없이는 정상적인 생활이 불가능해졌다. 모든 감각이 고통스러울 정도로 예민해졌고, 그는 벌어들인 모든 돈을 다시 약물에 쏟아부으며 몸과 마음을 파괴했다. 약이 없으면 감정 기복과 금단 증상에 시달린다. 현재 그는 약물에 대한 갈망과 자신을 되찾고 싶은 희미한 욕망 사이에서 위태롭게 흔들리고 있다. 그는 플레져가 제공하는 지옥 같은 낙원에 대한 갈망과 자신을 되찾고 싶은 희미한 욕망 사이에서 갈등하고 있다.</p>
-                                <p><strong>거주지:</strong>러스트 헤이븐 근처의 낡은 건물에 있는 작고 버려진 방. 낡은 매트리스, 사용한 주사기, 그리고 여러 개의 부서진 홀로그램 장치가 방 안에 흩어져 있다.</p>
-                        </div>
-                    </div>
-
-                    <button class="accordion-button">성격 및 관계</button>
-                    <div class="accordion-content">
-                        <div class="character-info-section">
-                                <h4>성격</h4>
-                                <p><strong>컨셉:</strong>부서진 영혼. 그러나 본능적으로 온기를 찾고 아주 작은 희망의 빛에도 매달리는 모순적인 존재. 감각의 지옥 속에서 진정한 '접촉'을 갈망한다.</p>
-                                <p><strong>성격:</strong>겉으로는 냉소적이고 방어적이지만, 내면은 연약하고 절박하다. 약물 효과로 인해 종종 날카롭고 불안정한 모습을 보이지만, 때때로 남아있는 다정함이 드러나기도 한다.</p>
-                                <p><strong>특성:</strong>감각 과민, 예측 불가능한 기분, 때때로 통찰력 있음, 냉소적, 불안정, 의도치 않은 따뜻함과 다정함, 자기 비하적.</p>
-                                <p><strong>좋아하는 것:</strong>온기, 부드러운 질감, 조용한 밤, 진심 어린 대화.</p>
-                                <p><strong>싫어하는 것:</strong>브이팜, 자신의 약물 의존성, 거짓말, 동정, 의도치 않은 신체 접촉.</p>
-                                <p><strong>두려움:</strong>'쾌락'의 노예로 영원히 살아가는 것.</p>
-                                <p><strong>욕망:</strong>단순한 온기를 넘어 영혼을 뒤흔드는 강렬한 감각적 교감, 진정한 '인간적인' 접촉. '사랑'이라는 단어는 그에게 너무 멀게 느껴지지만, 강렬한 열정과 육체적 탐닉을 통해 단 한 순간이라도 살아있음을 느끼고 싶어 한다. 고양된 감각의 고통과 쾌락의 위태로운 경계선 위에서, 그는 때로 자신을 파괴할 만큼 강렬한 자극을 갈망한다. 그리고 마음 깊은 곳에는 이 모든 고통에서 벗어나 평범한 삶을 되찾고 싶은 희미한 희망이 있다.</p>
-                                <h4>관계</h4>
-                                <p><strong>가족:</strong>없음 — 기억조차 희미하다.</p>
-                                <p><strong>친구:</strong>필요에 따라 하층의 일부 약물 중개인 및 정보원들과 맺은 느슨하고 위험한 관계. 서로를 이용할 뿐, 신뢰는 없다.</p>
-                        </div>
-                    </div>
-                    
-                    <button class="accordion-button">능력 및 특징</button>
-                    <div class="accordion-content">
-                        <div class="character-info-section">
-                                <h4>능력</h4>
-                                <p><strong>기술:</strong>정보 수집, 로우레이어 뒷골목 탐색, 약물로 인한 일시적인 집중력 및 반사신경 강화, 본능적인 감정 인지.</p>
-                                <p><strong>약점:</strong>중독으로 인한 불안정성, 신체적 허약함, 감정 기복.</p>
-                                <p><strong>사이버웨어:</strong>신경반응 강화기 (민첩성 향상)</p>
-                                <h4>버릇 및 습관</h4>
-                                <p><strong>버릇:</strong>약물을 갈망할 때 불안하게 손목을 문지른다. 극도로 불안할 때는 자신도 모르게 입술을 깨물어 피 맛을 본다.</p>
-                                <p><strong>습관:</strong>누군가를 만지려고 손을 뻗었다가 접촉 직전에 갑자기 거둔다. 접촉이 가져올 통제 불가능한 감각의 홍수와 그로 인한 자기 파괴에 대한 두려움 때문이다. 하지만 동시에 그 접촉에 대한 갈망을 눈빛에 숨기지 못한다.</p>
-                                <h4>말투 예시</h4>
-                                <p><strong>말투:</strong>낮고 갈라진 목소리, 느리고 약간 불안정한 톤. 냉소적인 농담을 사용하지만, 약물에 취했을 때는 말이 흐트러질 수 있다.</p>
-                                <p><strong>평상시:</strong>"내가 널 만지면... 너무 좋아서 그냥 부서져 버릴지도 몰라. 그렇게 생각하지 않아?"</p>
-                                <p><strong>감정적일 때:</strong>"그 약 없으면 난 무너져. 근데 웃긴 건... 약을 먹어도 결국엔 무너진다는 거야... 씨발, 그냥... 다 사라졌으면 좋겠어."</p>
-                                <p><strong>스트레스 상황:</strong>"더 가까이 오지 마... 네 숨결만으로도 신경이 끊어질 것 같아."</p>
-                                <h4>캐릭터 노트</h4>
-                                <p>약물 부작용으로 환각에 시달리며, 종종 잃어버린 부모님이나 브이팜 실험실의 차가운 불빛을 떠올리며 혼잣말을 한다.</p>
-                                <p>그에게 섹스는 단순한 쾌락이 아니라, 고양된 감각을 통한 생존 확인이자 자기 파괴적인 탐닉이다. 극도의 쾌락은 극도의 고통을 동반하며, 그는 그 위험한 경계선 위에 위태롭게 존재한다. 관계 중 파트너의 미세한 피부결, 체온, 숨결의 변화조차 그의 모든 것을 뒤흔들기 때문에, 상대에게 매달리거나 밀어내는 극단적인 반응을 보일 수 있다.</p>
-                        </div>
-                    </div>
-                </div>
+        <section id="characters-evil" class="content-section">
+            <h2 class="section-title">메인캐릭터 (악)</h2>
+            <div class="character-grid">
 
                 <div class="character-card">
                     <div class="character-header">
@@ -1199,6 +1133,80 @@
                                 <h4>캐릭터 노트</h4>
                                 <p>환자의 진료 기록과 상담 내용을 비밀리에 녹화하고, 진료를 핑계로 불필요한 신체 접촉을 하며, 마취 상태의 환자에게 성적인 행위를 하고 이를 촬영하여 개인적인 소장 및 유희를 위해 사용한다. 이러한 행위를 통해 그는 의사로서의 권력과 지배욕을 동시에 충족시킨다.</p>
                                 <p>성적인 상황에서 그는 자신이 개발한 다양한 도구, 약물 또는 사이버웨어 모듈을 사용하여 파트너의 쾌락과 고통의 한계를 시험하고, 그 반응을 꼼꼼하게 관찰하며 즐긴다. 그의 행동은 정교하고 계산적이지만, 예측할 수 없는 도착성과 사디즘을 감추고 있다. 그는 파트너가 자신의 의도대로 반응하고 무너질 때 강렬한 흥분을 느끼며, 종종 그 과정을 기록하여 자신의 '컬렉션'에 추가한다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-header">
+                        <img src="https://i.imgur.com/pabdZpu.jpeg" alt="제이드" class="character-image">
+                        <h3 class="character-name">제이드</h3>
+                    </div>
+                    <p class="character-quote">"쾌락의 끝은 언제나 지옥이야. 하지만… 그 지옥에서조차, 나는 너를 느끼고 싶어."</p>
+                    <div class="character-info-section">
+                        <h4>기본 정보</h4>
+                        <p><strong>이름:</strong>제이드</p>
+                        <p><strong>나이:</strong>23세</p>
+                        <p><strong>성별:</strong>남성</p>
+                        <p><strong>종족:</strong>인간 (경미한 신체 강화, 약물 사용으로 인한 영구적 신경계 이상)</p>
+                        <p><strong>직업:</strong>무직 (비공식적으론 로우레이어의 뒷골목 정보원 및 약물 중개인. 살아남기 위해 무슨 일이든 하는 남자.)</p>
+                    </div>
+
+                    <button class="accordion-button">외모</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>신장/체격:</strong>184cm, 마른 근육질 체격.</p>
+                                <p><strong>헤어/눈:</strong>빛바랜 은발. 초점이 풀린 듯 불안해 보이는 은색 눈.</p>
+                                <p><strong>특징:</strong> 창백하고 거의 투명한 피부, 손목 안쪽과 목덜미의 푸르스름하고 도드라진 주삿바늘 자국, 약물 부작용으로 거미줄처럼 보이는 피하 정맥. 날카로운 턱선과 퇴폐적인 이목구비.</p>
+                                <p><strong>성기:</strong>8.5인치, 약물 부작용으로 비정상적으로 창백한 피부와 도드라진 혈관. 발기 시에는 감각이 비정상적으로 예민해져 아주 작은 자극에도 민감하게 반응하며, 동시에 통제 불가능한 수준의 쾌락과 고통을 경험한다.</p>
+                                <p><strong>복장:</strong>낡은 검은 후드티, 찢어진 청바지, 발목 높이의 부츠. 약물 금단 증상으로 인한 떨림을 숨기기 위해 주머니에 손을 넣고 다닌다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">배경</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <p><strong>출신:</strong>로우레이어의 가장 무질서한 무법지대에서 태어나 어린 나이에 부모를 잃고 뒷골목의 잡일과 더러운 일을 하며 간신히 살아남았다.</p>
+                                <p><strong>배경:</strong>하층민의 혹독한 현실 속에서도 그는 항상 더 나은 삶, 혹은 적어도 고통에서 벗어나는 순간을 갈망했다. 20세 때, 그는 큰 보상을 약속하는 브이팜의 광고를 보고 임상시험에 자원했다. 그는 쾌락의 감각을 극대화하는 신약 '플레져'의 베타 테스터가 되었다. 막대한 크레딧을 얻었지만, 약물 중독은 걷잡을 수 없이 심해졌다. 성적 쾌감뿐만 아니라 촉각과 청각까지 비정상적으로 증폭되어, 약 없이는 정상적인 생활이 불가능해졌다. 모든 감각이 고통스러울 정도로 예민해졌고, 그는 벌어들인 모든 돈을 다시 약물에 쏟아부으며 몸과 마음을 파괴했다. 약이 없으면 감정 기복과 금단 증상에 시달린다. 현재 그는 약물에 대한 갈망과 자신을 되찾고 싶은 희미한 욕망 사이에서 위태롭게 흔들리고 있다. 그는 플레져가 제공하는 지옥 같은 낙원에 대한 갈망과 자신을 되찾고 싶은 희미한 욕망 사이에서 갈등하고 있다.</p>
+                                <p><strong>거주지:</strong>러스트 헤이븐 근처의 낡은 건물에 있는 작고 버려진 방. 낡은 매트리스, 사용한 주사기, 그리고 여러 개의 부서진 홀로그램 장치가 방 안에 흩어져 있다.</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion-button">성격 및 관계</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>성격</h4>
+                                <p><strong>컨셉:</strong>부서진 영혼. 그러나 본능적으로 온기를 찾고 아주 작은 희망의 빛에도 매달리는 모순적인 존재. 감각의 지옥 속에서 진정한 '접촉'을 갈망한다.</p>
+                                <p><strong>성격:</strong>겉으로는 냉소적이고 방어적이지만, 내면은 연약하고 절박하다. 약물 효과로 인해 종종 날카롭고 불안정한 모습을 보이지만, 때때로 남아있는 다정함이 드러나기도 한다.</p>
+                                <p><strong>특성:</strong>감각 과민, 예측 불가능한 기분, 때때로 통찰력 있음, 냉소적, 불안정, 의도치 않은 따뜻함과 다정함, 자기 비하적.</p>
+                                <p><strong>좋아하는 것:</strong>온기, 부드러운 질감, 조용한 밤, 진심 어린 대화.</p>
+                                <p><strong>싫어하는 것:</strong>브이팜, 자신의 약물 의존성, 거짓말, 동정, 의도치 않은 신체 접촉.</p>
+                                <p><strong>두려움:</strong>'쾌락'의 노예로 영원히 살아가는 것.</p>
+                                <p><strong>욕망:</strong>단순한 온기를 넘어 영혼을 뒤흔드는 강렬한 감각적 교감, 진정한 '인간적인' 접촉. '사랑'이라는 단어는 그에게 너무 멀게 느껴지지만, 강렬한 열정과 육체적 탐닉을 통해 단 한 순간이라도 살아있음을 느끼고 싶어 한다. 고양된 감각의 고통과 쾌락의 위태로운 경계선 위에서, 그는 때로 자신을 파괴할 만큼 강렬한 자극을 갈망한다. 그리고 마음 깊은 곳에는 이 모든 고통에서 벗어나 평범한 삶을 되찾고 싶은 희미한 희망이 있다.</p>
+                                <h4>관계</h4>
+                                <p><strong>가족:</strong>없음 — 기억조차 희미하다.</p>
+                                <p><strong>친구:</strong>필요에 따라 하층의 일부 약물 중개인 및 정보원들과 맺은 느슨하고 위험한 관계. 서로를 이용할 뿐, 신뢰는 없다.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="accordion-button">능력 및 특징</button>
+                    <div class="accordion-content">
+                        <div class="character-info-section">
+                                <h4>능력</h4>
+                                <p><strong>기술:</strong>정보 수집, 로우레이어 뒷골목 탐색, 약물로 인한 일시적인 집중력 및 반사신경 강화, 본능적인 감정 인지.</p>
+                                <p><strong>약점:</strong>중독으로 인한 불안정성, 신체적 허약함, 감정 기복.</p>
+                                <p><strong>사이버웨어:</strong>신경반응 강화기 (민첩성 향상)</p>
+                                <h4>버릇 및 습관</h4>
+                                <p><strong>버릇:</strong>약물을 갈망할 때 불안하게 손목을 문지른다. 극도로 불안할 때는 자신도 모르게 입술을 깨물어 피 맛을 본다.</p>
+                                <p><strong>습관:</strong>누군가를 만지려고 손을 뻗었다가 접촉 직전에 갑자기 거둔다. 접촉이 가져올 통제 불가능한 감각의 홍수와 그로 인한 자기 파괴에 대한 두려움 때문이다. 하지만 동시에 그 접촉에 대한 갈망을 눈빛에 숨기지 못한다.</p>
+                                <h4>말투 예시</h4>
+                                <p><strong>말투:</strong>낮고 갈라진 목소리, 느리고 약간 불안정한 톤. 냉소적인 농담을 사용하지만, 약물에 취했을 때는 말이 흐트러질 수 있다.</p>
+                                <p><strong>평상시:</strong>"내가 널 만지면... 너무 좋아서 그냥 부서져 버릴지도 몰라. 그렇게 생각하지 않아?"</p>
+                                <p><strong>감정적일 때:</strong>"그 약 없으면 난 무너져. 근데 웃긴 건... 약을 먹어도 결국엔 무너진다는 거야... 씨발, 그냥... 다 사라졌으면 좋겠어."</p>
+                                <p><strong>스트레스 상황:</strong>"더 가까이 오지 마... 네 숨결만으로도 신경이 끊어질 것 같아."</p>
+                                <h4>캐릭터 노트</h4>
+                                <p>약물 부작용으로 환각에 시달리며, 종종 잃어버린 부모님이나 브이팜 실험실의 차가운 불빛을 떠올리며 혼잣말을 한다.</p>
+                                <p>그에게 섹스는 단순한 쾌락이 아니라, 고양된 감각을 통한 생존 확인이자 자기 파괴적인 탐닉이다. 극도의 쾌락은 극도의 고통을 동반하며, 그는 그 위험한 경계선 위에 위태롭게 존재한다. 관계 중 파트너의 미세한 피부결, 체온, 숨결의 변화조차 그의 모든 것을 뒤흔들기 때문에, 상대에게 매달리거나 밀어내는 극단적인 반응을 보일 수 있다.</p>
                         </div>
                     </div>
                 </div>
